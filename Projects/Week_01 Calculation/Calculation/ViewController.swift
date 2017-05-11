@@ -23,8 +23,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var num1:Int = 0
-    var num2:Int = 0
+    var firstNum:Int = 0
+    var secondNum:Int = 0
     var totalNum:Int = 0
     
     @IBOutlet weak var displayLabel: UILabel!
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickButtonPlus(_ sender: UIButton) {
-        totalNum = num1 + num2
+        totalNum = firstNum + secondNum
         
         print(totalNum)
         print("+ 버튼이 클릭되었습니다.")
@@ -74,13 +74,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickButton1(_ sender: UIButton) {
-        num1 = 1
         print("1번 버튼이 클릭되었습니다.")
+        
+        if firstNum == 0 {
+            firstNum = 1
+        }
+        else{
+            secondNum = 1
+        }
     }
     
     @IBAction func clickButton2(_ sender: UIButton) {
-        num2 = 2
         print("2번 버튼이 클릭되었습니다.")
+        
+        if firstNum == 0 {
+            firstNum = 2
+        }
+        else{
+            secondNum = 2
+        }
+        
     }
     
     @IBAction func clickButton3(_ sender: UIButton) {

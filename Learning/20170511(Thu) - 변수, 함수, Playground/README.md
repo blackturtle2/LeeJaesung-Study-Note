@@ -98,7 +98,7 @@ address = “서울시 신사동"
 ## String 조합
 1. String 변수 안에 변수 값을 첨부할 때는 Interpolation(삽입; \\)을 사용한다.
 2. 참고: [이스케이프 시퀀스](http://ko.cppreference.com/w/cpp/language/escape)
-3. `\n`: 라인피드 / `r`: 
+3. `\n`: 라인피드 / `\r`: 케리지 리턴
 
 ```swift
 var name:String = “이재성”
