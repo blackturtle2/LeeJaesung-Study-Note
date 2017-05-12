@@ -153,7 +153,8 @@ print("\(tripFriend.name) 의 나이는 \(String(tripFriend.age)) 이고, \(trip
 ```
 
 --
-// 함수
+
+# 함수
 
 ## 함수의 문법과 인수명
 
