@@ -71,10 +71,14 @@ class ViewController: UIViewController {
     
     @IBAction func clickButton0(_ sender: UIButton) {
         print("0번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = displayLabel.text! + "0"
     }
     
     @IBAction func clickButton1(_ sender: UIButton) {
         print("1번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "1"
         
         if firstNum == 0 {
             firstNum = 1
@@ -87,6 +91,8 @@ class ViewController: UIViewController {
     @IBAction func clickButton2(_ sender: UIButton) {
         print("2번 버튼이 클릭되었습니다.")
         
+        self.displayLabel.text = "2"
+        
         if firstNum == 0 {
             firstNum = 2
         }
@@ -98,30 +104,44 @@ class ViewController: UIViewController {
     
     @IBAction func clickButton3(_ sender: UIButton) {
         print("3번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "3"
     }
     
     @IBAction func clickButton4(_ sender: UIButton) {
         print("4번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "4"
     }
     
     @IBAction func clickButton5(_ sender: UIButton) {
         print("5번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "5"
     }
     
     @IBAction func clickButton6(_ sender: UIButton) {
         print("6번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "6"
     }
     
     @IBAction func clickButton7(_ sender: UIButton) {
         print("7번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "7"
     }
     
     @IBAction func clickButton8(_ sender: UIButton) {
         print("8번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "8"
     }
     
     @IBAction func clickButton9(_ sender: UIButton) {
         print("9번 버튼이 클릭되었습니다.")
+        
+        self.displayLabel.text = "9"
     }
 
 //    func printf(name1 namestr:String){
