@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var displayOperationLabel: UILabel!
     
     var tempFirstNum:Int = 0
     var tempSecondNum:Int = 0
@@ -30,31 +31,43 @@ class ViewController: UIViewController {
     
     @IBAction func clickButtonPlusMinus(_ sender: UIButton) {
         print("+/- 버튼이 클릭되었습니다.")
+        
+        displayNumber = String(Int(displayNumber)! * -1)
+        self.displayLabel.text = displayNumber
+        
+        addFirstNumOrSecondNum(number: displayNumber)
     }
     
     @IBAction func clickButtonPercent(_ sender: UIButton) {
         print("% 버튼이 클릭되었습니다.")
+        
+        tempOperation = "%"
+        displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     @IBAction func clickButtonDivide(_ sender: UIButton) {
         print("/ 버튼이 클릭되었습니다.")
         
-        tempOperation = "/"
+        tempOperation = "÷"
         displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     @IBAction func clickButtonTime(_ sender: UIButton) {
         print("x 버튼이 클릭되었습니다.")
         
-        tempOperation = "*"
+        tempOperation = "×"
         displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     @IBAction func clickButtonMinus(_ sender: UIButton) {
         print("- 버튼이 클릭되었습니다.")
         
-        tempOperation = "-"
+        tempOperation = "−"
         displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     // 더하기 버튼 클릭시
@@ -64,6 +77,7 @@ class ViewController: UIViewController {
         
         tempOperation = "+"
         displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     // 더하기 함수
@@ -77,15 +91,18 @@ class ViewController: UIViewController {
         print("= 버튼이 클릭되었습니다.")
         var resultValue:Int = 0
         
+        //×÷−+
         switch tempOperation {
         case "+":
             resultValue = plus(num1: tempFirstNum, num2: tempSecondNum)
-        case "-":
+        case "−":
             resultValue = tempFirstNum - tempSecondNum
-        case "*":
+        case "×":
             resultValue = tempFirstNum * tempSecondNum
-        case "/":
+        case "÷":
             resultValue = tempFirstNum / tempSecondNum
+        case "%":
+            resultValue = tempFirstNum / tempSecondNum * 100
         default:
             resultValue = 0
         }
@@ -95,6 +112,7 @@ class ViewController: UIViewController {
         tempSecondNum = 0
         tempOperation = ""
         displayNumber = "0"
+        displayOperationLabel.text = tempOperation
     }
     
     @IBAction func clickButtonPoint(_ sender: UIButton) {
@@ -118,7 +136,6 @@ class ViewController: UIViewController {
         if tempOperation.isEmpty {
             // 첫번째 숫자
             tempFirstNum = Int(displayNumber)!
-            
             
             //"!"는 이 변수가 절대 nil이 될 수 없어! 라는 의미입니다. 개발자의 보증수표랄까..
             //displayLabel.text는 절대 nil이 될 수 없고, String 값이 Int가 될 때도 String에 문자만 있을리 없어라고 이야기하는 의미입니다.
