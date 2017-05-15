@@ -23,7 +23,6 @@ func make(circle radius:Int) -> Double{
 print(make(circle: 10)) // = 314.0
 
 
-
 //삼각형의 넓이 구하는 함수 만들기
 //argument : base(밑변), height(높이)
 func make(triangle base:Int, height:Int) -> Double{

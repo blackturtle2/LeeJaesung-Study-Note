@@ -54,10 +54,9 @@ print(makeGbOf(mb: 1000))
 //ex) 11320 >> 4400초
 func makeSecondOf(hhmmss num:Int) -> Double{
     var result:Double = 0
-    let vNum:Double = Double(num)
     let vHH:Int = num/10000*60*60
-    let vMM:Int = (num%10000)/100*60 //(vNum - vNum/10000*10000)/100*60
-    let vSS:Double = vNum.truncatingRemainder(dividingBy: 100)
+    let vMM:Int = (num%10000)/100*60
+    let vSS:Double = Double(num).truncatingRemainder(dividingBy: 100)
     
     result = Double(vHH + vMM) + vSS
     
