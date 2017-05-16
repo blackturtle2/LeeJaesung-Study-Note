@@ -130,7 +130,7 @@ class ViewController: UIViewController {
     }
     
     
-    //첫번째 숫자인지, 두번째 숫자(연산 버튼을 누른 다음 누르는 숫자)인지 판단해서 각각에 저장하는 함수
+    ///첫번째 숫자인지, 두번째 숫자(연산 버튼을 누른 다음 누르는 숫자)인지 판단해서 각각에 저장하는 함수
     func addFirstNumOrSecondNum(number num:String) {
         
         if tempOperation.isEmpty {
@@ -152,7 +152,6 @@ class ViewController: UIViewController {
         
         addDisplayNumber(num: (sender.titleLabel?.text)!)
         //addDisplayNumber(num: sender.currentTitle!)
-        
         
         addFirstNumOrSecondNum(number: displayNumber)
         
