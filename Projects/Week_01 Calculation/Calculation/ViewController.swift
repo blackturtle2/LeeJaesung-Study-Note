@@ -147,96 +147,18 @@ class ViewController: UIViewController {
     
     
     // MARK: - 숫자 버튼들
-    @IBAction func clickButton0(_ sender: UIButton) {
-        print("0번 버튼이 클릭되었습니다.")
+    @IBAction func numberButtonTouched(_ sender: UIButton) {
+        print("\(sender.currentTitle!)) 번 버튼이 클릭되었습니다.")
         
-        addDisplayNumber(num: "0")
+        addDisplayNumber(num: (sender.titleLabel?.text)!)
+        //addDisplayNumber(num: sender.currentTitle!)
+        
+        
         addFirstNumOrSecondNum(number: displayNumber)
         
         self.displayLabel.text = displayNumber
     }
     
-    
-    @IBAction func clickButton1(_ sender: UIButton) {
-        print("1번 버튼이 클릭되었습니다.")
-
-        addDisplayNumber(num: "1")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton2(_ sender: UIButton) {
-        print("2번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "2")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton3(_ sender: UIButton) {
-        print("3번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "3")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton4(_ sender: UIButton) {
-        print("4번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "4")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton5(_ sender: UIButton) {
-        print("5번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "5")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton6(_ sender: UIButton) {
-        print("6번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "6")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton7(_ sender: UIButton) {
-        print("7번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "7")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton8(_ sender: UIButton) {
-        print("8번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "8")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
-    
-    @IBAction func clickButton9(_ sender: UIButton) {
-        print("9번 버튼이 클릭되었습니다.")
-        
-        addDisplayNumber(num: "9")
-        addFirstNumOrSecondNum(number: displayNumber)
-        
-        self.displayLabel.text = displayNumber
-    }
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
