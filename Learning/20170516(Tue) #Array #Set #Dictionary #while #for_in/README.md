@@ -4,7 +4,7 @@
  - 함수 위에 `///` 주석으로 설명을 달고, <kbd>option</kbd> 누르고 함수를 클릭하면, 말풍선으로 된 설명을 볼 수 있다.
  - `// MARK: - 숫자 버튼들`와 같은 주석으로 코드의 흐름을 구분할 수 있다. ( Xcode의 경로표시줄에서 쉽게 이동이 가능하다. )
  - `UIButton`의 `sender`에서 `sender.titleLabel.text`을 통해 버튼의 텍스트 값을 받아올 수 있다.
- - ```
+ - ```swift
 	@IBAction func numberButtonTouched(_ sender: UIButton) {
 	        print("\(sender.currentTitle!)) 번 버튼이 클릭되었습니다.")
 	        
@@ -25,7 +25,7 @@
 > 정렬된 값의 모음.
 > 같은 종류의 데이터들이 순차적으로 저장되어 있다.
 
-```
+```swift
 var SomeInts:[Int] = [Int]()
 var SomeInts:Array<Int> = Array<Int>()
 var SomeInts:[Int] = [1, 2, 3] //리터럴(literal) 문법
@@ -52,7 +52,7 @@ print("\(SomeInts[1])") // = 2
 ## Set ( 집합 )
 > Array가 아닌, Set은 집합 연산을 사용하고자 할 때, 유용하다.
 
-```
+```swift
 var someInts:Set<Int> = Set<Int>()
 ```
 
@@ -65,7 +65,7 @@ var someInts:Set<Int> = Set<Int>()
 ## Dictionary ( 사전 )
 > Dictionary는 추후 통신할 때, Json과 잘 맞아서 많이 사용된다.
 
-```
+```swift
 var someInts:[String:Int] = [String:Int]()
 var someInts:Dictionary<String,Int> = [:]
 
@@ -94,7 +94,7 @@ print("\(airports["ICH"])")
 
 ### 콜렉션 타입들의 선언 문법
 
-```
+```swift
 var list:Array<Int>
 var setv:Set<Int>
 var dic:Dictionary<String, Int>
@@ -102,7 +102,7 @@ var dic:Dictionary<String, Int>
 
 ### 콜렉션 타입들의 선언 문법 2
 
-```
+```swift
 var SomeInts:Array<Int> = Array<Int>()
 var SomeInts:[Int] = [1, 2, 3]
 
@@ -115,7 +115,7 @@ var someInts:[String:Int] = [String:Int]()
 # 반복문
 
 ## While문
-```
+```swift
 var index = 0;
 
 while index < 10
@@ -126,7 +126,7 @@ while index < 10
 ```
 
 ## for-in문
-```
+```swift
 let numbers = [1,2,3,4,5]
 
 for number in numbers
@@ -138,7 +138,7 @@ for number in numbers
  - 배열의 항목, 숫자의 범위 또는 문자열의 문자와 같은 시퀀스를 반복할 때, 사용한다.
  - `for` 바로 다음에 오는 변수는 따로 선언할 필요가 없다.
 
-```
+```swift
 let base = 3
 let power = 10
 var answer = 1
@@ -154,7 +154,7 @@ for _ in 1...power { //범위 연산자
 
 
 ## 예제
-```
+```swift
 func googoodan(number num:Int) {
     var firstNum:Int = 1
     
@@ -185,7 +185,7 @@ func fatorialOf(number num:Int) -> Int {
 ```
 
 ## 연습 문제
-```
+```swift
 // MARK: 로또 번호 뽑기 프로토타입 ( max 45, 숫자 6개 뽑기 )
 func findLottoProtoType() -> [Int] {
     var lottoNumbers:[Int] = []
