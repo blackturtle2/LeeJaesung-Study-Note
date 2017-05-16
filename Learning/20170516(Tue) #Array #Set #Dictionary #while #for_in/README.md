@@ -40,7 +40,7 @@ print("\(SomeInts[1])") // = 2
 1. `String`도 원래는 `var name:String = String()`으로 작성하고, 값을 넣어야 한다.
 2. 하지만, 어차피 변수는 값이 필요하고, 편의상 `var name:String = "Lee"`처럼 사용한다.
 3. 배열도 마찬가지로 `var SomeInts:[Int] = [Int]()`으로 작성하고, 값을 넣는다.
-4. 하지만, 리터럴 문법을 통해 `var SomeInts:[Int] = [1, 2, 3]
+4. 하지만, 리터럴 문법을 통해 `var SomeInts:[Int] = [1, 2, 3]`와 같이 간단히 선언과 초기화를 할 수 있다.
 
 ### 배열의 추가 기능
  - element count / 추가 / 삽입 / 삭제
