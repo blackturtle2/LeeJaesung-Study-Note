@@ -72,17 +72,21 @@ func testFunc(optionalStr:String?){    if optionalStr != nil	{           let
  - 옵셔널 변수에 값이 있는지 확인하여 보통의(?) 변수로 전환시킨다.
  - 옵셔널 변수도 일종의 `타입(Type)`이다.
 
-## Optional Binding ( 선택적 해제 )```swiftfunc testFunc(optionalStr:String?){    if let unwrapStr:String = optionalStr    {       print(unwrapStr)    }}
+## Optional Binding ( 옵셔널 바인딩 ) - 옵셔널의 값을 가져오고 싶을 때? -> `옵셔널 바인딩`을 사용한다.
+>옵셔널 바인딩은 옵셔널의 값이 존재하는지를 검사한 뒤, 존재한다면 그 값을 다른 변수에 대입시켜줍니다. if let 또는 if var를 사용하는데요. 옵셔널의 값을 벗겨서 값이 있다면 if문 안으로 들어가고, 값이 nil이라면 그냥 통과하게 됩니다.
+>
+> \- [옵셔널 (Optional) · 40시간만에 Swift로 iOS 앱 만들기](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-2/optionals.html)```swiftfunc testFunc(optionalStr:String?){    if let unwrapStr:String = optionalStr    {       print(unwrapStr) // optionalStr의 값이 존재한다면 해당 값이 출력됩니다.    }}
+// optionalStr의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.
 ```
  - 대부분의 함수들은 인수로 옵셔널을 받지 않는다. 그래서 옵셔널을 해제시키고, `String`과 같은 변수에 넣어버린다.
 
 ```
-func isNumber(inputNum1:String, inputNum2:String) -> Bool{	if let firstNumber = Int(inputNum1), let secondNumber = Int(inputNum2)	{		return true	}else {
+func isNumber(inputNum1:String, inputNum2:String) -> Bool{	if let firstNumber = Int(inputNum1), secondNumber = Int(inputNum2)	{		return true	}else {
 		return false
 	}
 }
 ```
- - 콤마( , )를 통해 옵셔널 바인딩을 추가하고, 또 조건도 추가 할수 있다.
+ - 하나의 if 문에서 콤마( , )로 구분하여 여러 옵셔널을 바인딩할 수 있다. 이곳에 사용된 모든 옵셔널의 값이 존재해야 if 문 안으로 진입한다.
 
 ## Early Exit _ feat. Guard 문
 ```
