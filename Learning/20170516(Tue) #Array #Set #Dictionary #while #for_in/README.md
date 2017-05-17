@@ -69,7 +69,7 @@ var someInts:Set<Int> = Set<Int>()
 var someInts:[String:Int] = [String:Int]()
 var someInts:Dictionary<String,Int> = [:]
 
-var airports: [String:String] = ["ICH":"인천공항", "CJU":"제주공항"]
+var airports:[String:String] = ["ICH":"인천공항", "CJU":"제주공항"]
 print("\(airports["ICH"])")
 ```
  - `Dictionary`는 순서가 정해져 있지 않은 데이터에 키 값을 통해 구분할 수 있는 자료구조이다.
@@ -95,21 +95,17 @@ print("\(airports["ICH"])")
 ### 콜렉션 타입들의 선언 문법
 
 ```swift
-var list:Array<Int>
-var setv:Set<Int>
-var dic:Dictionary<String, Int>
-```
+// 배열
+var list:Array<Int> = Array<Int>()
+var list:[Int] = [1, 2, 3]
 
-### 콜렉션 타입들의 선언 문법 2
+// 집합
+var setv:Set<Int> = Set<Int>()
+var setv:Set<Int> = [1, 2, 3]
 
-```swift
-var SomeInts:Array<Int> = Array<Int>()
-var SomeInts:[Int] = [1, 2, 3]
-
-var someInts:Set<Int> = Set<Int>()
-
-var someInts:Dictionary<String,Int> = [:]
-var someInts:[String:Int] = [String:Int]()
+// 딕셔너리
+var dic:Dictionary<String, Int> = [:]
+var dic:[String:Int] = [String:Int]()
 ```
 
 # 반복문
