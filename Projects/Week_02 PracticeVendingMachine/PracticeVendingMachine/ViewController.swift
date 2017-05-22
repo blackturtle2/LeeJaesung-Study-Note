@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     var totalPrice: Int = 0
     var isAddOption = false
     
+    // 옵션이 2번 선택되지 않도록 세팅 시작........ 20170519
     var selectedOption: [String:Int] = [String:Int]()
     
     
