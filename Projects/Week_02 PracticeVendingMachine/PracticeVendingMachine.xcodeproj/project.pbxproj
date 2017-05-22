@@ -17,6 +17,7 @@
 		FE488EB61ECE97210023F41D /* 520d.png in Resources */ = {isa = PBXBuildFile; fileRef = FE488EB21ECE97210023F41D /* 520d.png */; };
 		FE488EB71ECE97210023F41D /* E-Class.png in Resources */ = {isa = PBXBuildFile; fileRef = FE488EB31ECE97210023F41D /* E-Class.png */; };
 		FE488EB91ECEC0480023F41D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE488EB81ECEC0480023F41D /* Car.swift */; };
+		FE4A1D621ED27573006F8970 /* CarOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4A1D611ED27573006F8970 /* CarOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FE488EB21ECE97210023F41D /* 520d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 520d.png; sourceTree = "<group>"; };
 		FE488EB31ECE97210023F41D /* E-Class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "E-Class.png"; sourceTree = "<group>"; };
 		FE488EB81ECEC0480023F41D /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		FE4A1D611ED27573006F8970 /* CarOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				FE488E961ECE90CD0023F41D /* AppDelegate.swift */,
 				FE488E981ECE90CD0023F41D /* ViewController.swift */,
+				FE4A1D611ED27573006F8970 /* CarOption.swift */,
 				FE488EB81ECEC0480023F41D /* Car.swift */,
 				FE488E9A1ECE90CD0023F41D /* Main.storyboard */,
 				FE488E9D1ECE90CD0023F41D /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE488E991ECE90CD0023F41D /* ViewController.swift in Sources */,
+				FE4A1D621ED27573006F8970 /* CarOption.swift in Sources */,
 				FE488E971ECE90CD0023F41D /* AppDelegate.swift in Sources */,
 				FE488EB91ECEC0480023F41D /* Car.swift in Sources */,
 			);
