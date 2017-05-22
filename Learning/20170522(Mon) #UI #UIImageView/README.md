@@ -67,7 +67,7 @@ self.view.addSubview(gfriendImgV)
  - `UIViewContentMode.ScaleAspectFill`: 이미지의 가로/세로 비율을 고정하고, 이미지를 이미지뷰에 틈새가 없도록 **꽉차게** 확대/축소된다. `//외모(Aspect)를 꽉 채우다(Fill).`
 
 ## 예제 - for문 UI 그리기
-```
+```swift
 for i in 1...5 {
     let gfriendImgV_4 = UIImageView(frame: CGRect(x: 15, y: i*100, width: 100, height: 100))
     gfriendImgV_4.image = UIImage(named: "gfriend.jpg")
