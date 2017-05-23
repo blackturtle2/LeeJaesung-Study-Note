@@ -145,7 +145,7 @@ doubleNum = Double(intNum) //int를 double로 캐스팅
 ## 변수 예제 ( Powered by 재성 )
 // 예제 하나에 튜플 선언과 캐스팅을 모두 담았습니다. ~(윙크)~
 
-```
+```swift
 var tripFriend:(name:String, age:Int, location:String) = ("leejaesung", 30 , "Seoul")
 
 print("저는 \(tripFriend.name) 와 여행을 갈 계획입니다.")

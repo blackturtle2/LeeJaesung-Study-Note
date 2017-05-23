@@ -219,7 +219,7 @@ printPoint(of: 98)
  - 예외처리: 사용자가 101점을 입력했을 경우의 에러 처리는 grade 함수나 point 함수가 아닌 그 함수를 실제로 사용하는 액션에서 차단하면 좋다. (grade, point 함수 그 자체는 무결점하게 만든다.)
 
 ## 연습문제 - 홀짝 계산 ( powered by 재성 )
-```
+```swift
 //홀짝 프린트 함수(홀수 인지 짝수인지 확인)
 func evenof(number input:Int) -> Bool {
     let vInput:Int = input
@@ -237,7 +237,7 @@ print("입력한 수의 짝수 여부는? = \(evenof(number: 3))") // = false
 ```
 
 ## 연습문제 - 절대값 계산 ( powered by 재성 )
-```
+```swift
 //절대값 프린트.
 func checkAbsolute(of input:Int) -> Int {
     var vInput:Int = input
@@ -252,7 +252,7 @@ print("입력한 수의 절대값은? = \(checkAbsolute(of: -105))") // = 105
 ```
 
 ## 연습문제 - 영화표 값 계산하는 프로그램 ( powered by 재성 )
-```
+```swift
 //영화표값 계산하기.
 //기본가격 :        9000원
 //10시까지 조조 :   -10%
@@ -278,7 +278,7 @@ print("총 영화표 값은? = \(mTicketPrice(startTime: 11, adultCount: 1, teen
 ```
 
 ## 연습문제 - 지폐 개수 계산하는 프로그램 ( powered by 재성 )
-```
+```swift
 //지폐별 갯수
 //금액을 입력받고 100원, 500원, 1,000원, 5,000원, 10,000원, 50,000원권으로 각각 몇 장씩 나눠지는지 프린트.
 func countChanges(forMoney money:Int) -> (count50000w: Int, count10000w:Int, count5000w:Int, count1000w:Int, count500w:Int, count100w:Int) {
@@ -323,7 +323,7 @@ printOf(changes: 666000)
 ```
 
 ## 연습문제 - 윤년 계산하는 프로그램 ( powered by 재성 )
-```
+```swift
 //윤년구하기
 //서력 기원 연수가 4로 나누어떨어지는 해는 윤년으로 한다.(2004년, 2008년, 2012년, 2016년, 2020년, 2024년 …)
 //이 중에서 100으로 나누어떨어지는 해는 평년으로 한다.(1900년, 2100년, 2200년, 2300년, 2500년 …)
@@ -344,7 +344,7 @@ print("입력한 해의 윤년 여부는? = \(checkLeapYear(of: 2004))") // = tr
 
 ---
 ## 과제 1
-```
+```swift
 //(정)사각형의 넓이 구하는 함수 만들기
 //argument : width(가로), length(세로).
 
@@ -370,7 +370,7 @@ print("입력한 해의 윤년 여부는? = \(checkLeapYear(of: 2004))") // = tr
 //argument: radius(반지름), height(높이)
 ```
 ## 과제 2
-```
+```swift
 //1. inch to cm, cm to inch (2개)
 //2. m2 to 평, 평 to  m2 (2개)
 //3. 화씨 to 섭씨, 섭씨 to 화씨 (2개)
