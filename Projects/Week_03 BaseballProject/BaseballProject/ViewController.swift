@@ -39,8 +39,11 @@ class ViewController: UIViewController {
     var currentStatus:Status = Status() // 현재 상황
     
     
-    // MARK: 사용자 난이도 추가중... 20170523 20:00
-    var setDifficultyNumber:Int = Int() //사용자 설정 난이도 ( 범위는 3, 4, 5 )
+//    // MARK: 사용자 난이도 추가중... 20170523 20:00
+//    var setDifficultyNumber:Int = Int() //사용자 설정 난이도 ( 범위는 3, 4, 5 )
+//    
+//    var vLabelInsertNumber:UILabel = UILabel()
+//    var arrayLabelInsertNumber:[UILabel] = []
     
     
     // MARK: viewDidLoad()
@@ -49,33 +52,31 @@ class ViewController: UIViewController {
         
         initGame()
         
-        // UILabel을 코드로 만들고, 태그를 통해서 그 레이블을 찾아 값을 수정해보기.
-        var vLabelInsertNumber:UILabel = UILabel()
-        var arrayLabelInsertNumber:[UILabel] = []
         
-        setDifficultyNumber = 5
-        
-        for i in 0...(setDifficultyNumber-1) {
-            
-            switch i {
-            case 0...2:
-                vLabelInsertNumber = UILabel(frame: CGRect(x: 79+83*i, y: 162, width: 50, height: 50))
-            case 3:
-                vLabelInsertNumber = UILabel(frame: CGRect(x: 127, y: 226, width: 50, height: 50))
-            case 4:
-                vLabelInsertNumber = UILabel(frame: CGRect(x: 197, y: 226, width: 50, height: 50))
-            default:
-                print("error- 레이블 그리기 범위 초과")
-            }
-            
-            vLabelInsertNumber.text = "_"
-            vLabelInsertNumber.font = UIFont.boldSystemFont(ofSize: 30)
-            vLabelInsertNumber.textAlignment = .center
-            vLabelInsertNumber.tag = i
-            self.view.addSubview(vLabelInsertNumber)
-            
-            arrayLabelInsertNumber.append(vLabelInsertNumber)
-        }
+        // [사용자 난이도 추가중] UILabel을 코드로 만들고, 태그를 통해서 그 레이블을 찾아 값을 수정해보기.
+//        setDifficultyNumber = 5
+//        
+//        for i in 0...(setDifficultyNumber-1) {
+//            
+//            switch i {
+//            case 0...2:
+//                vLabelInsertNumber = UILabel(frame: CGRect(x: 79+83*i, y: 162, width: 50, height: 50))
+//            case 3:
+//                vLabelInsertNumber = UILabel(frame: CGRect(x: 127, y: 226, width: 50, height: 50))
+//            case 4:
+//                vLabelInsertNumber = UILabel(frame: CGRect(x: 197, y: 226, width: 50, height: 50))
+//            default:
+//                print("error- 레이블 그리기 범위 초과")
+//            }
+//            
+//            vLabelInsertNumber.text = "_"
+//            vLabelInsertNumber.font = UIFont.boldSystemFont(ofSize: 30)
+//            vLabelInsertNumber.textAlignment = .center
+//            vLabelInsertNumber.tag = i
+//            self.view.addSubview(vLabelInsertNumber)
+//            
+//            arrayLabelInsertNumber.append(vLabelInsertNumber)
+//        }
 
     }
 
@@ -87,15 +88,14 @@ class ViewController: UIViewController {
     
     // MARK: 숫자 버튼 액션 정의 함수
     @IBAction func buttonInsertNumber(_ sender: UIButton) {
-        let vTag:Int = sender.tag
-        let strTag:String = String(vTag)
+        let strTag:String = String(sender.tag)
         
-        guard !userCurrentAnswer.contains(vTag) else {
+        guard !userCurrentAnswer.contains(sender.tag) else {
             showDialog(title: "경고", message: "이미 입력한 숫자입니다.\r다른 숫자를 눌러주세요.")
             return
         }
         
-        userCurrentAnswer.append(vTag)
+        userCurrentAnswer.append(sender.tag)
 
         switch userCurrentAnswer.count {
         case 1:
