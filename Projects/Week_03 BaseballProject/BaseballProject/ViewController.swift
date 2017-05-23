@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelStatus: UILabel!
     
     // 사용자가 입력한 숫자 표시하는 레이블 3개 묶음 - 태그에 0, 1, 2 넣음.
-    // @IBOutlet weak var labelInsertNumber: UILabel! // 3개의 레이블을 묶고는 태그로 분류해서 사용하려고 했으나.. 실패하고, 각각 분리.
     @IBOutlet weak var labelInsertNumber1: UILabel!
     @IBOutlet weak var labelInsertNumber2: UILabel!
     @IBOutlet weak var labelInsertNumber3: UILabel!
@@ -36,9 +35,12 @@ class ViewController: UIViewController {
     var correctAnswer:[Int] = [] // 정답 배열 변수
     var userCurrentAnswer:[Int] = [] // 사용자 입력 배열 변수
     
-    var trynumber:Int = 1 // 사용자 시도 횟수
+    var tryNumber:Int = 1 // 사용자 시도 횟수
     var currentStatus:Status = Status() // 현재 상황
     
+    
+    // MARK: 사용자 난이도 추가중... 20170523 20:00
+    var setDifficultyNumber:Int = Int() //사용자 설정 난이도 ( 범위는 3, 4, 5 )
     
     
     // MARK: viewDidLoad()
@@ -47,6 +49,34 @@ class ViewController: UIViewController {
         
         initGame()
         
+        // UILabel을 코드로 만들고, 태그를 통해서 그 레이블을 찾아 값을 수정해보기.
+        var vLabelInsertNumber:UILabel = UILabel()
+        var arrayLabelInsertNumber:[UILabel] = []
+        
+        setDifficultyNumber = 5
+        
+        for i in 0...(setDifficultyNumber-1) {
+            
+            switch i {
+            case 0...2:
+                vLabelInsertNumber = UILabel(frame: CGRect(x: 79+83*i, y: 162, width: 50, height: 50))
+            case 3:
+                vLabelInsertNumber = UILabel(frame: CGRect(x: 127, y: 226, width: 50, height: 50))
+            case 4:
+                vLabelInsertNumber = UILabel(frame: CGRect(x: 197, y: 226, width: 50, height: 50))
+            default:
+                print("error- 레이블 그리기 범위 초과")
+            }
+            
+            vLabelInsertNumber.text = "_"
+            vLabelInsertNumber.font = UIFont.boldSystemFont(ofSize: 30)
+            vLabelInsertNumber.textAlignment = .center
+            vLabelInsertNumber.tag = i
+            self.view.addSubview(vLabelInsertNumber)
+            
+            arrayLabelInsertNumber.append(vLabelInsertNumber)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,11 +119,11 @@ class ViewController: UIViewController {
         // 숫자 3개를 누르지 않고, 확인 버튼을 눌렀을 때의 예외 처리
         if userCurrentAnswer.count < 3 {
             showDialog(title: "경고", message: "숫자 버튼을 먼저 눌러주세요.")
-            trynumber -= 1
+            tryNumber -= 1
             return
         }
         
-        trynumber += 1 // 시도 횟수 +1
+        tryNumber += 1 // 시도 횟수 +1
         currentStatus.setFree() // 상태 초기화
         
         // 상태 체크 로직 - START
@@ -120,7 +150,7 @@ class ViewController: UIViewController {
         }else {
             showDialog(title: "알림", message: "실패입니다-!\r\r공격 넘버: \(userCurrentAnswer[0]) , \(userCurrentAnswer[1]) , \(userCurrentAnswer[2])")
             
-            labelTryNumber.text = "\(String(trynumber)) 번째 공격" // 시도 횟수 출력
+            labelTryNumber.text = "\(String(tryNumber)) 번째 공격" // 시도 횟수 출력
             labelStatus.text = "\(currentStatus.out) OUT , \(currentStatus.ball) BALL , \(currentStatus.strike) STRIKE - !"
             
             userCurrentAnswer.removeAll()
