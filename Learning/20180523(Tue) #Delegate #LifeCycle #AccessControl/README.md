@@ -91,7 +91,7 @@ override func viewDidAppear(_ animated: Bool){
  - `override func viewDidDisappear(_ animated: Bool)`
 	 - view가 화면에서 **사라진 직후에** 호출.
 
-# 접근 제어
+# Access Control ( 접근 제어 )
 
 ## 접근 제한
  - `모듈` : 배포할 코드의 묶음 단위, 통상 프레임워크나 라이브러리, 애플리케이션이 모듈의 단위가 될 수 있다.
