@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelInsertNumber2: UILabel!
     @IBOutlet weak var labelInsertNumber3: UILabel!
     
-    //@IBOutlet weak var buttonOutletConfirm: UIButton!
     @IBOutlet weak var buttonGameRestart: UIButton!
     
     
@@ -106,6 +105,11 @@ class ViewController: UIViewController {
             userCurrentAnswer.removeLast()
             return
         }
+        
+        
+        // 질문1. 라벨 3개를 아울렛 하나로 묶고, 태그로 분리가 가능한지.
+        // 질문2. Switch-case에서 클래스 타입의 배열에 넣고, 버튼 누를 때마다 체크하는 것 다시 한번..
+        
         
         //        Q&A 특정 태그에 해당하는 레이블에 텍스트를 넣는 것은 불가능할까..
         //        내일 여쭤보는 걸로...............
@@ -214,6 +218,7 @@ class ViewController: UIViewController {
         let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
         dialog.addAction(action)
+        
         self.present(dialog, animated: true, completion: nil)
         
     }
