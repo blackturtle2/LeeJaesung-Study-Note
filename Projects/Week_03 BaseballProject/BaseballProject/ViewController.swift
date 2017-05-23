@@ -38,13 +38,7 @@ class ViewController: UIViewController {
     var tryNumber:Int = 1 // 사용자 시도 횟수
     var currentStatus:Status = Status() // 현재 상황
     
-    
-//    // MARK: 사용자 난이도 추가중... 20170523 20:00
-//    var setDifficultyNumber:Int = Int() //사용자 설정 난이도 ( 범위는 3, 4, 5 )
-//    
-//    var vLabelInsertNumber:UILabel = UILabel()
-//    var arrayLabelInsertNumber:[UILabel] = []
-    
+    var vLabelInsertNumber:[UILabel] = []
     
     // MARK: viewDidLoad()
     override func viewDidLoad() {
@@ -52,32 +46,10 @@ class ViewController: UIViewController {
         
         initGame()
         
+        vLabelInsertNumber.append(labelInsertNumber1)
+        vLabelInsertNumber.append(labelInsertNumber2)
+        vLabelInsertNumber.append(labelInsertNumber3)
         
-        // [사용자 난이도 추가중] UILabel을 코드로 만들고, 태그를 통해서 그 레이블을 찾아 값을 수정해보기.
-//        setDifficultyNumber = 5
-//        
-//        for i in 0...(setDifficultyNumber-1) {
-//            
-//            switch i {
-//            case 0...2:
-//                vLabelInsertNumber = UILabel(frame: CGRect(x: 79+83*i, y: 162, width: 50, height: 50))
-//            case 3:
-//                vLabelInsertNumber = UILabel(frame: CGRect(x: 127, y: 226, width: 50, height: 50))
-//            case 4:
-//                vLabelInsertNumber = UILabel(frame: CGRect(x: 197, y: 226, width: 50, height: 50))
-//            default:
-//                print("error- 레이블 그리기 범위 초과")
-//            }
-//            
-//            vLabelInsertNumber.text = "_"
-//            vLabelInsertNumber.font = UIFont.boldSystemFont(ofSize: 30)
-//            vLabelInsertNumber.textAlignment = .center
-//            vLabelInsertNumber.tag = i
-//            self.view.addSubview(vLabelInsertNumber)
-//            
-//            arrayLabelInsertNumber.append(vLabelInsertNumber)
-//        }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,18 +69,31 @@ class ViewController: UIViewController {
         
         userCurrentAnswer.append(sender.tag)
 
-        switch userCurrentAnswer.count {
-        case 1:
-            labelInsertNumber1.text = strTag
-        case 2:
-            labelInsertNumber2.text = strTag
-        case 3:
-            labelInsertNumber3.text = strTag
+        // 사용자 입력 레이블에 입력 값을 넣는 로직
+        // 아래 주석 처리한 로직을 아래와 같이 UILabel의 엘리먼트로 갖는 배열 변수를 만들어 로직 재구성.
+        let i = userCurrentAnswer.count
+        
+        switch i {
+        case 1...i:
+            vLabelInsertNumber[i-1].text = strTag
         default:
             showDialog(title: "알림", message: "모두 입력했습니다.\r정답을 확인해보세요-!")
             userCurrentAnswer.removeLast()
             return
         }
+        
+        //        switch userCurrentAnswer.count {
+        //        case 1:
+        //            labelInsertNumber1.text = strTag
+        //        case 2:
+        //            labelInsertNumber2.text = strTag
+        //        case 3:
+        //            labelInsertNumber3.text = strTag
+        //        default:
+        //            showDialog(title: "알림", message: "모두 입력했습니다.\r정답을 확인해보세요-!")
+        //            userCurrentAnswer.removeLast()
+        //            return
+        //        }
 
     }
     
@@ -154,9 +139,10 @@ class ViewController: UIViewController {
             labelStatus.text = "\(currentStatus.out) OUT , \(currentStatus.ball) BALL , \(currentStatus.strike) STRIKE - !"
             
             userCurrentAnswer.removeAll()
-            labelInsertNumber1.text = "_"
-            labelInsertNumber2.text = "_"
-            labelInsertNumber3.text = "_"
+            
+            for i in 0...2 {
+                vLabelInsertNumber[i].text = "_"
+            }
         }
     }
     
@@ -174,9 +160,12 @@ class ViewController: UIViewController {
         print(correctAnswer)
         
         userCurrentAnswer.removeAll()
-        labelInsertNumber1.text = "_"
-        labelInsertNumber2.text = "_"
-        labelInsertNumber3.text = "_"
+        
+        if vLabelInsertNumber.count != 0 {
+            for i in 0...2 {
+                vLabelInsertNumber[i].text = "_"
+            }
+        }
         
         labelTryNumber.text = "1 번째 공격"
         labelStatus.text = "숫자를 눌러주세요."
