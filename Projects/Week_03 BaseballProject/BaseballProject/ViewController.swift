@@ -127,7 +127,6 @@ class ViewController: UIViewController {
             labelInsertNumber1.text = "_"
             labelInsertNumber2.text = "_"
             labelInsertNumber3.text = "_"
-            
         }
     }
     
@@ -139,7 +138,7 @@ class ViewController: UIViewController {
         
     }
     
-    // 게임 초기화 함수
+    // MARK: 게임 초기화 함수
     func initGame() {
         correctAnswer = makeCorrectAnswer()
         print(correctAnswer)
@@ -167,13 +166,12 @@ class ViewController: UIViewController {
     func makeCorrectAnswer() -> [Int] {
         var result:[Int] = []
         
-        for _ in 1...3 {
-            var randomNum = Int(arc4random_uniform(9)+1) //arc4random_uniform(범위)+시작점
+        while result.count < 3 {
+            let randomNum = Int(arc4random_uniform(9)+1) //arc4random_uniform(범위)+시작점
             
-            while result.contains(randomNum) {
-                randomNum = Int(arc4random_uniform(9)+1)
+            if !result.contains(randomNum) {
+                result.append(randomNum)
             }
-            result.append(randomNum)
         }
         
         return result
