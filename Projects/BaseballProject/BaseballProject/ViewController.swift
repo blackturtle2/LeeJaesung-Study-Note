@@ -40,38 +40,12 @@ class ViewController: UIViewController {
     var currentStatus:Status = Status() // 현재 상황
     
     
+    
+    // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 랜덤으로 구성된 3개의 엘리먼트를 가진 정답, correctAnswer 초기화
-        correctAnswer = makeCorrectAnswer()
-        print(correctAnswer)
-        
-        /* 스토리보드에서 추가한 버튼과 유사하게 만들려다가 패스.
-        let btnNumber:UIButton = UIButton(frame: CGRect(x: 50, y: 150, width: 200, height: 50))
-        btnNumber.setTitle("button", for: .normal )
-        btnNumber.backgroundColor = UIColor.black
-        btnNumber.tintColor = UIColor.red
-        btnNumber.showsTouchWhenHighlighted = true
-        btnNumber.tag = 1
-        
-        self.view.addSubview(btnNumber)
-        */
-        
-        /* 버튼 만들다가 포기... addTarget을 알 수가 없다.
-        let button = UIButton();
-        button.setTitle("Back", for: .normal)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        button.frame = CGRect(x: 25, y: 25, width: 35, height: 30)
-
-        button.addTarget(self, action: Selector("buttonPressed:"), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: (31/255.0), green: (146/255.0), blue: (160/255.0), alpha: 1.0)
-        
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        
-        self.view.addSubview(button)
-        */
+        initGame()
         
     }
 
@@ -86,7 +60,7 @@ class ViewController: UIViewController {
         let vTag:Int = sender.tag
         let strTag:String = String(vTag)
         
-        if userCurrentAnswer.contains(vTag) {
+        guard !userCurrentAnswer.contains(vTag) else {
             showDialog(title: "경고", message: "이미 입력한 숫자입니다.\r다른 숫자를 눌러주세요.")
             return
         }
@@ -105,21 +79,14 @@ class ViewController: UIViewController {
             userCurrentAnswer.removeLast()
             return
         }
-        
-        
-        // 질문1. 라벨 3개를 아울렛 하나로 묶고, 태그로 분리가 가능한지.
-        // 질문2. Switch-case에서 클래스 타입의 배열에 넣고, 버튼 누를 때마다 체크하는 것 다시 한번..
-        
-        
-        //        Q&A 특정 태그에 해당하는 레이블에 텍스트를 넣는 것은 불가능할까..
-        //        내일 여쭤보는 걸로...............
-        //        let vLabel = labelInsertNumber.viewWithTag(0)
-        //        vLabel!.text = "hi"
+
     }
     
     
     // MARK: 확인 버튼 액션 정의 함수
     @IBAction func buttonConfirm(_ sender: UIButton) {
+        
+        // 숫자 3개를 누르지 않고, 확인 버튼을 눌렀을 때의 예외 처리
         if userCurrentAnswer.count < 3 {
             showDialog(title: "경고", message: "숫자 버튼을 먼저 눌러주세요.")
             trynumber -= 1
@@ -129,7 +96,7 @@ class ViewController: UIViewController {
         trynumber += 1 // 시도 횟수 +1
         currentStatus.setFree() // 상태 초기화
         
-        // 상태 체크 로직 시작
+        // 상태 체크 로직 - START
         for x in 0...2 {
             for y in 0...2 {
                 if userCurrentAnswer[x] == correctAnswer[y] {
@@ -142,7 +109,7 @@ class ViewController: UIViewController {
             }
         }
         currentStatus.out = 3 - (currentStatus.strike + currentStatus.ball)
-        // 상태 체크 로직 끝
+        // 상태 체크 로직 - END
         
         if currentStatus.strike == 3 {
             showDialog(title: "알림", message: "정답입니다-!")
@@ -165,19 +132,17 @@ class ViewController: UIViewController {
     }
     
     
-    // MARK: 폭탄 이모티콘의 초기화 버튼 함수
+    // MARK: 폭탄 이모티콘버튼 액션 함수
     @IBAction func buttonInitGame(_ sender: UIButton) {
         
-        initGame()
+        initGameAndShowDialog()
         
     }
     
-    // 초기화 함수
+    // 게임 초기화 함수
     func initGame() {
-        
         correctAnswer = makeCorrectAnswer()
         print(correctAnswer)
-        showDialog(title: "알림", message: "게임이 초기화되었습니다.")
         
         userCurrentAnswer.removeAll()
         labelInsertNumber1.text = "_"
@@ -185,7 +150,16 @@ class ViewController: UIViewController {
         labelInsertNumber3.text = "_"
         
         labelTryNumber.text = "1 번째 공격"
-        labelStatus.text = ""
+        labelStatus.text = "숫자를 눌러주세요."
+    }
+    
+    
+    // 게임 초기화 & 알림 출력 함수
+    func initGameAndShowDialog() {
+        
+        initGame()
+        showDialog(title: "알림", message: "게임이 초기화되었습니다.")
+        
     }
     
     
@@ -207,7 +181,7 @@ class ViewController: UIViewController {
     
     // MARK: 게임 재시작 버튼 액션 함수
     @IBAction func buttonGameRestartAction(_ sender: UIButton) {
-        initGame()
+        initGameAndShowDialog()
         buttonGameRestart.isHidden = true
     }
     
