@@ -9,7 +9,7 @@
 > “Classes and structures are general-purpose, flexible constructs that become thebuilding blocks of your program’s code.You define properties and methods to add functionality to your classes and structuresby using exactly the same syntax as for constants, variables, and functions.”
 
 1. 프로그램 코드 블럭의 기본 구조이다.
-2. 변수, 상수, 함수를 추가 할수 있다. (두 구조의 문법 같음)
+2. 변수, 상수, 함수를 추가 할수 있다. ( 두 구조의 문법 같음 )
 3. 단일 파일에 정의 되며 다른 코드에서 자동으로 사용 할수 있습니다. (접근 제한 자에 따라 접근성은 차이가 있다. `internal` 기본 접근제한자)
 4. 초기 상태를 설정하기 위해 `initializer`가 만들어 지고, 사용자가 추가로 정의할 수 있다.
 5. 사용 시 `인스턴스(instance)`라고 불린다.
@@ -46,7 +46,7 @@ class BookStore {
 }
 ```
  - `Struct`인 Book에 별도 `Init`을 하지 않았는데, `Book(name: ...)`이 자동으로 만들어졌고, 실제 사용할 때, 이를 사용할 수 있었다.
- - `init(parameter)`을 여러개 만들어서 각각의 init을 가능하게 할 수 있다. ( 예: name만을 받는 init과 cost만을 받는 `init` 선언이 가능함. )
+ - `init(parameter)`을 여러개 만들어서 각각의 init을 가능하게 할 수 있다. ( 예: name만을 받는 init과 cost 만을 받는 `init` 선언이 가능함. )
 
 
 # 값 타입 & 참조 타입
@@ -64,7 +64,7 @@ let num1:Int = 5 // 값 타입let view:UIView = UIView() // 참조 타입 ( 레
 ```
 
 - num1은 `5`라는 값을 바로 가질 수 있고, `STACK`에 저장된다.
-- view는 값을 가질 수 없으므로, `HEAP` 영역의 주소 값을 갖고 `STACK`에 저장된다.
+- view는 값을 가질 수 없으므로, `HEAP` 영역의 주소 값을 갖고, 주소 값만을`STACK`에 저장한다.
 - 기본 타입인 Int, UInt, String, Double, Char, Set, Dictionary, Array 등은 `Structure` 이다.
 
 ### 값을 저장한다는 것과 주소를 저장한다는 것의 차이
@@ -110,8 +110,9 @@ print(bs2.name) // = "나는야 자바 마스터"
 ```
 
  - `Struct`는 값을 복사해와서 본인(?)의 값을 바꾼다. ~그 녀석의~ 구조와 값을 가져와서 내 것으로 만든다고 생각하면 좋을 듯?
- - `Class`는 착해서(?) 내 것으로 만들지는 않고, 레퍼런스 값을 가져온다. 그래서 내 것으로 씌우지 않고, 그 녀석의 주소에 있는 Value를 바꾼다. ~착한게 아닌데?~
- - ~제 멋대로 해석했습니다..~
+ - `Class`는 착해서(?) 내 것으로 만들지는 않고, 레퍼런스 값을 가져온다. 그래서 내 것으로 씌우지 않고, 그 녀석의 주소에 있는 Value를 바꾼다. ~뭐지. 착한게 아닌데?~
+ - ~구조체 변수가 착해서 미안하니까.. 값을 가져와서 내 주머니에 넣고, 값을 바꾸고.. 클래스는 알고 보니 나쁜 놈(?)이라, 그 친구 주소만 가져와서 값을 바꿀 때, 그 친구의 값을 바꿔서 본인 것인 척을 한다.~
+ - ~이해를 위해 제 멋대로 해석했습니다..~
 
 
 ## Classes Vs Structures ( 차이점 ) - #참조타입 #값타입
