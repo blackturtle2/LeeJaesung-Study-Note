@@ -19,17 +19,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var textfieldInputNumber: UITextField!
     @IBOutlet weak var labelPrintResult: UILabel!
     
+    var arrayResult:[Int] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func buttonConfirm(_ sender: UIButton) {
         if textfieldInputNumber.text?.isEmpty == true {
             showDialog(title: "경고", message: "숫자를 먼저 입력해주세요.")
@@ -43,6 +44,15 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func buttonFibonacci(_ sender: UIButton) {
+        labelPrintResult.text = String(fibonacci(ofNum: Int(textfieldInputNumber.text!)!))
+        
+        print(arrayResult)
+        
+    }
+    
+    
+    // MARK: 계산 로직
     func calculate(ofNum number:Int) -> Int {
         var vNum:Int = number
         var vTryNum:Int = 0
@@ -69,6 +79,21 @@ class ViewController: UIViewController {
         
         self.present(dialog, animated: true, completion: nil)
         
+    }
+    
+    
+    // MARK: 피보나치 수열 연습
+    func fibonacci(ofNum inputNumber:Int) -> Int {
+        if inputNumber == 0 {
+            return 0
+        }else if inputNumber == 1{
+            return 1
+        }else {
+            
+            //F(n) = F(n-1) + F(n-2)
+            
+            return fibonacci(ofNum: inputNumber - 1) + fibonacci(ofNum: inputNumber - 2)
+        }
     }
 
 }
