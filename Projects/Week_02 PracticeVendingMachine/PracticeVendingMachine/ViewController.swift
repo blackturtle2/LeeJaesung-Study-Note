@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     // 뷰가 뜨자마자 다이얼로그를 띄우는 아이.
     override func viewDidAppear(_ animated: Bool) {
-        showDialog(title: "알림", message: "JS Motors에 오신 것을 환영합니다. 차량은 먼저 선택해주세요.")
+        showDialog(title: "알림", message: "JS Motors에 오신 것을 환영합니다. 차량을 먼저 선택해주세요.")
     }
     
     override func didReceiveMemoryWarning() {
