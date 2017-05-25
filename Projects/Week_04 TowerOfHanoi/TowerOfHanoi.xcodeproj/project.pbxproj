@@ -301,6 +301,7 @@
 				FE1B8E381ED5877C005661AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
