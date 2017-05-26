@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE01BFDD1ED7C0480062093E /* iu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FE01BFDC1ED7C0480062093E /* iu.jpeg */; };
 		FE5AC9E91ED6A158008920D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AC9E81ED6A158008920D0 /* AppDelegate.swift */; };
 		FE5AC9EB1ED6A158008920D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AC9EA1ED6A158008920D0 /* ViewController.swift */; };
 		FE5AC9EE1ED6A158008920D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5AC9EC1ED6A158008920D0 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE01BFDC1ED7C0480062093E /* iu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = iu.jpeg; path = ../../../Downloads/iu.jpeg; sourceTree = "<group>"; };
 		FE5AC9E51ED6A158008920D0 /* Practice0525.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice0525.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5AC9E81ED6A158008920D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE5AC9EA1ED6A158008920D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 		FE5AC9DC1ED6A158008920D0 = {
 			isa = PBXGroup;
 			children = (
+				FE01BFDC1ED7C0480062093E /* iu.jpeg */,
 				FE5AC9E71ED6A158008920D0 /* Practice0525 */,
 				FE5AC9E61ED6A158008920D0 /* Products */,
 			);
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE5AC9F31ED6A158008920D0 /* LaunchScreen.storyboard in Resources */,
+				FE01BFDD1ED7C0480062093E /* iu.jpeg in Resources */,
 				FE5AC9F01ED6A158008920D0 /* Assets.xcassets in Resources */,
 				FE5AC9EE1ED6A158008920D0 /* Main.storyboard in Resources */,
 			);
@@ -301,6 +305,7 @@
 				FE5AC9F91ED6A158008920D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
