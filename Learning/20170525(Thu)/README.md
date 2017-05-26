@@ -21,10 +21,20 @@
 
 ### Constant - 일정한 간격을 유지하기 위한 속성
 
-### 공식
+### Tool
+![AutoLayoutTool](AutoLayoutTool.png)
+
+### AuoLayout 공식
 ```
 Item1.Attribute = 비율 X Item2.Attribute + 간격
 ```
+
+## AutoLayout 실습 꿀팁
+
+### 버튼 4개를 일정한 간격으로 배치하기
+![example_button4](example_button4.png)
+
+
 
 ---
 ### 문서 끝 ( by 재성 )
