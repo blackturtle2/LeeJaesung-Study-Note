@@ -9,16 +9,15 @@
 	 - n 번을 출발지에서 목적지로..
 	 - n-1 개의 원판을 경유지에서 출발지를 거쳐 목적지로..
  - `핵꿀팁`: 원판을 옮긴다고만 생각하지 말고, **탑을 옮긴다**라고 생각하면, 이해가 쉬워진다.
- - ```
-/* 로직 이해하기
 
-     [1:n-1] A --> B
-        [1:n-2] A --> C
-        [n-2]   A --> B
-        [1:n-2] C --> B
-     [n]     A --> C
-     [1:n-1] A --> C
-     */  
+### 로직 이해하기
+```
+[1:n-1] A --> B
+	[1:n-2] A --> C
+	[n-2]   A --> B
+	[1:n-2] C --> B
+[n]     A --> C
+[1:n-1] A --> C
 ```
 
 ### 소스 참고
@@ -51,16 +50,19 @@ func moveNum(number n:Int, from vFrom:String, pass vPass:String, to vTo:String) 
  - `Leading`은 왼쪽 좌표 / `Trailing`은 오른쪽 좌표.
  - `Mutlipier`를 통해 비율을 조정할 수 있다.
  
-## contraint - Constraint: 각 뷰의 거리, 길이, 위치 등을 표현하기 위한 제약
+## contraint
+ - Constraint: 각 뷰의 거리, 길이, 위치 등을 표현하기 위한 제약
 
 ![contraint](contraint.png)
 
 ### Attribute
 ![attribute](attribute.png)
 
-### Multiplier - 비율을 통한 레이아웃 설정을 위한 속성
+### Multiplier
+ - 비율을 통한 레이아웃 설정을 위한 속성
 
-### Constant - 일정한 간격을 유지하기 위한 속성
+### Constant
+ - 일정한 간격을 유지하기 위한 속성
 
 ### Tool
 ![AutoLayoutTool](AutoLayoutTool.png)
