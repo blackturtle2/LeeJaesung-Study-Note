@@ -21,7 +21,7 @@
 ```
 
 ### 소스 참고
-```
+```swift
 func moveNum(number n:Int, from vFrom:String, pass vPass:String, to vTo:String) {
     if n == 1 {
         textViewOfResult.insertText("\(n)번 원판을 \(vFrom)에서 \(vTo)로 이동\r")
