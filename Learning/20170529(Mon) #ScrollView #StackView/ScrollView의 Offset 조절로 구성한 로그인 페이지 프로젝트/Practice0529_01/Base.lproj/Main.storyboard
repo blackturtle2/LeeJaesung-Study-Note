@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Practice0529_01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Els-SY-aK8">
+                                <rect key="frame" x="145" y="28" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVR-UK-4nJ">
+                                <rect key="frame" x="16" y="49" width="343" height="618"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPR-WL-BVz">
+                                        <rect key="frame" x="93" y="558" width="157" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="EHd-Cr-Ndd"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert your ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USz-21-TfX">
+                                        <rect key="frame" x="117.5" y="500" width="108" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Pml-tD-cUp"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="USz-21-TfX" firstAttribute="centerX" secondItem="uVR-UK-4nJ" secondAttribute="centerX" id="Ulh-gE-8lR"/>
+                                    <constraint firstItem="ZPR-WL-BVz" firstAttribute="centerX" secondItem="uVR-UK-4nJ" secondAttribute="centerX" id="bGP-wy-nGE"/>
+                                    <constraint firstAttribute="trailing" secondItem="USz-21-TfX" secondAttribute="trailing" constant="-29" id="dxT-03-CXg"/>
+                                    <constraint firstItem="ZPR-WL-BVz" firstAttribute="top" secondItem="USz-21-TfX" secondAttribute="bottom" constant="28" id="ed9-Nu-bWz"/>
+                                    <constraint firstItem="USz-21-TfX" firstAttribute="top" secondItem="uVR-UK-4nJ" secondAttribute="top" constant="500" id="ezB-Rh-4en"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZPR-WL-BVz" secondAttribute="bottom" constant="20" id="vSg-6o-sXT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uVR-UK-4nJ" secondAttribute="trailing" id="A0m-Rn-krw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uVR-UK-4nJ" secondAttribute="bottom" id="HKG-kz-pex"/>
+                            <constraint firstItem="uVR-UK-4nJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HSi-b0-cCS"/>
+                            <constraint firstItem="uVR-UK-4nJ" firstAttribute="top" secondItem="Els-SY-aK8" secondAttribute="bottom" id="aJI-fc-sqq"/>
+                            <constraint firstItem="Els-SY-aK8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="axz-uZ-nfj"/>
+                            <constraint firstItem="Els-SY-aK8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="129" id="fyi-Xu-FV7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="svRoot" destination="uVR-UK-4nJ" id="pjT-LO-89L"/>
+                        <outlet property="tfInsertID" destination="USz-21-TfX" id="Je9-iP-TFZ"/>
+                        <outlet property="tfInsertPW" destination="ZPR-WL-BVz" id="uQ0-S2-khN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
