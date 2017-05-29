@@ -71,20 +71,8 @@ class ViewController: UIViewController, UIWebViewDelegate {
 }
 ```
 
-## 스토리보드로 ScrollView 만들기
- - 스토리보드에서 스크롤 뷰를 끌어오고, 사이즈를 잡는다. 스크롤 뷰의 사이즈는 디스플레이를 넘지 않는다.
- - 스크롤 뷰 안에 뷰를 추가해서 `ContentView`(콘텐츠 뷰)를 넣는다. 콘텐츠 뷰의 `Constraints`를 0, 0, 0, 0으로 먹인다. ( `height` 값은 나중에 유동적으로 만들어볼 수도 있고, 이 경우, `StackView`를 활용한다. )
- - 이 콘텐츠뷰 안에 레이블이나 이미지 뷰 그리고 아래에서 이야기하는 스택 뷰 등을 활용해서 뷰를 구성한다.
 
-### 가로 스크롤 뷰와 세로 스크롤 뷰를 구성한 프로젝트의 스토리보드
- - 첫번째 가로 스크롤 뷰 안에 속한 콘텐츠 뷰의 width는 스크롤 뷰의 width에 3을 곱한 수를 넣어 무조건 스크롤 뷰보다 콘텐츠 뷰가 크도록 세팅하였다.
-	 - `Scroll View 1 > ContentsView.width = 3 × width`
- - 두번째 세로 스크롤 뷰 안에 속한 콘텐츠 뷰의 bottom을 마지막 이미지의 bottom에 10을 더한 수를 넣어서 콘텐츠 뷰의 세로 사이즈가 이미지에 따라 유동적이도록 세팅하였다.
-	 - `Scroll View 2 > ContentsView > bottom = iu_background_01.jpg.bottom + 10`
-
-![ScrollView](ScrollView.png)
-
-### 오프셋으로 키보드 내리기?
+### ScrollView의 Offset 설정으로 로그인 페이지에서 TextField 위로 올리기
  - 스크롤 뷰의 Offset 세팅으로 키보드가 올라올 때, 키보드로 TextField가 가려지는 문제를 해결할 수 있다.
  - 기존에 만들어진 뷰들을 스크롤 뷰 안에 넣고 싶을 때, 뷰들을 선택하고, Xcode 메뉴의 `Editor > Embed In - Scroll View`를 선택한다. ~물론 오토레이아웃이 망가진다.....~
  - `TextField`의 Delegate를 활용한다.
@@ -126,6 +114,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 }
 ```
+
+## 스토리보드로 ScrollView 만들기
+ - 스토리보드에서 스크롤 뷰를 끌어오고, 사이즈를 잡는다. 스크롤 뷰의 사이즈는 디스플레이를 넘지 않는다.
+ - 스크롤 뷰 안에 뷰를 추가해서 `ContentView`(콘텐츠 뷰)를 넣는다. 콘텐츠 뷰의 `Constraints`를 0, 0, 0, 0으로 먹인다. ( `height` 값은 나중에 유동적으로 만들어볼 수도 있고, 이 경우, `StackView`를 활용한다. )
+ - 이 콘텐츠뷰 안에 레이블이나 이미지 뷰 그리고 아래에서 이야기하는 스택 뷰 등을 활용해서 뷰를 구성한다.
+
+### 가로 스크롤 뷰와 세로 스크롤 뷰를 구성한 프로젝트의 스토리보드
+ - 첫번째 가로 스크롤 뷰 안에 속한 콘텐츠 뷰의 width는 스크롤 뷰의 width에 3을 곱한 수를 넣어 무조건 스크롤 뷰보다 콘텐츠 뷰가 크도록 세팅하였다.
+	 - `Scroll View 1 > ContentsView.width = 3 × width`
+ - 두번째 세로 스크롤 뷰 안에 속한 콘텐츠 뷰의 bottom을 마지막 이미지의 bottom에 10을 더한 수를 넣어서 콘텐츠 뷰의 세로 사이즈가 이미지에 따라 유동적이도록 세팅하였다.
+	 - `Scroll View 2 > ContentsView > bottom = iu_background_01.jpg.bottom + 10`
+
+![ScrollView](ScrollView.png)
 
 # Stack View
 
