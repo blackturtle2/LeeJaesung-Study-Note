@@ -146,9 +146,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 3. 요렇게 indent 관리를 하면, `Constraints`를 읽기 편하고, 협업 시에 이는 매우 중요하다.
 4. **[ 깨알팁 ]** `Root ContentView`의 `width` 값은 루트 뷰의 `width` 값의 `32`를 뺀다. 양 쪽에서 16을 빼서 여백을 주고, 사용자에게 보여주려는 내용이 스크롤에 가리지 않기 위함이다. 왜냐하면, 나중에 아래에 이미지를 넣으면, **이미지는 스택 뷰에 양쪽 여백 없이 딱 맞추고, 텍스트만 좌우 양쪽 여백을 주기 위함**이다. ~이쁘게 이쁘게~
 5. `Root StackView` 안에는 `스택 뷰 + 레이블 + 스크롤 뷰`가 위에서부터 아래로 들어가 있다.
-6. **[ 깨알팁 ]**테이블 뷰는 스크롤 뷰를 상속 받는다.
+6. **[ 깨알팁 ]** 테이블 뷰는 스크롤 뷰를 상속 받는다.
 7. iOS에서는 내비게이션 컨트롤 뷰가 많이 사용되므로 뷰를 잡은 뒤, `Editor > Embed in > Navigation Controll View`를 누른다.
-8. **[ 핵꿀팁 ]**내비게이션 컨트롤 뷰에서 `ScrollView`를 넣을 때, `Center Vertical`을 먹이고, `height`를 부모 뷰와 동일하게 먹인다. 그러면, 내비게이션 바 뒤로 콘텐츠가 스크롤 되어서 이쁘게 보인다.
+8. **[ 핵꿀팁 ]** 내비게이션 컨트롤 뷰에서 `ScrollView`를 넣을 때, `Center Vertical`을 먹이고, `height`를 부모 뷰와 동일하게 먹인다. 그러면, 내비게이션 바 뒤로 콘텐츠가 스크롤 되어서 이쁘게 보인다.
 
 // 이제 진짜 뷰를 구성하기 시작한다.
 
@@ -158,9 +158,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 4. 스택 뷰의 세로 위치는 `Top Space = 0`을 먹여보자.
 5. `Label`을 스택 뷰 안에 넣고, `Label`의 세로 크기도 텍스트 길이에 따라 유동적이므로 스택 뷰의 세로 크기는 곧바로 자동으로 가져온다. `Label`의 `Lines`를 `0`으로 먹이면, 여러줄이 된다.
 6. `Label`의 `Alignment`와 `Distribution`을 `Fill`을 넣으면, 스택 뷰의 사이즈를 따라간다.
-7. **[ 깨알팁 ]** `TextView`는 보통 장문의 텍스트를 사용자로부터 **입력** 받을 때에 사용하고, `Label`은 사용자에게 장문, 단문 가리지 않고 텍스트를 **출력**해주는 용도로 사용한다.
+7. **[ 깨알팁 ]** `TextView`는 보통 장문의 텍스트를 사용자로부터 **입력** 받을 때에 사용하고, `Label`은 사용자에게 장문, 단문 가리지 않고 텍스트를 **출력** 해주는 용도로 사용한다.
 8. `Label` 위에 `StackView`를 먹이고, `width`를 준다음, `ratio`로 `height`을 계산하도록 했다.
-9. **[ 핵꿀팁 ]**스택 뷰 안에 스택 뷰를 넣고, 넣고.. 그럴 때, `Distribution`을 `Equal Spacing`으로 준다. 그래야 부모가 되는 스택 뷰의 `Space`를 자식이 되는 스택 뷰에게도 전달해줄 수 있다.
+9. **[ 핵꿀팁 ]** 스택 뷰 안에 스택 뷰를 넣고, 넣고.. 그럴 때, `Distribution`을 `Equal Spacing`으로 준다. 그래야 부모가 되는 스택 뷰의 `Space`를 자식이 되는 스택 뷰에게도 전달해줄 수 있다.
 10. `ScrollView`의 콘텐츠 뷰에서 루트 스택 뷰에다가 끌어가서 `Equal height`를 먹이면, 콘텐트 뷰의 height 값이 루트 스택 뷰의 `height`에서 가져와서 먹여진다.
 
 
