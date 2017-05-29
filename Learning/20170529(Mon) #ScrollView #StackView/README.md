@@ -3,6 +3,8 @@
 # 오늘의 팁
  - Delegate는 많이 써보면서 익숙하게 만들자.
  - Delegate를 직접 만들어서 커스텀 UI를 만들 예정이다.
+ - 스토리보드에서 `TextField`의 `Secure Text Entry` 값을 체크해주면, `Password` 텍스트필드처럼 **** 표시된다.
+ - 
 
 # UIScrollView
 
