@@ -13,6 +13,7 @@
 		FE1C032D1ED85A1F00B7EFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1C032C1ED85A1F00B7EFD1 /* Assets.xcassets */; };
 		FE1C03301ED85A1F00B7EFD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1C032E1ED85A1F00B7EFD1 /* LaunchScreen.storyboard */; };
 		FE1C03381ED85E0700B7EFD1 /* legend_iu_01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FE1C03371ED85E0700B7EFD1 /* legend_iu_01.jpeg */; };
+		FE701D011EDD825400A6166F /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE701D001EDD825400A6166F /* Register.swift */; };
 		FEFBC57B1EDBB265001F00C8 /* iu_background_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEFBC56E1EDBB265001F00C8 /* iu_background_01.jpg */; };
 		FEFBC57C1EDBB265001F00C8 /* iu_background_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEFBC56F1EDBB265001F00C8 /* iu_background_02.jpg */; };
 		FEFBC57D1EDBB265001F00C8 /* iu_background_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEFBC5701EDBB265001F00C8 /* iu_background_03.jpg */; };
@@ -40,6 +41,7 @@
 		FE1C032F1ED85A1F00B7EFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE1C03311ED85A1F00B7EFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1C03371ED85E0700B7EFD1 /* legend_iu_01.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = legend_iu_01.jpeg; sourceTree = "<group>"; };
+		FE701D001EDD825400A6166F /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		FEFBC56E1EDBB265001F00C8 /* iu_background_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_01.jpg; sourceTree = "<group>"; };
 		FEFBC56F1EDBB265001F00C8 /* iu_background_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_02.jpg; sourceTree = "<group>"; };
 		FEFBC5701EDBB265001F00C8 /* iu_background_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_03.jpg; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				FE1C03251ED85A1F00B7EFD1 /* AppDelegate.swift */,
 				FE1C03271ED85A1F00B7EFD1 /* ViewController.swift */,
+				FE701D001EDD825400A6166F /* Register.swift */,
 				FE1C03291ED85A1F00B7EFD1 /* Main.storyboard */,
 				FE1C032C1ED85A1F00B7EFD1 /* Assets.xcassets */,
 				FE1C032E1ED85A1F00B7EFD1 /* LaunchScreen.storyboard */,
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE701D011EDD825400A6166F /* Register.swift in Sources */,
 				FE1C03281ED85A1F00B7EFD1 /* ViewController.swift in Sources */,
 				FE1C03261ED85A1F00B7EFD1 /* AppDelegate.swift in Sources */,
 			);
