@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice0530_ScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDU-iV-DTH" userLabel="Root Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1484"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyT-JB-ObR" userLabel="Root Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1545"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kbG-8A-fn0" userLabel="Root Stack View">
+                                                <rect key="frame" x="0.0" y="32" width="375" height="1513"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5y1-r4-VJS" userLabel="1st Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legend_iu_01.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="cAJ-Sn-Tn0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="187.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="cAJ-Sn-Tn0" secondAttribute="height" multiplier="1:1" id="y3D-xO-cq8"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legend_iu_02.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Gtx-oA-fRt">
+                                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="187.5"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Gtx-oA-fRt" firstAttribute="width" secondItem="cAJ-Sn-Tn0" secondAttribute="width" id="N4f-Z4-LnW"/>
+                                                            <constraint firstItem="Gtx-oA-fRt" firstAttribute="height" secondItem="cAJ-Sn-Tn0" secondAttribute="height" id="QuJ-ur-nEL"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-Gj-VRr" userLabel="Label Container">
+                                                        <rect key="frame" x="0.0" y="203.5" width="375" height="588.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAK-cT-obT">
+                                                                <rect key="frame" x="16" y="0.0" width="343" height="588.5"/>
+                                                                <mutableString key="text">대한민국은 민주공화국이다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 새로운 회계연도가 개시될 때까지 예산안이 의결되지 못한 때에는 정부는 국회에서 예산안이 의결될 때까지 다음의 목적을 위한 경비는 전년도 예산에 준하여 집행할 수 있다.
+
+모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서 선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은 위원중에서 호선한다.
+
+대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다. 국회는 국가의 예산안을 심의·확정한다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.
+
+국가는 균형있는 국민경제의 성장 및 안정과 적정한 소득의 분배를 유지하고, 시장의 지배와 경제력의 남용을 방지하며, 경제주체간의 조화를 통한 경제의 민주화를 위하여 경제에 관한 규제와 조정을 할 수 있다.
+
+통신·방송의 시설기준과 신문의 기능을 보장하기 위하여 필요한 사항은 법률로 정한다. 이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다.</mutableString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="YAK-cT-obT" firstAttribute="leading" secondItem="gQv-Gj-VRr" secondAttribute="leading" constant="16" id="3Uc-UC-VJT"/>
+                                                            <constraint firstItem="YAK-cT-obT" firstAttribute="top" secondItem="gQv-Gj-VRr" secondAttribute="top" id="C6F-0R-teP"/>
+                                                            <constraint firstAttribute="height" secondItem="YAK-cT-obT" secondAttribute="height" id="lj7-Do-GrW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YAK-cT-obT" secondAttribute="trailing" constant="16" id="q8y-DO-SLB"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUs-Ay-Fah" userLabel="2nd Stack View">
+                                                        <rect key="frame" x="0.0" y="808" width="375" height="187.5"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legend_iu_03.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mft-dn-90M">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="187.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="mft-dn-90M" secondAttribute="height" multiplier="1:1" id="QeF-TO-E45"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucq-yW-T7J">
+                                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="187.5"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vx8ot7o6h.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-Uy-NlS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="94"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vxgg382j1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YXk-V8-pHw">
+                                                                        <rect key="frame" x="0.0" y="94" width="187.5" height="93.5"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Gc3-Uy-NlS" firstAttribute="height" secondItem="ucq-yW-T7J" secondAttribute="height" multiplier="1/2" id="1gc-p9-os0"/>
+                                                                    <constraint firstItem="YXk-V8-pHw" firstAttribute="height" secondItem="Gc3-Uy-NlS" secondAttribute="height" id="6NK-RD-3tr"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="mft-dn-90M" firstAttribute="width" secondItem="nUs-Ay-Fah" secondAttribute="width" multiplier="1/2" id="Riy-hE-396"/>
+                                                            <constraint firstItem="ucq-yW-T7J" firstAttribute="width" secondItem="mft-dn-90M" secondAttribute="width" id="chw-P3-NtI"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JV-8y-yB9">
+                                                        <rect key="frame" x="0.0" y="1011.5" width="375" height="501.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-Hh-OXa">
+                                                                <rect key="frame" x="16" y="0.0" width="343" height="501.5"/>
+                                                                <mutableString key="text">같이, 얼음에 생생하며, 인생을 예가 아니다. 보이는 설산에서 찾아다녀도, 있으랴? 사랑의 새가 능히 그와 열락의 대한 위하여서 것이다. 같지 위하여 우리는 갑 인간이 것이다. 얼음에 청춘 끝까지 부패를 구하지 안고, 그들의 이것을 있으랴? 그들의 인생을 우는 놀이 가는 방황하였으며, 열매를 청춘이 사막이다. 곳으로 사랑의 동산에는 밝은 있는 ? 같이, 따뜻한 청춘은 따뜻한 인간에 수 황금시대다. 심장은 풀이 싶이 옷을 피고, 것이다. 눈이 그것은 가는 관현악이며, 군영과 그들은 말이다. 일월과 발휘하기 사는가 사람은 그것은 때문이다.
+
+뜨고, 수 구하지 이것은 산야에 사람은 길을 사막이다. 아니한 소금이라 곧 얼음이 이상은 싸인 말이다. 피는 뜨고, 그들은 그들의 우는 싹이 청춘 것이다. 길을 이상을 용감하고 우리의 것이다. 청춘의 보이는 돋고, 이것을 뼈 있다. 황금시대를 목숨이 우리 심장의 예가 위하여 곳이 그러므로 아름다우냐? 곳이 구할 피는 원대하고, 반짝이는 인생에 보이는 발휘하기 황금시대다. 구하기 오직 위하여서, 남는 것이다. 맺어, 우리 새가 인생의 산야에 든 있다. 눈에 가치를 뼈 피다. 두기 용감하고 쓸쓸한 내려온 주는 얼음이 있음으로써 뛰노는 보라. 청춘의 이상의 기관과 풀이 얼마나 같이, 가슴에 있다.
+
+이상 웅대한 가는 같이, 그들의 어디 힘있다. 못할 뜨고, 소금이라 인간이 붙잡아 이것을 인생을 뛰노는 ? 두손을 불어 끝에 있다. 무엇을 인류의 이상의 뜨거운지라, 되는 위하여 위하여, 따뜻한 있다. 있는 얼마나 봄날의 앞이 힘차게 약동하다. 속에 피고, 새 옷을 날카로우나 위하여서. 심장의 끝에 피고, 보이는 할지니, 싸인 석가는 꽃 칼이다. 피부가 스며들어 내려온 맺어, 말이다. 그들은 아니한 있음으로써 황금시대다. 천고에 주는 날카로우나 반짝이는 많이 힘있다. 청춘의 그들의 어디 이상 사막이다.</mutableString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="WUg-Hh-OXa" secondAttribute="trailing" constant="16" id="MNH-Bi-zbE"/>
+                                                            <constraint firstAttribute="height" secondItem="WUg-Hh-OXa" secondAttribute="height" id="NSL-IT-Yta"/>
+                                                            <constraint firstItem="WUg-Hh-OXa" firstAttribute="leading" secondItem="7JV-8y-yB9" secondAttribute="leading" constant="16" id="gdc-54-sut"/>
+                                                            <constraint firstItem="WUg-Hh-OXa" firstAttribute="top" secondItem="7JV-8y-yB9" secondAttribute="top" id="sMu-eI-tAV"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nUs-Ay-Fah" firstAttribute="width" secondItem="kbG-8A-fn0" secondAttribute="width" id="4Vs-1p-VgJ"/>
+                                                    <constraint firstItem="gQv-Gj-VRr" firstAttribute="width" secondItem="5y1-r4-VJS" secondAttribute="width" id="npz-Ah-XE2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="kbG-8A-fn0" firstAttribute="leading" secondItem="UyT-JB-ObR" secondAttribute="leading" id="5iB-ni-Muy"/>
+                                            <constraint firstItem="kbG-8A-fn0" firstAttribute="top" secondItem="UyT-JB-ObR" secondAttribute="top" constant="32" id="ON1-Fv-Bqi"/>
+                                            <constraint firstAttribute="bottom" secondItem="kbG-8A-fn0" secondAttribute="bottom" id="UaU-5r-JRT"/>
+                                            <constraint firstItem="kbG-8A-fn0" firstAttribute="width" secondItem="UyT-JB-ObR" secondAttribute="width" id="X9c-v8-gob"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UyT-JB-ObR" secondAttribute="trailing" id="BdC-JR-U4q"/>
+                                    <constraint firstItem="UyT-JB-ObR" firstAttribute="top" secondItem="eDU-iV-DTH" secondAttribute="top" id="Dhc-hn-v0y"/>
+                                    <constraint firstAttribute="bottom" secondItem="UyT-JB-ObR" secondAttribute="bottom" id="GDC-Zf-6UV"/>
+                                    <constraint firstItem="UyT-JB-ObR" firstAttribute="centerX" secondItem="eDU-iV-DTH" secondAttribute="centerX" id="YFA-Ee-3hy"/>
+                                    <constraint firstItem="UyT-JB-ObR" firstAttribute="leading" secondItem="eDU-iV-DTH" secondAttribute="leading" id="ngC-3k-ZGw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eDU-iV-DTH" secondAttribute="bottom" constant="16" id="Hol-MC-Kj7"/>
+                            <constraint firstAttribute="trailing" secondItem="eDU-iV-DTH" secondAttribute="trailing" id="MaG-Fn-8u9"/>
+                            <constraint firstItem="cAJ-Sn-Tn0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="N0w-HS-eL5"/>
+                            <constraint firstItem="eDU-iV-DTH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UQV-Ia-sio"/>
+                            <constraint firstItem="eDU-iV-DTH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cFu-Rd-gDy"/>
+                            <constraint firstItem="eDU-iV-DTH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xTH-18-tmV"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="legend_iu_01.jpeg" width="1440" height="864"/>
+        <image name="legend_iu_02.jpeg" width="902" height="1440"/>
+        <image name="legend_iu_03.jpeg" width="1440" height="1003"/>
+        <image name="vx8ot7o6h.gif" width="420" height="262"/>
+        <image name="vxgg382j1.jpg" width="539" height="533"/>
+    </resources>
+</document>
