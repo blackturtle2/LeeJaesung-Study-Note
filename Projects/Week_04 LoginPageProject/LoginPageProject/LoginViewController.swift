@@ -53,6 +53,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showDialog(title: "알림", message: "비밀번호를 입력해주세요.")
             return
         }
+        
+        UserDefaults.standard.set(true, forKey: Authentification.isLogin)
+        performSegue(withIdentifier: "moveMain", sender: nil)
 
     }
     

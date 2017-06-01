@@ -10,17 +10,21 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var webview: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        configureWebView()
+        loadAddressURL()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // 뷰가 뜨자마자 로그인 여부를 체크합니다.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -32,9 +36,61 @@ class MainViewController: UIViewController {
         
     }
     
+    // 뷰가 뜨고 indicator를 표시하지 않습니다.
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    
+    /// Powerd by APPLE ///
+    
+    // MARK: - Convenience
+    
+    func loadAddressURL() {
+        if let requestURL = URL(string: "https://www.clien.net") {
+            let request = URLRequest(url: requestURL)
+            webview.loadRequest(request)
+        }
+    }
+    
+    // MARK: - Configuration
+    
+    func configureWebView() {
+        webview.backgroundColor = UIColor.white
+        webview.scalesPageToFit = true
+        webview.dataDetectorTypes = .all
+    }
+    
+    // MARK: - UIWebViewDelegate
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        // Report the error inside the web view.
+        let localizedErrorMessage = NSLocalizedString("An error occured:", comment: "")
+        
+        let errorHTML = "<!doctype html><html><body><div style=\"width: 100%%; text-align: center; font-size: 36pt;\">\(localizedErrorMessage) \(error.localizedDescription)</div></body></html>"
+        
+        webview.loadHTMLString(errorHTML, baseURL: nil)
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
+    
     // 메인 뷰의 로그아웃 버튼을 누르면, 로그인 상태를 false라고 UserDefaults에 저장합니다.
     @IBAction func buttonLogoutAction(_ sender: UIButton) {
         UserDefaults.standard.set(false, forKey: Authentification.isLogin)
+        
+//        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+        let vc:LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
+        
+        self.present(vc, animated: true, completion: nil)
     }
     
     

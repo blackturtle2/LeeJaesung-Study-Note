@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginID" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginPageProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginPageProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -202,35 +202,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U6-ej-SMH">
-                                <rect key="frame" x="135" y="335" width="51" height="30"/>
+                                <rect key="frame" x="253" y="442" width="51" height="30"/>
                                 <state key="normal" title="LogOut"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="KMe-85-hXm"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is Main View." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-ep-hjS">
-                                <rect key="frame" x="92" y="160" width="136" height="160"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJS-Ec-cy9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="414"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qc4-ep-hjS" firstAttribute="centerX" secondItem="1U6-ej-SMH" secondAttribute="centerX" id="QQj-eI-Sb7"/>
-                            <constraint firstItem="qc4-ep-hjS" firstAttribute="centerY" secondItem="FG7-SN-Qev" secondAttribute="centerY" id="rw5-eF-AQl"/>
-                            <constraint firstItem="qc4-ep-hjS" firstAttribute="top" secondItem="RFb-N8-NZP" secondAttribute="bottom" constant="140" id="t3o-mG-XNF"/>
-                            <constraint firstItem="1U6-ej-SMH" firstAttribute="centerX" secondItem="FG7-SN-Qev" secondAttribute="centerX" id="wa6-ve-2UE"/>
-                            <constraint firstItem="1U6-ej-SMH" firstAttribute="top" secondItem="qc4-ep-hjS" secondAttribute="bottom" constant="15" id="ykb-Iy-aqz"/>
+                            <constraint firstItem="Kmt-4V-ZCj" firstAttribute="top" secondItem="1U6-ej-SMH" secondAttribute="bottom" constant="8" id="BH6-vM-Lvs"/>
+                            <constraint firstItem="1U6-ej-SMH" firstAttribute="top" secondItem="LJS-Ec-cy9" secondAttribute="bottom" constant="8" id="Bi2-4J-xzI"/>
+                            <constraint firstItem="LJS-Ec-cy9" firstAttribute="width" secondItem="FG7-SN-Qev" secondAttribute="width" id="STV-KQ-3pn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1U6-ej-SMH" secondAttribute="trailing" id="SmM-ZB-2NC"/>
+                            <constraint firstItem="LJS-Ec-cy9" firstAttribute="centerX" secondItem="FG7-SN-Qev" secondAttribute="centerX" id="WBP-ux-57O"/>
+                            <constraint firstItem="LJS-Ec-cy9" firstAttribute="top" secondItem="RFb-N8-NZP" secondAttribute="bottom" id="oZU-ht-5th"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="moveLogin" id="zAF-7X-nbG"/>
+                        <outlet property="webview" destination="LJS-Ec-cy9" id="yyM-5P-Hky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHI-gJ-Tpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-923" y="139"/>
+            <point key="canvasLocation" x="-924.375" y="138.75"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="8lY-uy-S20">
@@ -404,7 +400,4 @@
         <image name="iu_background_03_edit.jpg" width="675" height="1200"/>
         <image name="iu_background_05.jpg" width="675" height="1200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="81L-9o-hH0"/>
-    </inferredMetricsTieBreakers>
 </document>
