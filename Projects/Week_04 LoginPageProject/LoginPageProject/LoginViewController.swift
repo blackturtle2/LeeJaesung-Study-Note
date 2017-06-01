@@ -46,17 +46,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // 로그인 버튼 액션 정의.
     @IBAction func buttonLogin(_ sender: UIButton) {
         
-        if !(textFieldUserID.text?.isEmpty)! {
+        if (textFieldUserID.text?.isEmpty)! {
             showDialog(title: "알림", message: "이메일을 입력해주세요.")
             return
-        }else if !(textFieldUserPassword.text?.isEmpty)! {
+        }else if (textFieldUserPassword.text?.isEmpty)! {
             showDialog(title: "알림", message: "비밀번호를 입력해주세요.")
             return
         }
         
+        print((UserDefaults.standard.dictionary(forKey: Authentification.email)?[textFieldUserID.text!]))
+        
+//        for value in (UserDefaults.standard.dictionary(forKey: Authentification.email)?.keys)! {
+//            print("\(value)")
+//        }
+        
         UserDefaults.standard.set(true, forKey: Authentification.isLogin)
         performSegue(withIdentifier: "moveMain", sender: nil)
-
+        
+//      self.dismiss(animated: true, completion: nil)
+        
     }
     
     // 로그인 정보 기억하기 버튼 액션 정의.

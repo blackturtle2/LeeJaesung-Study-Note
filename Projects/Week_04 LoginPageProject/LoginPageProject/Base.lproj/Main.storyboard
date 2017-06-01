@@ -204,6 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U6-ej-SMH">
                                 <rect key="frame" x="253" y="442" width="51" height="30"/>
                                 <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="buttonLogoutAction:" destination="aMQ-de-h7P" eventType="touchUpInside" id="R6z-lF-xbP"/>
+                                </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJS-Ec-cy9">
                                 <rect key="frame" x="0.0" y="20" width="320" height="414"/>
@@ -222,11 +225,12 @@
                     </view>
                     <connections>
                         <outlet property="webview" destination="LJS-Ec-cy9" id="yyM-5P-Hky"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="moveLogin" id="FiN-xA-h4W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHI-gJ-Tpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-924.375" y="138.75"/>
+            <point key="canvasLocation" x="-1151" y="139"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="8lY-uy-S20">
@@ -400,4 +404,7 @@
         <image name="iu_background_03_edit.jpg" width="675" height="1200"/>
         <image name="iu_background_05.jpg" width="675" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FiN-xA-h4W"/>
+    </inferredMetricsTieBreakers>
 </document>

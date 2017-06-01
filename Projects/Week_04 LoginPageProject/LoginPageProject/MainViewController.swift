@@ -34,6 +34,12 @@ class MainViewController: UIViewController {
             self.performSegue(withIdentifier: "moveLogin", sender: self)
         }
         
+        let alert:UIAlertController = UIAlertController(title: "", message: "\(UserDefaults.standard.string(forKey: Authentification.nickname) ?? "00")님 환영합니다.", preferredStyle: .alert)
+        let alertAction:UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     // 뷰가 뜨고 indicator를 표시하지 않습니다.
@@ -42,7 +48,7 @@ class MainViewController: UIViewController {
     }
     
     
-    /// Powerd by APPLE ///
+    /// Powered by APPLE ///
     
     // MARK: - Convenience
     
@@ -85,12 +91,12 @@ class MainViewController: UIViewController {
     
     // 메인 뷰의 로그아웃 버튼을 누르면, 로그인 상태를 false라고 UserDefaults에 저장합니다.
     @IBAction func buttonLogoutAction(_ sender: UIButton) {
+        
         UserDefaults.standard.set(false, forKey: Authentification.isLogin)
         
-//        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
         let vc:LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
-        
         self.present(vc, animated: true, completion: nil)
+        
     }
     
     
