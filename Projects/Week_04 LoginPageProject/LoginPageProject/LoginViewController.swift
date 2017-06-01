@@ -54,17 +54,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        print((UserDefaults.standard.dictionary(forKey: Authentification.email)?[textFieldUserID.text!]))
         
-//        for value in (UserDefaults.standard.dictionary(forKey: Authentification.email)?.keys)! {
-//            print("\(value)")
-//        }
+        let vv = UserDefaults.standard.dictionary(forKey: Authentification.email)
+        print(vv?[textFieldUserID.text!]! ?? "데이터가 없습니다.")
         
         UserDefaults.standard.set(true, forKey: Authentification.isLogin)
         performSegue(withIdentifier: "moveMain", sender: nil)
-        
-//      self.dismiss(animated: true, completion: nil)
-        
+
     }
     
     // 로그인 정보 기억하기 버튼 액션 정의.

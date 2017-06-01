@@ -34,11 +34,12 @@ class MainViewController: UIViewController {
             self.performSegue(withIdentifier: "moveLogin", sender: self)
         }
         
-        let alert:UIAlertController = UIAlertController(title: "", message: "\(UserDefaults.standard.string(forKey: Authentification.nickname) ?? "00")님 환영합니다.", preferredStyle: .alert)
-        let alertAction:UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-        
-        alert.addAction(alertAction)
-        self.present(alert, animated: true, completion: nil)
+        // 메인 뷰가 뜨고, 환영한다는 Alert이 뜹니다.
+//        let alert:UIAlertController = UIAlertController(title: "", message: "\(UserDefaults.standard.string(forKey: Authentification.nickname) ?? "00")님 환영합니다.", preferredStyle: .alert)
+//        let alertAction:UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+//        
+//        alert.addAction(alertAction)
+//        self.present(alert, animated: true, completion: nil)
         
     }
     
