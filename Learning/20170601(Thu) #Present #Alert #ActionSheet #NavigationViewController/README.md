@@ -1,6 +1,11 @@
 # 패스트캠퍼스 강의 노트 19th ( 20170601 )
 
 # 오늘의 팁
+ - `UIKit Catalog` by 
+	 - iOS의 모든(?) UI를 데모로 돌려볼 수 있다.
+	 - 애플이 손수 만든 아주 좋은 예제 소스.
+	 - 관련 소스와 스토리보드 등을 참고하기에 매우매우매우(!!!) 좋다.
+	 - [https://developer.apple.com/library/...](https://developer.apple.com/library/content/samplecode/UICatalog/Introduction/Intro.html)
  - 적어도 내부에서만 사용되는 함수는 `private`을 걸어주도록 하자. 함수만 봐도 내부에서 사용되는 것인지 외부에서도 사용하는지 알 수 있다.
  - `UserDefaults`에 `Array`로 값을 저장하고, 그 안에 계속 쌓아서 실제 회원가입처럼 만들 수 있다.
 	 - `Array`로 저장된 데이터에 `set`을 하면, `append`가 아니고, 그냥 값을 바꿔치기 한다.
