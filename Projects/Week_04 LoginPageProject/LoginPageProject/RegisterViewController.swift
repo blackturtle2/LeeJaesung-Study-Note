@@ -32,7 +32,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func buttonRegister(_ sender: UIButton) {
         
         if !(textFieldEmail.text?.isEmpty)! && !(textFieldPassword.text?.isEmpty)! && !(textFieldNickName.text?.isEmpty)! {
@@ -47,8 +46,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 }
                 
                 
-                var userEmail:[] = [String:Int]
-                userEmail = UserDefaults.standard.dictionary(forKey: Authentification.email)
+                var userEmail = UserDefaults.standard.dictionary(forKey: Authentification.email)
                 userEmail?[textFieldEmail.text!] = userKeyID
                 UserDefaults.standard.set(userEmail, forKey: Authentification.email)
                 
@@ -60,8 +58,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 userNickName?[textFieldNickName.text!] = userKeyID
                 UserDefaults.standard.set(userNickName, forKey: Authentification.nickname)
                 
-//              print("\(UserDefaults.standard.array(forKey: Authentification.email)!) / \(UserDefaults.standard.array(forKey: Authentification.password)!) / \(UserDefaults.standard.array(forKey: Authentification.nickname)!)")
-                
+                //              print("\(UserDefaults.standard.array(forKey: Authentification.email)!) / \(UserDefaults.standard.array(forKey: Authentification.password)!) / \(UserDefaults.standard.array(forKey: Authentification.nickname)!)")
+            }
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         switch textField.tag {
