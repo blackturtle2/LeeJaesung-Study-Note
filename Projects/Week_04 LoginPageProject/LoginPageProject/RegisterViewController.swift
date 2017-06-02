@@ -38,6 +38,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             
             if textFieldPassword.text == textFieldPasswordConfirm.text {
                 var userKeyID:Int?
+                var userEmail:[String:Any]?
                 
                 if UserDefaults.standard.object(forKey: Authentification.totalUserKeyID) != nil {
                     userKeyID = 1
@@ -45,10 +46,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     userKeyID = UserDefaults.standard.integer(forKey: Authentification.totalUserKeyID) + 1
                 }
                 
+                if UserDefaults.standard.dictionary(forKey: Authentification.email) == nil {
+                    print("nil 값입니다.")
+                }
                 
-                var userEmail = UserDefaults.standard.dictionary(forKey: Authentification.email)
-                userEmail?[textFieldEmail.text!] = userKeyID
-                UserDefaults.standard.set(userEmail, forKey: Authentification.email)
+                
+                
+                if UserDefaults.standard.dictionary(forKey: Authentification.email) == nil {
+                    UserDefaults.standard.set(userEmail, forKey: Authentification.email)
+                }else {
+                    userEmail = UserDefaults.standard.dictionary(forKey: Authentification.email)
+                    userEmail?[textFieldEmail.text!] = userKeyID
+                    UserDefaults.standard.set(userEmail, forKey: Authentification.email)
+                }
+                
                 
                 var userPassword = UserDefaults.standard.dictionary(forKey: Authentification.password)
                 userPassword?[textFieldPassword.text!] = userKeyID
