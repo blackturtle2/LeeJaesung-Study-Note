@@ -9,7 +9,6 @@
 import Foundation
 
 struct LoginInfo {
-    static let userInfo = "userInfo"
     static let email = "email" //string
     static let name = "name" //string
     static let password = "password" //string
@@ -17,4 +16,10 @@ struct LoginInfo {
     static let totalUserKeyID = "totalUserKeyID" //int
     static let currentUserKeyID = "currentUserKeyID" //int - 로그인한 USER의 ID 값 저장.
     
+}
+
+struct MyFriend {
+    static let personInfo = "userInfo"
+    static let name = "name"
+    static let id = "id"
 }

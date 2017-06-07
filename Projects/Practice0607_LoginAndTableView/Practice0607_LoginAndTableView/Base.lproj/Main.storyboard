@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="61Z-0C-A0i" id="4bD-Gn-bJ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -51,6 +51,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-tG-7oF">
                                 <rect key="frame" x="16" y="629" width="109" height="30"/>
                                 <state key="normal" title="blackturtle2.net"/>
+                                <connections>
+                                    <segue destination="jl5-rd-hql" kind="show" id="pzb-La-Qfr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,12 +69,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="JS_Contact" id="LUf-HN-zZp">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="bwh-d2-QER"/>
                         <barButtonItem key="rightBarButtonItem" title="Add Friend" id="YSs-Ma-nEm">
                             <connections>
                                 <segue destination="I2M-CH-Hth" kind="show" id="OoZ-EQ-WQK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainTableview" destination="Fyo-gW-wGh" id="cc0-2u-1wX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,8 +103,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-OO-cid">
-                                <rect key="frame" x="160.5" y="134" width="53" height="30"/>
-                                <state key="normal" title="Save - !"/>
+                                <rect key="frame" x="170.5" y="134" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="buttonSaveAction:" destination="I2M-CH-Hth" eventType="touchUpInside" id="e6M-Ta-Hxg"/>
                                 </connections>
@@ -126,7 +133,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bsh-YY-9kJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fdm-5P-lxe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fdm-5P-lxe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -317,6 +324,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ML-mt-iuX" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1806" y="98"/>
+        </scene>
+        <!--Main Web View Controller-->
+        <scene sceneID="Jto-GF-tMc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jl5-rd-hql" customClass="MainWebViewController" customModule="Practice0607_LoginAndTableView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3qz-D3-QbL"/>
+                        <viewControllerLayoutGuide type="bottom" id="AmG-nz-BL6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7V8-pt-4ZP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-rl-Ys4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="595"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="width" secondItem="7V8-pt-4ZP" secondAttribute="width" id="DSs-kG-EyV"/>
+                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="top" secondItem="3qz-D3-QbL" secondAttribute="bottom" id="X5o-lx-4g2"/>
+                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="centerX" secondItem="7V8-pt-4ZP" secondAttribute="centerX" id="bFG-f8-2Op"/>
+                            <constraint firstItem="AmG-nz-BL6" firstAttribute="top" secondItem="OQB-rl-Ys4" secondAttribute="bottom" constant="8" symbolic="YES" id="mwh-Et-oiY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="OQB-rl-Ys4" id="NXh-KS-ibb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFb-eB-LsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="1514"/>
         </scene>
     </scenes>
     <resources>

@@ -16,7 +16,6 @@ class AddFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,19 +23,21 @@ class AddFriendViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func buttonSaveAction(_ sender: UIButton) {
+        var vArray = UserDefaults.standard.array(forKey: MyFriend.personInfo)
+        let vDic = [MyFriend.name : textfieldUserInput?.text]
         
+        if vArray == nil {
+            vArray = [vDic]
+        }else {
+            vArray?.append(vDic)
+        }
+        
+        UserDefaults.standard.set(vArray, forKey: MyFriend.personInfo)
+        
+        print(UserDefaults.standard.array(forKey: MyFriend.personInfo)!)
+        
+        self.navigationController?.popViewController(animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
