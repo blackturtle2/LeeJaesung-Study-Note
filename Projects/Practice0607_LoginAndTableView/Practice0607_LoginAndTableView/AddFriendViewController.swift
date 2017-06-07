@@ -1,6 +1,6 @@
 //
-//  MainViewController.swift
-//  LoginPageProject
+//  AddFriendViewController.swift
+//  Practice0607_LoginAndTableView
 //
 //  Created by leejaesung on 2017. 6. 7..
 //  Copyright © 2017년 leejaesung. All rights reserved.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class AddFriendViewController: UIViewController {
+    
+    @IBOutlet var textfieldUserInput: UITextField?
+    @IBOutlet var buttonSave: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,10 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func buttonSaveAction(_ sender: UIButton) {
+        
+    }
 
     /*
     // MARK: - Navigation

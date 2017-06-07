@@ -1,6 +1,6 @@
 //
-//  MainViewController.swift
-//  LoginPageProject
+//  LoginViewController.swift
+//  Practice0607_LoginAndTableView
 //
 //  Created by leejaesung on 2017. 6. 7..
 //  Copyright © 2017년 leejaesung. All rights reserved.
@@ -8,7 +8,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var textFieldUserID: UITextField!
+    @IBOutlet weak var textFieldUserPassword: UITextField!
+    
+    @IBOutlet weak var scrollViewRoot: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

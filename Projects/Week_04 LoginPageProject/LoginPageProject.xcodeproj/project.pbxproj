@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE38CEDB1EE82FAC00CE0EAF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CEDA1EE82FAC00CE0EAF /* MainViewController.swift */; };
 		FE701D0F1EDD8DB300A6166F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE701D0E1EDD8DB300A6166F /* AppDelegate.swift */; };
 		FE701D111EDD8DB300A6166F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE701D101EDD8DB300A6166F /* LoginViewController.swift */; };
 		FE701D141EDD8DB300A6166F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE701D121EDD8DB300A6166F /* Main.storyboard */; };
@@ -17,10 +18,11 @@
 		FE701D251EDE912D00A6166F /* iu_background_03_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE701D241EDE912D00A6166F /* iu_background_03_edit.jpg */; };
 		FE701D271EDE942D00A6166F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE701D261EDE942D00A6166F /* Constants.swift */; };
 		FE701D291EDE949D00A6166F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE701D281EDE949D00A6166F /* RegisterViewController.swift */; };
-		FEB9AFB91EDEA84300509459 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9AFB81EDEA84300509459 /* MainViewController.swift */; };
+		FEB9AFB91EDEA84300509459 /* ClienViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9AFB81EDEA84300509459 /* ClienViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE38CEDA1EE82FAC00CE0EAF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE701D0B1EDD8DB300A6166F /* LoginPageProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPageProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE701D0E1EDD8DB300A6166F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE701D101EDD8DB300A6166F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +35,7 @@
 		FE701D241EDE912D00A6166F /* iu_background_03_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_03_edit.jpg; sourceTree = "<group>"; };
 		FE701D261EDE942D00A6166F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FE701D281EDE949D00A6166F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		FEB9AFB81EDEA84300509459 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FEB9AFB81EDEA84300509459 /* ClienViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClienViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,8 @@
 			children = (
 				FE701D0E1EDD8DB300A6166F /* AppDelegate.swift */,
 				FE701D261EDE942D00A6166F /* Constants.swift */,
-				FEB9AFB81EDEA84300509459 /* MainViewController.swift */,
+				FEB9AFB81EDEA84300509459 /* ClienViewController.swift */,
+				FE38CEDA1EE82FAC00CE0EAF /* MainViewController.swift */,
 				FE701D101EDD8DB300A6166F /* LoginViewController.swift */,
 				FE701D281EDE949D00A6166F /* RegisterViewController.swift */,
 				FE701D121EDD8DB300A6166F /* Main.storyboard */,
@@ -160,8 +163,9 @@
 				FE701D111EDD8DB300A6166F /* LoginViewController.swift in Sources */,
 				FE701D0F1EDD8DB300A6166F /* AppDelegate.swift in Sources */,
 				FE701D271EDE942D00A6166F /* Constants.swift in Sources */,
+				FE38CEDB1EE82FAC00CE0EAF /* MainViewController.swift in Sources */,
 				FE701D291EDE949D00A6166F /* RegisterViewController.swift in Sources */,
-				FEB9AFB91EDEA84300509459 /* MainViewController.swift in Sources */,
+				FEB9AFB91EDEA84300509459 /* ClienViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
