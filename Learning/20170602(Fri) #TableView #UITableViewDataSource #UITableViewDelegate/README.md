@@ -55,7 +55,7 @@ for user in userList{
 
 ## Delegate - `UITableViewDelegate`
  - 프로토콜을 사용하여 테이블 뷰의 대리자로써의 수행할 수 있는 역할들을 정의해 둔 것
- - 역할	1. 헤더 또는 풋터의 높이를 설정 : Variable height support	2. 헤더 또는 풋터 뷰를 제공 : Section Informations.	3. **셀을 선택하였을 때 수행할 동작** 관리 : Selection	4. **셀의 삭제 될 때 수행할 동작** 등의 관리 : Editing	5. 기타 등등
+ - 역할	1. 헤더 또는 푸터의 높이를 설정 : `Variable height support`	2. 헤더 또는 푸터 뷰를 제공 : `Section Informations`	3. **셀을 선택하였을 때 수행할 동작** 관리 : `Selection`	4. **셀의 삭제 될 때 수행할 동작** 등의 관리 : `Editing`	5. 기타 등등
 
 ## [ 예제 ] Table View 만들기 ( ver.A ) `feat. UIViewController`
  - `UIViewController`를 만들고, 스토리보드에서 `TableView`를 `RootView`에 얹힌다.
@@ -117,7 +117,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	 - 스토리보드에서 UITableViewController로 추가한 다음, `Attribute`에서 이 클래스를 연결한다.
 
 ### `Cell`를 터치하면, 디테일 뷰로 넘어가기
- - `Segue`로 연결하고, `UserDefaults`에 `Set`해서 값을 저장하는 방법으로 구현했으나, 딱히 좋은 방법은 아니다. ~UserDefaults는 파일고, 따라서 사용자의 아이폰 용량을 먹는다는 점을 잊지 말자.~
+ - `Segue`로 연결하고, `UserDefaults`에 `Set`해서 값을 저장하는 방법으로 구현했으나, 딱히 좋은 방법은 아니다. ~UserDefaults는 파일이고, 따라서 사용자 아이폰의 용량을 우걱우걱 먹는다는 점을 잊지 말자.~
  - `NavigationController`을 `Embeded`시키고, `push`하면서 데이터를 같이 보내자.
 	 - 스토리보드에서 Identifier로 뷰컨트롤러를 `instantiate`해서 객체화한다.
 		 - `self.storyboard?.instantiateViewController()`
