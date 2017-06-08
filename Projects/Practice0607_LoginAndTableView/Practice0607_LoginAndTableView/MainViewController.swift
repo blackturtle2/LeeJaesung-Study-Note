@@ -62,7 +62,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var vDicData:[String:String]?
         
         if vArrayData == nil && indexPath == [0, 0] {
-            vDicData = [MyMemo.memoTitle:"환영합니다!  첫 메모를 추가해주세요. ☝🏻"]
+            vDicData = [MyMemo.memoTitle:"첫번째 메모를 추가해주세요. ☝🏻"]
         }else {
             vDicData = vArrayData?[indexPath.row]
         }
@@ -74,7 +74,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // 테이블뷰의 Cell을 터치했을 때의 액션 정의
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 맨 처음에 Cell을 터치하면, AddMemo로 이동하면서 죽는 버그 픽스.
+        if UserDefaults.standard.array(forKey: MyMemo.memo) == nil {
+            tableView.cellForRow(at: indexPath)?.selectionStyle = .none //스타일 none 말고 다른 건 없을까.
+            return
+        }
+        
+        // 선택한 Cell의 indexPath.row 값 저장.
         vIndexPath = indexPath.row
+        
+        // 곧바로 performSegue 시작. PreapeeditMemo로 넘어간다.
         performSegue(withIdentifier: "editMemo", sender: nil)
     }
     
