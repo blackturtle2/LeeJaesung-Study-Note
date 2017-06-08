@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--JS_Contact-->
+        <!--까북스 메모앱-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="Practice0607_LoginAndTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,8 +24,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udg-8H-BUe">
-                                <rect key="frame" x="308" y="629" width="51" height="30"/>
-                                <state key="normal" title="LogOut"/>
+                                <rect key="frame" x="307" y="629" width="52" height="30"/>
+                                <state key="normal" title="로그아웃"/>
                                 <connections>
                                     <segue destination="xgH-sa-3He" kind="presentation" id="BJS-pB-I7t"/>
                                 </connections>
@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="61Z-0C-A0i" id="4bD-Gn-bJ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -48,46 +48,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Fwl-IX-IlY"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-tG-7oF">
-                                <rect key="frame" x="16" y="629" width="109" height="30"/>
-                                <state key="normal" title="blackturtle2.net"/>
-                                <connections>
-                                    <segue destination="jl5-rd-hql" kind="show" id="pzb-La-Qfr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fyo-gW-wGh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4eX-zE-pJ4"/>
                             <constraint firstItem="Udg-8H-BUe" firstAttribute="top" secondItem="Fyo-gW-wGh" secondAttribute="bottom" constant="8" id="DKL-Rl-YQx"/>
-                            <constraint firstItem="Efh-tG-7oF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Djz-z2-23i"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Udg-8H-BUe" secondAttribute="trailing" id="ZUz-Jy-Q6f"/>
-                            <constraint firstItem="Efh-tG-7oF" firstAttribute="bottom" secondItem="Udg-8H-BUe" secondAttribute="bottom" id="ZdA-C4-JZG"/>
                             <constraint firstItem="Fyo-gW-wGh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fG7-1T-RdZ"/>
                             <constraint firstAttribute="trailing" secondItem="Fyo-gW-wGh" secondAttribute="trailing" id="hac-Du-bSy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Udg-8H-BUe" secondAttribute="bottom" constant="8" id="kiI-oZ-CqG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JS_Contact" id="LUf-HN-zZp">
+                    <navigationItem key="navigationItem" title="까북스 메모앱" id="LUf-HN-zZp">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bwh-d2-QER"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="YSs-Ma-nEm">
+                        <barButtonItem key="rightBarButtonItem" title="새 메모" id="YSs-Ma-nEm">
                             <connections>
-                                <segue destination="I2M-CH-Hth" kind="show" id="OoZ-EQ-WQK"/>
+                                <segue destination="I2M-CH-Hth" kind="show" id="Hwl-RS-cuW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableview" destination="Fyo-gW-wGh" id="cc0-2u-1wX"/>
+                        <segue destination="I2M-CH-Hth" kind="show" identifier="editMemo" id="Hv9-gF-ss9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="793"/>
         </scene>
-        <!--Add Friend View Controller-->
+        <!--Add Memo View Controller-->
         <scene sceneID="NN8-QK-Dqr">
             <objects>
-                <viewController id="I2M-CH-Hth" customClass="AddFriendViewController" customModule="Practice0607_LoginAndTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="I2M-CH-Hth" customClass="AddMemoViewController" customModule="Practice0607_LoginAndTableView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wxc-MM-EZ4"/>
                         <viewControllerLayoutGuide type="bottom" id="vC0-7s-Kh3"/>
@@ -96,32 +88,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHO-xD-56i">
-                                <rect key="frame" x="62.5" y="96" width="250" height="30"/>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용을 입력하세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PPC-Wb-weX">
+                                <rect key="frame" x="16" y="64" width="343" height="565"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-OO-cid">
-                                <rect key="frame" x="170.5" y="134" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Pb-gVX">
+                                <rect key="frame" x="329" y="629" width="30" height="30"/>
+                                <state key="normal" title="삭제"/>
                                 <connections>
-                                    <action selector="buttonSaveAction:" destination="I2M-CH-Hth" eventType="touchUpInside" id="e6M-Ta-Hxg"/>
+                                    <action selector="buttonDeleteAction:" destination="I2M-CH-Hth" eventType="touchUpInside" id="mbf-Zs-yy4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gHO-xD-56i" firstAttribute="centerY" secondItem="4JL-Jf-y7K" secondAttribute="centerY" multiplier="1/3" id="52H-bR-qT5"/>
-                            <constraint firstItem="hFU-OO-cid" firstAttribute="centerX" secondItem="gHO-xD-56i" secondAttribute="centerX" id="OVW-ZU-Hih"/>
-                            <constraint firstItem="gHO-xD-56i" firstAttribute="centerX" secondItem="4JL-Jf-y7K" secondAttribute="centerX" id="fYY-8n-Zlu"/>
-                            <constraint firstItem="hFU-OO-cid" firstAttribute="top" secondItem="gHO-xD-56i" secondAttribute="bottom" constant="8" id="nnQ-bo-9xS"/>
-                            <constraint firstItem="gHO-xD-56i" firstAttribute="width" secondItem="4JL-Jf-y7K" secondAttribute="width" multiplier="2/3" id="t5I-0A-Rmq"/>
+                            <constraint firstItem="b7S-Pb-gVX" firstAttribute="top" secondItem="PPC-Wb-weX" secondAttribute="bottom" id="0L5-tE-Hr5"/>
+                            <constraint firstItem="PPC-Wb-weX" firstAttribute="leading" secondItem="4JL-Jf-y7K" secondAttribute="leadingMargin" id="Dhj-rD-Cnh"/>
+                            <constraint firstItem="PPC-Wb-weX" firstAttribute="top" secondItem="Wxc-MM-EZ4" secondAttribute="bottom" id="H3H-lh-0dh"/>
+                            <constraint firstItem="vC0-7s-Kh3" firstAttribute="top" secondItem="b7S-Pb-gVX" secondAttribute="bottom" constant="8" id="HxB-VK-Adt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b7S-Pb-gVX" secondAttribute="trailing" id="hEE-AQ-2qh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PPC-Wb-weX" secondAttribute="trailing" id="p1u-xQ-lb0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kb7-ye-um7">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목" textAlignment="center" minimumFontSize="17" id="DSi-QQ-2xi">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="59k-lQ-xMD">
+                            <connections>
+                                <action selector="buttonSaveAction:" destination="I2M-CH-Hth" id="psR-8G-JI5"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="DSi-QQ-2xi" id="c5W-Fz-haM"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
-                        <outlet property="buttonSave" destination="hFU-OO-cid" id="Lx0-Td-oIN"/>
-                        <outlet property="textfieldUserInput" destination="gHO-xD-56i" id="rxM-wW-ktj"/>
+                        <outlet property="buttonDelete" destination="b7S-Pb-gVX" id="UUj-Wy-Ec2"/>
+                        <outlet property="buttonSave" destination="59k-lQ-xMD" id="Dvh-aw-VRU"/>
+                        <outlet property="textfieldTitle" destination="DSi-QQ-2xi" id="VCr-5B-3DA"/>
+                        <outlet property="textviewContent" destination="PPC-Wb-weX" id="BuU-hU-cEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="441-Pk-8C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,41 +338,11 @@
             </objects>
             <point key="canvasLocation" x="1806" y="98"/>
         </scene>
-        <!--Main Web View Controller-->
-        <scene sceneID="Jto-GF-tMc">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jl5-rd-hql" customClass="MainWebViewController" customModule="Practice0607_LoginAndTableView" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3qz-D3-QbL"/>
-                        <viewControllerLayoutGuide type="bottom" id="AmG-nz-BL6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7V8-pt-4ZP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-rl-Ys4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="595"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="width" secondItem="7V8-pt-4ZP" secondAttribute="width" id="DSs-kG-EyV"/>
-                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="top" secondItem="3qz-D3-QbL" secondAttribute="bottom" id="X5o-lx-4g2"/>
-                            <constraint firstItem="OQB-rl-Ys4" firstAttribute="centerX" secondItem="7V8-pt-4ZP" secondAttribute="centerX" id="bFG-f8-2Op"/>
-                            <constraint firstItem="AmG-nz-BL6" firstAttribute="top" secondItem="OQB-rl-Ys4" secondAttribute="bottom" constant="8" symbolic="YES" id="mwh-Et-oiY"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webview" destination="OQB-rl-Ys4" id="NXh-KS-ibb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SFb-eB-LsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="961" y="1514"/>
-        </scene>
     </scenes>
     <resources>
         <image name="iu_background_05.jpg" width="675" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hv9-gF-ss9"/>
+    </inferredMetricsTieBreakers>
 </document>

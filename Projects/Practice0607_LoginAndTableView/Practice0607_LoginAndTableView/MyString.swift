@@ -23,3 +23,11 @@ struct MyFriend {
     static let name = "name"
     static let id = "id"
 }
+
+struct MyMemo {
+    static let memo = "memo" // 일단, 메모 앱을 구현한다.
+    static let memoUser = "memoUserFor" // 뒤에 로그인한 User의 KeyID를 붙인다.
+    
+    static let memoTitle = "memoTitle"
+    static let memoContent = "memoContent"
+}

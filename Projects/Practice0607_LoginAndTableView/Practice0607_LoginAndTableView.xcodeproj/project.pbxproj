@@ -15,10 +15,9 @@
 		FE38CEFD1EE831FA00CE0EAF /* iu_background_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFA1EE831FA00CE0EAF /* iu_background_01.jpg */; };
 		FE38CEFE1EE831FA00CE0EAF /* iu_background_03_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFB1EE831FA00CE0EAF /* iu_background_03_edit.jpg */; };
 		FE38CEFF1EE831FA00CE0EAF /* iu_background_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFC1EE831FA00CE0EAF /* iu_background_05.jpg */; };
-		FE38CF011EE8348B00CE0EAF /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF001EE8348B00CE0EAF /* AddFriendViewController.swift */; };
+		FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */; };
 		FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF021EE834D400CE0EAF /* LoginViewController.swift */; };
 		FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF041EE8368500CE0EAF /* MyString.swift */; };
-		FEC78EDB1EE872D20000F12A /* MainWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC78EDA1EE872D20000F12A /* MainWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +31,9 @@
 		FE38CEFA1EE831FA00CE0EAF /* iu_background_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_01.jpg; sourceTree = "<group>"; };
 		FE38CEFB1EE831FA00CE0EAF /* iu_background_03_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_03_edit.jpg; sourceTree = "<group>"; };
 		FE38CEFC1EE831FA00CE0EAF /* iu_background_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_05.jpg; sourceTree = "<group>"; };
-		FE38CF001EE8348B00CE0EAF /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		FE38CF021EE834D400CE0EAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE38CF041EE8368500CE0EAF /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
-		FEC78EDA1EE872D20000F12A /* MainWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +72,8 @@
 				FE38CF041EE8368500CE0EAF /* MyString.swift */,
 				FE38CEE81EE830BB00CE0EAF /* AppDelegate.swift */,
 				FE38CEEA1EE830BB00CE0EAF /* MainViewController.swift */,
-				FE38CF001EE8348B00CE0EAF /* AddFriendViewController.swift */,
+				FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */,
 				FE38CF021EE834D400CE0EAF /* LoginViewController.swift */,
-				FEC78EDA1EE872D20000F12A /* MainWebViewController.swift */,
 				FE38CEEC1EE830BB00CE0EAF /* Main.storyboard */,
 				FE38CEEF1EE830BB00CE0EAF /* Assets.xcassets */,
 				FE38CEF11EE830BB00CE0EAF /* LaunchScreen.storyboard */,
@@ -160,10 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC78EDB1EE872D20000F12A /* MainWebViewController.swift in Sources */,
 				FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */,
 				FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */,
-				FE38CF011EE8348B00CE0EAF /* AddFriendViewController.swift in Sources */,
+				FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */,
 				FE38CEEB1EE830BB00CE0EAF /* MainViewController.swift in Sources */,
 				FE38CEE91EE830BB00CE0EAF /* AppDelegate.swift in Sources */,
 			);
