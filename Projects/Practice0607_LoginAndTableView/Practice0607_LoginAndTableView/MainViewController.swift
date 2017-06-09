@@ -19,11 +19,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
      */
     
     var vIndexPathRow:Int? // Cell을 Select 할 때, indextPath를 넘기기 위한 전역 변수.
+    var vArrayData:[[String:String]]?
+    var vDicData:[String:String]?
     
     @IBOutlet var mainTableview:UITableView? // 테이블 뷰 관리를 위해 IBOutlet 선언.
     
     // MARK: Memo를 추가하고 돌아왔을 때, TableView 다시 그리기
     override func viewWillAppear(_ animated: Bool) {
+        vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
         mainTableview?.reloadData()
     }
 
@@ -43,21 +46,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Row의 개수
     // count를 계산하고, nil 이면, 1을 넣는다.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var vCount = UserDefaults.standard.array(forKey: MyMemo.memo)?.count
+        var result:Int = 1
         
-        if vCount == nil {
-            vCount = 1
+        if vArrayData?.count == nil {
+            return result
+        }else {
+            result = (vArrayData?.count)!
         }
         
-        return vCount!
+        return result
     }
     
     // MARK: 셀 구현
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
-        var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
-        var vDicData:[String:String]?
+//        var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
+//        var vDicData:[String:String]?
         
         if vArrayData == nil && indexPath == [0, 0] {
             vDicData = [MyMemo.memoTitle:"첫번째 메모를 추가해주세요. ☝🏻"]
@@ -103,6 +108,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // 초기화 버튼 액션 정의
     @IBAction func buttonMemoInitial(_ sender: UIButton) {
         UserDefaults.standard.removeObject(forKey: MyMemo.memo)
-        mainTableview?.reloadData()
+        viewWillAppear(true)
     }
 }

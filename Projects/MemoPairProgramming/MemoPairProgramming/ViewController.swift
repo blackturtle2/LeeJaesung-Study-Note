@@ -61,19 +61,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
 
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        vIndexPath = indexPath.row
+//        
+//        
+//        performSegue(withIdentifier: "edit", sender: nil)
+//        
+//        return indexPath
+//    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         vIndexPath = indexPath.row
         
         
         performSegue(withIdentifier: "edit", sender: nil)
-        
-        return indexPath
     }
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    
-//    }
     
     
     // add 버튼 구현
