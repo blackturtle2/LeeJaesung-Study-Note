@@ -46,6 +46,8 @@ class AddMemoViewController: UIViewController {
     
     // 저장 버튼 액션 정의
     @IBAction func buttonSaveAction(_ sender: UIBarButtonItem) {
+        var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo)
+        let vDicData = [ MyMemo.memoTitle : textfieldTitle?.text , MyMemo.memoContent : textviewContent?.text ]
         
         if textfieldTitle?.text == "" {
             showAlert(vTitle: "알림", vMessage: "타이틀을 작성해주세요.")
@@ -54,9 +56,6 @@ class AddMemoViewController: UIViewController {
             showAlert(vTitle: "알림", vMessage: "내용을 작성해주세요.")
             return
         }
-        
-        var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo)
-        let vDicData = [ MyMemo.memoTitle : textfieldTitle?.text , MyMemo.memoContent : textviewContent?.text ]
         
         if isEdit == false {
             if vArrayData == nil {
@@ -78,6 +77,7 @@ class AddMemoViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // 삭제 버튼 액션 정의
     @IBAction func buttonDeleteAction(_ sender: UIButton) {
         var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo)
         vArrayData?.remove(at: vIndexNumber!)

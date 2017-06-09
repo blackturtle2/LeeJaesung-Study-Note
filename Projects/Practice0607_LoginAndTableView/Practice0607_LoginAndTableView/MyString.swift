@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LoginInfo {
+struct StringLogin {
     static let email = "email" //string
     static let name = "name" //string
     static let password = "password" //string

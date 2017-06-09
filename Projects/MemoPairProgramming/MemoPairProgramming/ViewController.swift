@@ -12,6 +12,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     @IBOutlet weak var tv: UITableView!
     var vIndexPath:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

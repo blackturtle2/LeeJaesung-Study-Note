@@ -18,10 +18,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
      Dictionary의 Key 값은 MyMemo.title과 MyMemo.content가 있다.
      */
     
-    var vIndexPath:Int?
+    var vIndexPathRow:Int? // Cell을 Select 할 때, indextPath를 넘기기 위한 전역 변수.
     
-    
-    @IBOutlet var mainTableview:UITableView?
+    @IBOutlet var mainTableview:UITableView? // 테이블 뷰 관리를 위해 IBOutlet 선언.
     
     // MARK: Memo를 추가하고 돌아왔을 때, TableView 다시 그리기
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +33,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: Section의 개수.
@@ -77,12 +75,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // 맨 처음에 Cell을 터치하면, AddMemo로 이동하면서 죽는 버그 픽스.
         if UserDefaults.standard.array(forKey: MyMemo.memo) == nil {
-            tableView.cellForRow(at: indexPath)?.selectionStyle = .none //스타일 none 말고 다른 건 없을까.
+//            tableView.cellForRow(at: indexPath)?.selectionStyle = .none //스타일 none 말고 다른 건 없을까. // 아래에 있네~
+            tableView.deselectRow(at: indexPath, animated: true)
             return
         }
         
         // 선택한 Cell의 indexPath.row 값 저장.
-        vIndexPath = indexPath.row
+        vIndexPathRow = indexPath.row
         
         // 곧바로 performSegue 시작. PreapeeditMemo로 넘어간다.
         performSegue(withIdentifier: "editMemo", sender: nil)
@@ -90,14 +89,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // 셀을 선택했을 때, "editMemo" Segue를 태운다.
         if segue.identifier == "editMemo" {
             let vc:AddMemoViewController = segue.destination as! AddMemoViewController
             
-            vc.vIndexNumber = vIndexPath
+            vc.vIndexNumber = vIndexPathRow
             vc.isEdit = true
             
         }
         
     }
     
+    // 초기화 버튼 액션 정의
+    @IBAction func buttonMemoInitial(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: MyMemo.memo)
+        mainTableview?.reloadData()
+    }
 }

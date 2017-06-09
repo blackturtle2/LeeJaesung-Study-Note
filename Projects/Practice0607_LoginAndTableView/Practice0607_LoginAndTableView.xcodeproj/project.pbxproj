@@ -18,6 +18,7 @@
 		FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */; };
 		FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF021EE834D400CE0EAF /* LoginViewController.swift */; };
 		FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF041EE8368500CE0EAF /* MyString.swift */; };
+		FE38CF2B1EEA3E2900CE0EAF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF2A1EEA3E2900CE0EAF /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		FE38CF021EE834D400CE0EAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE38CF041EE8368500CE0EAF /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
+		FE38CF2A1EEA3E2900CE0EAF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				FE38CEEA1EE830BB00CE0EAF /* MainViewController.swift */,
 				FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */,
 				FE38CF021EE834D400CE0EAF /* LoginViewController.swift */,
+				FE38CF2A1EEA3E2900CE0EAF /* RegisterViewController.swift */,
 				FE38CEEC1EE830BB00CE0EAF /* Main.storyboard */,
 				FE38CEEF1EE830BB00CE0EAF /* Assets.xcassets */,
 				FE38CEF11EE830BB00CE0EAF /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 				FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */,
 				FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */,
 				FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */,
+				FE38CF2B1EEA3E2900CE0EAF /* RegisterViewController.swift in Sources */,
 				FE38CEEB1EE830BB00CE0EAF /* MainViewController.swift in Sources */,
 				FE38CEE91EE830BB00CE0EAF /* AppDelegate.swift in Sources */,
 			);
