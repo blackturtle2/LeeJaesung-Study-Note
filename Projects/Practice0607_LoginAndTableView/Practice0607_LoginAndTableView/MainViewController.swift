@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // 선택한 Cell의 indexPath.row 값 저장.
         vIndexPathRow = indexPath.row
         
-        // 곧바로 performSegue 시작. PreapeeditMemo로 넘어간다.
+        // 곧바로 performSegue 시작. Prepare editMemo로 넘어간다.
         performSegue(withIdentifier: "editMemo", sender: nil)
     }
     
