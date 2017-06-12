@@ -61,7 +61,6 @@ class AddMemoViewController: UIViewController {
             if vArrayData == nil {
                 vArrayData = [vDicData]
             }else {
-                // vArrayData?.append(vDicData)
                 vArrayData?.insert(vDicData, at: 0) // 메모를 작성하면, 리스트 최상단에 오도록 한다.
             }
         } else if isEdit == true {

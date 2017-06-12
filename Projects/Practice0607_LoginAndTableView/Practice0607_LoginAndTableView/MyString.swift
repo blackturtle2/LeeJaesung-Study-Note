@@ -9,19 +9,14 @@
 import Foundation
 
 struct StringLogin {
-    static let email = "email" //string
-    static let name = "name" //string
+    static let user = "user" //string // user = [[email:String, password:String, name:String]]
+    static let id = "id" //string
     static let password = "password" //string
-    static let isLogin = "isLogin" //bool
-    static let totalUserKeyID = "totalUserKeyID" //int
-    static let currentUserKeyID = "currentUserKeyID" //int - 로그인한 USER의 ID 값 저장.
-    
-}
+    static let name = "name" //string
 
-struct MyFriend {
-    static let personInfo = "userInfo"
-    static let name = "name"
-    static let id = "id"
+    static let isLogin = "isLogin" //bool
+    
+    static let currentUserID = "currentUserID" //String - 로그인한 user의 ID 저장.
 }
 
 struct MyMemo {

@@ -8,24 +8,32 @@
 
 import UIKit
 
+/*******************************************************
+ 
+ /// UserDefaults 가이드라인 ///
+ MyMemo.memo 를 Key로 가진 array 타입의 `UserDefaults`
+ 
+ array 안에는 [[String:String]]으로 들어있고.
+ Dictionary의 Key 값은 MyMemo.title과 MyMemo.content가 있다.
+ 
+********************************************************/
+
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-     /*
-     /// UserDefaults 가이드라인 ///
-     MyMemo.memo 를 Key로 가진 array 타입의 `UserDefaults`
-     
-     array 안에는 [[String:String]]으로 들어있고.
-     Dictionary의 Key 값은 MyMemo.title과 MyMemo.content가 있다.
-     */
-    
     var vIndexPathRow:Int? // Cell을 Select 할 때, indextPath를 넘기기 위한 전역 변수.
-    var vArrayData:[[String:String]]?
-    var vDicData:[String:String]?
+    var vArrayData:[[String:String]]? // userDefaults를 담는 용도.
+    var vDicData:[String:String]? // userDefaults의 element를 담는 용도.
     
     @IBOutlet var mainTableview:UITableView? // 테이블 뷰 관리를 위해 IBOutlet 선언.
     
     // MARK: Memo를 추가하고 돌아왔을 때, TableView 다시 그리기
     override func viewWillAppear(_ animated: Bool) {
+        
+        if !(UserDefaults.standard.bool(forKey: StringLogin.isLogin)) {
+            performSegue(withIdentifier: "moveLogin", sender: nil)
+            return
+        }
+        
         vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
         mainTableview?.reloadData()
     }
@@ -61,9 +69,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
-//        var vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
-//        var vDicData:[String:String]?
-        
         if vArrayData == nil && indexPath == [0, 0] {
             vDicData = [MyMemo.memoTitle:"첫번째 메모를 추가해주세요. ☝🏻"]
         }else {
@@ -80,8 +85,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // 맨 처음에 Cell을 터치하면, AddMemo로 이동하면서 죽는 버그 픽스.
         if UserDefaults.standard.array(forKey: MyMemo.memo) == nil {
-//            tableView.cellForRow(at: indexPath)?.selectionStyle = .none //스타일 none 말고 다른 건 없을까. // 아래에 있네~
-            tableView.deselectRow(at: indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true) // 테이블뷰 셀 선택 해제 애니메이션입니다.
             return
         }
         
@@ -92,6 +96,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "editMemo", sender: nil)
     }
     
+    // MARK: 로그아웃 버튼 액션 정의.
+    @IBAction func buttonLogoutAction(_ sender:UIButton) {
+        UserDefaults.standard.removeObject(forKey: StringLogin.currentUserID)
+        performSegue(withIdentifier: "moveLogin", sender: nil)
+    }
+    
+    // MARK: 초기화 버튼 액션 정의
+    @IBAction func buttonMemoInitial(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: MyMemo.memo)
+        viewWillAppear(true)
+    }
+    
+    // MARK: Segue Prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // 셀을 선택했을 때, "editMemo" Segue를 태운다.
@@ -100,14 +117,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             vc.vIndexNumber = vIndexPathRow
             vc.isEdit = true
-            
         }
         
     }
     
-    // 초기화 버튼 액션 정의
-    @IBAction func buttonMemoInitial(_ sender: UIButton) {
-        UserDefaults.standard.removeObject(forKey: MyMemo.memo)
-        viewWillAppear(true)
-    }
 }

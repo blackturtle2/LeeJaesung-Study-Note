@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--까북스 메모앱-->
+        <!--Memo List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="Practice0607_LoginAndTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="307" y="629" width="52" height="30"/>
                                 <state key="normal" title="로그아웃"/>
                                 <connections>
-                                    <segue destination="xgH-sa-3He" kind="presentation" modalTransitionStyle="flipHorizontal" id="BJS-pB-I7t"/>
+                                    <action selector="buttonLogoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dA-1k-PC2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-2s-end">
@@ -68,7 +68,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Udg-8H-BUe" secondAttribute="bottom" constant="8" id="kiI-oZ-CqG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="까북스 메모앱" id="LUf-HN-zZp">
+                    <navigationItem key="navigationItem" title="Memo List" id="LUf-HN-zZp">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bwh-d2-QER"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YSs-Ma-nEm">
                             <connections>
@@ -78,7 +78,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableview" destination="Fyo-gW-wGh" id="cc0-2u-1wX"/>
-                        <segue destination="I2M-CH-Hth" kind="show" identifier="editMemo" id="Hv9-gF-ss9"/>
+                        <segue destination="I2M-CH-Hth" kind="show" identifier="editMemo" id="ikS-7J-8Ni"/>
+                        <segue destination="xgH-sa-3He" kind="presentation" identifier="moveLogin" modalTransitionStyle="flipHorizontal" id="zj3-Yz-VPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,8 +192,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iu_background_05.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-QF-6Re">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IU Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQU-sc-VVv">
-                                <rect key="frame" x="148.5" y="36" width="78" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IU Memo App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQU-sc-VVv">
+                                <rect key="frame" x="134" y="36" width="107.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -204,9 +205,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CYa-Rt-9zH">
-                                                <rect key="frame" x="8" y="245.5" width="359" height="176"/>
+                                                <rect key="frame" x="8" y="264.5" width="359" height="138"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mac-gs-1lG">
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mac-gs-1lG">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="Tqy-6f-UZQ"/>
@@ -215,7 +216,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="****" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMg-Rb-apK">
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMg-Rb-apK">
                                                         <rect key="frame" x="0.0" y="55" width="359" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -227,14 +228,6 @@
                                                         <state key="normal" title="로그인"/>
                                                         <connections>
                                                             <action selector="buttonLogin:" destination="xgH-sa-3He" eventType="touchUpInside" id="z1G-pu-DOO"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="641-dR-8nR">
-                                                        <rect key="frame" x="0.0" y="148" width="359" height="28"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                                        <state key="normal" title="로그인 정보 기억하기"/>
-                                                        <connections>
-                                                            <action selector="buttonSaveLogin:" destination="xgH-sa-3He" eventType="touchUpInside" id="noT-aU-Qkp"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -347,6 +340,7 @@
                         <outlet property="scrollViewRoot" destination="Oty-8P-rSq" id="jaG-Hq-lbM"/>
                         <outlet property="textFieldUserID" destination="Mac-gs-1lG" id="bso-1f-ZlH"/>
                         <outlet property="textFieldUserPassword" destination="MMg-Rb-apK" id="5Qy-AE-LBY"/>
+                        <segue destination="bsh-YY-9kJ" kind="presentation" identifier="moveMain" id="m4T-tW-9W7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ML-mt-iuX" sceneMemberID="firstResponder"/>
@@ -372,6 +366,7 @@
                                 <rect key="frame" x="16" y="28" width="30" height="30"/>
                                 <state key="normal" title="취소"/>
                                 <connections>
+                                    <action selector="buttonCancel:" destination="bFu-OH-xce" eventType="touchUpInside" id="JTA-Ru-FzT"/>
                                     <segue destination="TLd-B2-fsy" kind="unwind" unwindAction="unwindLoginViewWithSegueValue:" id="Pea-Tf-2eU"/>
                                 </connections>
                             </button>
@@ -390,7 +385,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n4C-Dl-wlL">
                                                 <rect key="frame" x="8" y="16" width="359" height="248"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dg-E1-0Zj">
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dg-E1-0Zj">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="KB1-vO-5JX"/>
@@ -411,7 +406,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="next" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-pY-xMG">
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.75" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-pY-xMG">
                                                         <rect key="frame" x="0.0" y="165" width="359" height="45"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -467,8 +462,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textFieldEmail" destination="1dg-E1-0Zj" id="DKV-qx-Wvy"/>
-                        <outlet property="textFieldNickName" destination="rP6-pY-xMG" id="95N-OA-4mG"/>
+                        <outlet property="textFieldID" destination="1dg-E1-0Zj" id="2v2-Av-h4j"/>
+                        <outlet property="textFieldName" destination="rP6-pY-xMG" id="HzI-Lo-muO"/>
                         <outlet property="textFieldPassword" destination="2oo-JR-5HJ" id="4Xq-Fj-HUN"/>
                         <outlet property="textFieldPasswordConfirm" destination="ybg-6v-coZ" id="ft2-oy-Ma6"/>
                     </connections>
@@ -478,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="2593" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Find User Account-->
         <scene sceneID="2xh-rM-dXU">
             <objects>
-                <viewController id="Omq-KR-xNJ" sceneMemberID="viewController">
+                <viewController id="Omq-KR-xNJ" customClass="FindUserAccount" customModule="Practice0607_LoginAndTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p2x-RP-z9Y"/>
                         <viewControllerLayoutGuide type="bottom" id="gXz-yA-Ljb"/>
@@ -494,6 +489,7 @@
                                 <rect key="frame" x="16" y="28" width="30" height="30"/>
                                 <state key="normal" title="취소"/>
                                 <connections>
+                                    <action selector="buttonCancel:" destination="Omq-KR-xNJ" eventType="touchUpInside" id="Azk-EU-iq8"/>
                                     <segue destination="xCY-mM-U4g" kind="unwind" unwindAction="unwindLoginViewWithSegueValue:" id="9qN-vO-whN"/>
                                 </connections>
                             </button>
@@ -503,12 +499,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgQ-LL-FXs" userLabel="Seperated View">
+                                <rect key="frame" x="-0.5" y="60" width="375" height="1"/>
+                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="bh3-Xu-art"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pcc-55-q9E">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jfv-6u-8aH">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jfv-6u-8aH" id="zcR-kH-0Oj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="mVg-Xd-pSm" secondAttribute="leading" id="4Lg-cc-1Mf"/>
                             <constraint firstItem="mVg-Xd-pSm" firstAttribute="top" secondItem="p2x-RP-z9Y" secondAttribute="bottom" constant="8" id="5fe-aa-I9H"/>
+                            <constraint firstItem="Pcc-55-q9E" firstAttribute="width" secondItem="1uA-0R-iY1" secondAttribute="width" id="HZi-hh-PKk"/>
+                            <constraint firstItem="Pcc-55-q9E" firstAttribute="centerX" secondItem="1uA-0R-iY1" secondAttribute="centerX" id="Iqv-q6-lOu"/>
+                            <constraint firstItem="EgQ-LL-FXs" firstAttribute="width" secondItem="1uA-0R-iY1" secondAttribute="width" id="M64-Oy-aB2"/>
+                            <constraint firstItem="gXz-yA-Ljb" firstAttribute="top" secondItem="Pcc-55-q9E" secondAttribute="bottom" id="UWi-G0-Cs0"/>
+                            <constraint firstItem="EgQ-LL-FXs" firstAttribute="top" secondItem="VnD-gf-mA3" secondAttribute="bottom" constant="8" id="eUi-Dk-cd5"/>
+                            <constraint firstItem="EgQ-LL-FXs" firstAttribute="centerX" secondItem="1uA-0R-iY1" secondAttribute="centerX" id="ndD-FX-xIG"/>
                             <constraint firstItem="VnD-gf-mA3" firstAttribute="baseline" secondItem="mVg-Xd-pSm" secondAttribute="baseline" id="vYV-cO-gz8"/>
+                            <constraint firstItem="Pcc-55-q9E" firstAttribute="top" secondItem="VnD-gf-mA3" secondAttribute="bottom" constant="14" id="vhE-hc-W6Z"/>
                             <constraint firstItem="VnD-gf-mA3" firstAttribute="centerX" secondItem="1uA-0R-iY1" secondAttribute="centerX" id="yz9-rS-H7d"/>
                         </constraints>
                     </view>
@@ -516,7 +540,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqy-43-2c1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xCY-mM-U4g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2593" y="-564"/>
+            <point key="canvasLocation" x="2592.8000000000002" y="-564.46776611694156"/>
         </scene>
     </scenes>
     <resources>
@@ -524,6 +548,6 @@
         <image name="iu_background_05.jpg" width="675" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hv9-gF-ss9"/>
+        <segue reference="ikS-7J-8Ni"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,59 +14,75 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldUserPassword: UITextField!
     @IBOutlet weak var scrollViewRoot: UIScrollView!
     
-    // 로그인 뷰로 데이터가 전달되면, 받는 용도입니다.
-    var data:String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // 로그인 뷰로 데이터가 전달되면, 받아서 표시합니다.
+        if let userEmail = UserDefaults.standard.string(forKey: StringLogin.currentUserID) {
+            textFieldUserID.text = userEmail
+            UserDefaults.standard.removeObject(forKey: StringLogin.currentUserID)
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 로그인 뷰로 오면, 로그인이 풀렸다는 뜻이므로 isLogin 값을 false라고 줍니다.
-        // 로그아웃 버튼과 겹칠 수 있지만, 안전하게 아래 명령을 넣도록 합니다. - 재성
+        // 로그인 뷰로 오면, 로그인이 풀렸다는 뜻이므로 isLogin 값을 false로 줍니다.
+        // 로그아웃 버튼과 겹칠 수 있지만, 안전하게 아래 명령을 넣도록 합니다.
         UserDefaults.standard.set(false, forKey: StringLogin.isLogin)
         
         textFieldUserID.delegate = self
         textFieldUserPassword.delegate = self
         
-        // 로그인 뷰로 데이터가 전달되면, 받아서 표시합니다.
-        if data != nil {
-            textFieldUserID.text = data
-        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // 다른 뷰에서 로그인 뷰로 unwind 액션을 정의합니다.
-    @IBAction func unwindLoginView(segueValue:UIStoryboardSegue){
-        
-    }
-    
-    
     // 로그인 버튼 액션 정의.
     @IBAction func buttonLogin(_ sender: UIButton) {
         
+        // -- 예외처리 시작 -- //
         if (textFieldUserID.text?.isEmpty)! {
-            showDialog(title: "알림", message: "이메일을 입력해주세요.")
+            showDialog(title: "알림", message: "아이디를 입력해주세요.")
             return
         }else if (textFieldUserPassword.text?.isEmpty)! {
             showDialog(title: "알림", message: "비밀번호를 입력해주세요.")
             return
         }
+        // -- 예외처리 끝 -- //
         
-        let vDicEmail = UserDefaults.standard.dictionary(forKey: StringLogin.email)
-        print(vDicEmail?[textFieldUserID.text!]! ?? "데이터가 없습니다.")
+        let userID = textFieldUserID.text
+        let userPW = textFieldUserPassword.text
+        let vArrayTotalUser = UserDefaults.standard.array(forKey: StringLogin.user)
+        var availableLogin:Bool = false
         
-        UserDefaults.standard.set(true, forKey: StringLogin.isLogin)
+        for i in 0...((vArrayTotalUser?.count)! - 1) {
+            var vID:[String:String] = vArrayTotalUser?[i] as! [String:String]
+            
+            if vID[StringLogin.id] == userID {
+                if vID[StringLogin.password] == userPW {
+                    availableLogin = true
+                    print("로그인 조건: All OK-! :D")
+                }else {
+                    showDialog(title: "알림", message: "비밀번호가 틀렸습니다.\r다시 확인해주세요.")
+                    print("로그인 조건: Password is not okay! :(")
+                    return
+                }
+            }
+        }
         
-        performSegue(withIdentifier: "moveMain", sender: nil)
+        if availableLogin {
+            UserDefaults.standard.set(true, forKey: StringLogin.isLogin) // 로그인 여부 저장.
+            UserDefaults.standard.set(userID, forKey: StringLogin.currentUserID) // currentUserID 저장.
+            performSegue(withIdentifier: "moveMain", sender: nil)
+            
+        }else {
+            showDialog(title: "알림", message: "회원 정보가 없습니다.\r회원가입을 진행해주세요.")
+        }
         
-    }
-    
-    // 로그인 정보 기억하기 버튼 액션 정의.
-    @IBAction func buttonSaveLogin(_ sender: UIButton) {
-        // 아직은 내용 무.....
     }
     
     // textField에서 키보드의 Return 버튼을 눌렀을 때의 액션 정의.
@@ -75,9 +91,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case 0:
             self.view.viewWithTag(1)?.becomeFirstResponder()
             // textFieldUserPassword.becomeFirstResponder()
-        // 패스워드 텍스트필드로 커서를 이동한다.
+            // 패스워드 텍스트필드로 커서를 이동한다.
         default:
-            textField.resignFirstResponder() // 키보드를 내린다.
+            textField.resignFirstResponder() // 키보드를 내립니다.
         }
         
         return true
