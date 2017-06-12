@@ -12,9 +12,6 @@
 		FE38CEEE1EE830BB00CE0EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEEC1EE830BB00CE0EAF /* Main.storyboard */; };
 		FE38CEF01EE830BB00CE0EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEEF1EE830BB00CE0EAF /* Assets.xcassets */; };
 		FE38CEF31EE830BB00CE0EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEF11EE830BB00CE0EAF /* LaunchScreen.storyboard */; };
-		FE38CEFD1EE831FA00CE0EAF /* iu_background_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFA1EE831FA00CE0EAF /* iu_background_01.jpg */; };
-		FE38CEFE1EE831FA00CE0EAF /* iu_background_03_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFB1EE831FA00CE0EAF /* iu_background_03_edit.jpg */; };
-		FE38CEFF1EE831FA00CE0EAF /* iu_background_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE38CEFC1EE831FA00CE0EAF /* iu_background_05.jpg */; };
 		FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */; };
 		FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF021EE834D400CE0EAF /* LoginViewController.swift */; };
 		FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF041EE8368500CE0EAF /* MyString.swift */; };
@@ -30,9 +27,6 @@
 		FE38CEEF1EE830BB00CE0EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE38CEF21EE830BB00CE0EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE38CEF41EE830BB00CE0EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE38CEFA1EE831FA00CE0EAF /* iu_background_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_01.jpg; sourceTree = "<group>"; };
-		FE38CEFB1EE831FA00CE0EAF /* iu_background_03_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_03_edit.jpg; sourceTree = "<group>"; };
-		FE38CEFC1EE831FA00CE0EAF /* iu_background_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iu_background_05.jpg; sourceTree = "<group>"; };
 		FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		FE38CF021EE834D400CE0EAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE38CF041EE8368500CE0EAF /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
@@ -56,9 +50,6 @@
 			children = (
 				FE38CEE71EE830BB00CE0EAF /* Practice0607_LoginAndTableView */,
 				FE38CEE61EE830BB00CE0EAF /* Products */,
-				FE38CEFA1EE831FA00CE0EAF /* iu_background_01.jpg */,
-				FE38CEFB1EE831FA00CE0EAF /* iu_background_03_edit.jpg */,
-				FE38CEFC1EE831FA00CE0EAF /* iu_background_05.jpg */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,12 +138,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE38CEFD1EE831FA00CE0EAF /* iu_background_01.jpg in Resources */,
 				FE38CEF31EE830BB00CE0EAF /* LaunchScreen.storyboard in Resources */,
-				FE38CEFF1EE831FA00CE0EAF /* iu_background_05.jpg in Resources */,
 				FE38CEF01EE830BB00CE0EAF /* Assets.xcassets in Resources */,
 				FE38CEEE1EE830BB00CE0EAF /* Main.storyboard in Resources */,
-				FE38CEFE1EE831FA00CE0EAF /* iu_background_03_edit.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,4 +25,8 @@ struct MyMemo {
     
     static let memoTitle = "memoTitle"
     static let memoContent = "memoContent"
+    
+    static func memoKey(id:String) -> String {
+        return "memo_\(id)"
+    }
 }

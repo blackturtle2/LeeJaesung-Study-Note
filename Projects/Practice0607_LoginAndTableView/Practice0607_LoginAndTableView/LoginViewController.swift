@@ -102,7 +102,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // textField에 커서가 오면, ScrollView를 올려서 키보드에 가리지 않도록 합니다.
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollViewRoot.setContentOffset(CGPoint(x: 0.0, y:100.0), animated: true)
+        scrollViewRoot.setContentOffset(CGPoint(x: 0.0, y:50.0), animated: true)
     }
     
     

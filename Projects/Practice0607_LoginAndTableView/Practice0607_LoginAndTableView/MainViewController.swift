@@ -8,15 +8,15 @@
 
 import UIKit
 
-/*******************************************************
+/************************************************************************************************************
  
- /// UserDefaults 가이드라인 ///
- MyMemo.memo 를 Key로 가진 array 타입의 `UserDefaults`
+  /// UserDefaults 가이드라인 ///
+ // Ver 1.0 --> "MyMemo.memo" 를 Key로 가진 array 타입의 UserDefaults
+ // Ver 2.0 --> "memo_\(id)" 의 형태로 Key를 가진 array 타입의 UserDefaults ( 사용자별 각각의 메모 관리 용도 )
  
- array 안에는 [[String:String]]으로 들어있고.
- Dictionary의 Key 값은 MyMemo.title과 MyMemo.content가 있다.
+ array 안에는 [[String:String]]으로 Element들이 들어있고, Dictionary의 Key 값은 MyMemo.title과 MyMemo.content가 있다.
  
-********************************************************/
+*************************************************************************************************************/
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -34,12 +34,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return
         }
         
-        vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]]
+//        vArrayData = UserDefaults.standard.array(forKey: MyMemo.memo) as? [[String : String]] // 사용자에 따른 메모 분리 작업 - UserDefaults 분리 ( 리팩토링 필요 )
+        vArrayData = UserDefaults.standard.array(forKey: MyMemo.memoKey(id: UserDefaults.standard.string(forKey: StringLogin.currentUserID)!)) as? [[String : String]]
         mainTableview?.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +86,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 맨 처음에 Cell을 터치하면, AddMemo로 이동하면서 죽는 버그 픽스.
-        if UserDefaults.standard.array(forKey: MyMemo.memo) == nil {
+//        if UserDefaults.standard.array(forKey: MyMemo.memo) == nil { // 사용자에 따른 메모 분리 작업 - UserDefaults 분리 ( 리팩토링 필요 )
+        if UserDefaults.standard.array(forKey: MyMemo.memoKey(id: UserDefaults.standard.string(forKey: StringLogin.currentUserID)!)) == nil {
             tableView.deselectRow(at: indexPath, animated: true) // 테이블뷰 셀 선택 해제 애니메이션입니다.
             return
         }
@@ -104,7 +107,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: 초기화 버튼 액션 정의
     @IBAction func buttonMemoInitial(_ sender: UIButton) {
-        UserDefaults.standard.removeObject(forKey: MyMemo.memo)
+//        UserDefaults.standard.removeObject(forKey: MyMemo.memo) // 사용자에 따른 메모 분리 작업 - UserDefaults 분리 ( 리팩토링 필요 )
+        UserDefaults.standard.removeObject(forKey: MyMemo.memoKey(id: UserDefaults.standard.string(forKey: StringLogin.currentUserID)!))
         viewWillAppear(true)
     }
     
