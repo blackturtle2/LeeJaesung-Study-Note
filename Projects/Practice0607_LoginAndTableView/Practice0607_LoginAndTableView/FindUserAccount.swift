@@ -21,6 +21,8 @@ class FindUserAccount: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         vArrayUserInfo = UserDefaults.standard.array(forKey: StringLogin.user) as? [[String:String]]
+        
+        
     }
 
     override func viewDidLoad() {
@@ -51,8 +53,10 @@ class FindUserAccount: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // MARK: Cell 구현.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "findUserAccountReusableCell")!
-        let vDicData:[String:String] = vArrayUserInfo![indexPath.row]
+        var vDicData:[String:String] = vArrayUserInfo?[indexPath.row] ?? [StringLogin.id:"회원 목록이 없습니다."]
+        
         cell.textLabel?.text = vDicData[StringLogin.id] // 모든 사용자 id 출력하기
         
         return cell

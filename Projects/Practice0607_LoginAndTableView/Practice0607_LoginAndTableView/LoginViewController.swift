@@ -22,6 +22,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             textFieldUserID.text = userEmail
             UserDefaults.standard.removeObject(forKey: StringLogin.currentUserID)
         }
+        
+        textFieldUserPassword.text = ""
     }
     
     
@@ -59,6 +61,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let vArrayTotalUser = UserDefaults.standard.array(forKey: StringLogin.user)
         var availableLogin:Bool = false
         
+        // 회원 목록이 0일 때 예외처리
+        if UserDefaults.standard.array(forKey: StringLogin.user) == nil {
+            showDialog(title: "알림", message: "회원가입이 필요합니다.")
+            return
+        }
+        
+        // 로그인 가능 여부 검사
         for i in 0...((vArrayTotalUser?.count)! - 1) {
             var vID:[String:String] = vArrayTotalUser?[i] as! [String:String]
             
@@ -74,6 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        // 로그인 로직 처리
         if availableLogin {
             UserDefaults.standard.set(true, forKey: StringLogin.isLogin) // 로그인 여부 저장.
             UserDefaults.standard.set(userID, forKey: StringLogin.currentUserID) // currentUserID 저장.
