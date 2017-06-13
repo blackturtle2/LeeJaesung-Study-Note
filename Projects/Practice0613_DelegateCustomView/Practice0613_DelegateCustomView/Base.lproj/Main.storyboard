@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice0613_DelegateCustomView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p5U-qv-O77">
+                                <rect key="frame" x="94" y="64" width="187.5" height="187.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ky-B6-lBq" customClass="CustomView" customModule="Practice0613_DelegateCustomView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="187.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1S-Yw-T2c">
+                                                <rect key="frame" x="91" y="40" width="6.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEI-Qw-R5F">
+                                                <rect key="frame" x="75.5" y="125.5" width="35" height="30"/>
+                                                <state key="normal" title="Okay"/>
+                                                <connections>
+                                                    <action selector="buttonOkayAction:" destination="8ky-B6-lBq" eventType="touchUpInside" id="XSj-YA-MR8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <constraints>
+                                            <constraint firstItem="G1S-Yw-T2c" firstAttribute="centerX" secondItem="8ky-B6-lBq" secondAttribute="centerX" id="2Hw-H5-a0V"/>
+                                            <constraint firstAttribute="width" secondItem="8ky-B6-lBq" secondAttribute="height" multiplier="1:1" id="PCx-Gs-kBg"/>
+                                            <constraint firstItem="sEI-Qw-R5F" firstAttribute="centerX" secondItem="8ky-B6-lBq" secondAttribute="centerX" id="bKo-kP-BSK"/>
+                                            <constraint firstItem="sEI-Qw-R5F" firstAttribute="centerY" secondItem="8ky-B6-lBq" secondAttribute="centerY" multiplier="3/2" id="ciR-vR-GfY"/>
+                                            <constraint firstItem="G1S-Yw-T2c" firstAttribute="centerY" secondItem="8ky-B6-lBq" secondAttribute="centerY" multiplier="1/2" id="kcG-Zy-qdA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buttonOkay" destination="sEI-Qw-R5F" id="Pdi-UU-Wx7"/>
+                                            <outlet property="labelResult" destination="G1S-Yw-T2c" id="Yle-T0-D4r"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8ky-B6-lBq" firstAttribute="centerX" secondItem="p5U-qv-O77" secondAttribute="centerX" id="2Ey-zA-BPI"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4K-Oc-Y16">
+                                <rect key="frame" x="183" y="323.5" width="8.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5US-G8-DTc" customClass="BottomView" customModule="Practice0613_DelegateCustomView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-Ff-gq1">
+                                        <rect key="frame" x="167.5" y="9" width="39" height="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="buttonReset:" destination="5US-G8-DTc" eventType="touchUpInside" id="PmD-eM-AY8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Crs-Xo-FAr"/>
+                                    <constraint firstItem="SpF-Ff-gq1" firstAttribute="centerX" secondItem="5US-G8-DTc" secondAttribute="centerX" id="Eef-GV-dpO"/>
+                                    <constraint firstItem="SpF-Ff-gq1" firstAttribute="centerY" secondItem="5US-G8-DTc" secondAttribute="centerY" id="bF6-5d-HMR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c4K-Oc-Y16" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DkO-Sx-ksS"/>
+                            <constraint firstItem="8ky-B6-lBq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="FgH-KG-13r"/>
+                            <constraint firstItem="5US-G8-DTc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="J5a-gT-dL2"/>
+                            <constraint firstItem="p5U-qv-O77" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eBj-ua-gjV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5US-G8-DTc" secondAttribute="bottom" id="pBX-hK-BFF"/>
+                            <constraint firstItem="c4K-Oc-Y16" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qSn-Ez-oRf"/>
+                            <constraint firstItem="5US-G8-DTc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tRX-dO-jBX"/>
+                            <constraint firstItem="p5U-qv-O77" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="wcP-bA-Q6r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="5US-G8-DTc" id="Le7-lg-Mx9"/>
+                        <outlet property="labelResult" destination="c4K-Oc-Y16" id="8Ba-Nn-PA1"/>
+                        <outlet property="myCustomView1" destination="8ky-B6-lBq" id="Xpu-1a-kcK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
