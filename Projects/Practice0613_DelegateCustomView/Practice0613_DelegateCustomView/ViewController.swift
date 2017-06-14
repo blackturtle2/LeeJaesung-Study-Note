@@ -18,6 +18,7 @@ class ViewController: UIViewController, CustomDelegate, BottomViewDelegate {
         super.viewDidLoad()
         
         myCustomView1?.delegate = self
+        bottomView?.delegate = self
         
     }
 
