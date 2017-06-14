@@ -16,6 +16,7 @@
 		FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF021EE834D400CE0EAF /* LoginViewController.swift */; };
 		FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF041EE8368500CE0EAF /* MyString.swift */; };
 		FE38CF2B1EEA3E2900CE0EAF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38CF2A1EEA3E2900CE0EAF /* RegisterViewController.swift */; };
+		FE5C4DC11EF0FF7F00E43EC7 /* JsToolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C4DC01EF0FF7F00E43EC7 /* JsToolBox.swift */; };
 		FED050261EEECEEE00434193 /* FindUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED050251EEECEEE00434193 /* FindUserAccount.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		FE38CF021EE834D400CE0EAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE38CF041EE8368500CE0EAF /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
 		FE38CF2A1EEA3E2900CE0EAF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FE5C4DC01EF0FF7F00E43EC7 /* JsToolBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsToolBox.swift; sourceTree = "<group>"; };
 		FED050251EEECEEE00434193 /* FindUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindUserAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				FE38CF041EE8368500CE0EAF /* MyString.swift */,
+				FE5C4DC01EF0FF7F00E43EC7 /* JsToolBox.swift */,
 				FE38CEE81EE830BB00CE0EAF /* AppDelegate.swift */,
 				FE38CEEA1EE830BB00CE0EAF /* MainViewController.swift */,
 				FE38CF001EE8348B00CE0EAF /* AddMemoViewController.swift */,
@@ -154,6 +157,7 @@
 				FE38CF031EE834D400CE0EAF /* LoginViewController.swift in Sources */,
 				FED050261EEECEEE00434193 /* FindUserAccount.swift in Sources */,
 				FE38CF051EE8368500CE0EAF /* MyString.swift in Sources */,
+				FE5C4DC11EF0FF7F00E43EC7 /* JsToolBox.swift in Sources */,
 				FE38CF011EE8348B00CE0EAF /* AddMemoViewController.swift in Sources */,
 				FE38CF2B1EEA3E2900CE0EAF /* RegisterViewController.swift in Sources */,
 				FE38CEEB1EE830BB00CE0EAF /* MainViewController.swift in Sources */,

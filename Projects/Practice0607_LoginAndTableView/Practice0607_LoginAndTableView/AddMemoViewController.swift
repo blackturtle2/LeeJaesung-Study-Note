@@ -17,6 +17,7 @@ class AddMemoViewController: UIViewController {
     
     var vIndexNumber: Int?
     var isEdit: Bool = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

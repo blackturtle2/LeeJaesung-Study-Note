@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        
         // 로그인 뷰로 데이터가 전달되면, 받아서 표시합니다.
         if let userEmail = UserDefaults.standard.string(forKey: StringLogin.currentUserID) {
             textFieldUserID.text = userEmail
@@ -82,6 +83,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        // 아이디 입력
+        // 비밀번호 입력
+        // 비밀번호가 틀렸
+        // 회원정보가 없
         
         // 로그인 로직 처리
         if availableLogin {
