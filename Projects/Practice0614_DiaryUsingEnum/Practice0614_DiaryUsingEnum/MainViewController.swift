@@ -13,46 +13,37 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var mainTableView:UITableView?
     
     var vDataCenter:DataCenter = DataCenter()
+    let customCell:CustomTableViewCell = CustomTableViewCell()
+    var todayMonth:Int?
+    var todayDate:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let today = Date()
-//        let strToday:String = String(describing: today)
-//        print("strToday: \(strToday)")
-        
         // 날짜 도출하기
-        let format = DateFormatter()
-//        format.dateFormat = "dd.MM.yy" //14.06.17
-//        format.dateFormat = "MMMMd" //June14
-        format.dateFormat = "MMMM" //June
-//        format.dateFormat = "MMM" //Jun
-//        format.dateFormat = "MM" //06
-//        format.dateFormat = "d" //14
+        let formatMonth = DateFormatter()
+        formatMonth.dateFormat = "M" //6
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = "d"
+        
+        todayMonth = Int(formatMonth.string(from: Date()))!
+        todayDate = Int(formatDate.string(from: Date()))!
+        print("todayMonth: \(todayMonth!) / todayDate: \(todayDate!)") // 검사
+        
+    }
 
-        let result = format.string(from: Date())
-        print("result: \(result)")
-        
-//        let dateFormat
-//        
-//        let todayDate =
-        
-        
-//        let firstSpaceStrToday = strToday.characters.index(of: "-")
-//        let firstStrToday = String(strToday.characters.prefix(upTo: firstSpaceStrToday!))
-//        print("firstStrToday: \(firstStrToday)")
-        
-        // 자동으로 스크롤
-        mainTableView?.scrollToRow(at: IndexPath(row: 19, section: 5), at: .top, animated: true)
-        
-        // 텍스트뷰 선택되도록 하다가 실패
-//        mainTableView?.cellForRow(at: IndexPath(row: 19, section: 5)).textViewContents.becomeFirstResponder()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        mainTableView?.scrollToRow(at: IndexPath(row: todayDate!-1, section: todayMonth!-1), at: .top, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // 자동 FirstResponder 시도중..
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
     }
     
     
