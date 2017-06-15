@@ -43,7 +43,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // 자동 FirstResponder 시도중..
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+        let myCell = cell as! CustomTableViewCell
+        myCell.textViewContents?.becomeFirstResponder()
     }
     
     

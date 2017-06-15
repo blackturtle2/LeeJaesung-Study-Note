@@ -20,5 +20,17 @@ print("result: \(result)")
 # -
 
 ## -
+
+
+calendar.component(.month, from: Date()) // Int로 return 한다.
+
+
+// cell의 textView의 델리게이트를 tableView의 cell을 그리는 부분에서 데려오고, cell의 200자 제한을 걸어버린다.
+
+```swift
+if cell.textView.delegate == nil {
+	cell.textView.delegate = self
+}
+```
 ---
 ### 문서 끝 ( by 재성 )
