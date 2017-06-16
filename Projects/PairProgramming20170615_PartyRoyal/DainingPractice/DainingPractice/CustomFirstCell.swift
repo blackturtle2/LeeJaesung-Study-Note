@@ -8,15 +8,20 @@
 
 import UIKit
 
-class CustomFirstCell: UITableViewCell {
+protocol CustomCellSaveText {
+    func notiTextField()
+}
+
+class CustomFirstCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var myTextfield: UITextField!
+    var strIndex:Int?
+    var delegate:CustomCellSaveText?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
     
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,5 +29,14 @@ class CustomFirstCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        delegate?.notiTextField()
+        print("textFieldShouldEndEditing")
+        
+        return true
+    }
+    
 
 }

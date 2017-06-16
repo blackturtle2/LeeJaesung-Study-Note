@@ -62,8 +62,8 @@
 			children = (
 				452E47541EF2555500EB158E /* AppDelegate.swift */,
 				452E47561EF2555500EB158E /* FirstViewController.swift */,
-				452E47661EF257C100EB158E /* SecondViewController.swift */,
 				452E476A1EF2655000EB158E /* CustomFirstCell.swift */,
+				452E47661EF257C100EB158E /* SecondViewController.swift */,
 				452E47681EF25A5700EB158E /* CustomViewCell.swift */,
 				452E47581EF2555500EB158E /* Main.storyboard */,
 				452E475B1EF2555500EB158E /* Assets.xcassets */,
@@ -311,6 +311,7 @@
 				452E47651EF2555500EB158E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
