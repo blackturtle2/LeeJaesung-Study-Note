@@ -20,7 +20,8 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
     
     
@@ -47,6 +48,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         return true
     }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
