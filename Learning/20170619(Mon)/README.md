@@ -114,13 +114,5 @@ if let filePath = mainBundle.path(forResource: "rName", ofType: "rType"),   let
 if let dict = NSDictionary(contentsOfFile: basePath) as? [String: Any]{	var loadData = dict	loadData.updateValue("addData", forKey: "key")
 		let nsDic:NSDictionary =  NSDictionary(dictionary: loadData)	nsDic.write(toFile: basePath, atomically: true)}
 ```
-
-싱글톤은 프로젝트 전체에서 단 하나(유니크)의 이름으로 만들어진 인스턴스 딱 하나이다.
-
-```swift
-private static let instance:FriendData = FriendData()
-
-class ver standard: FriendData {
-	return instance
-}```---
+---
 ### 문서 끝 ( by 재성 )

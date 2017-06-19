@@ -45,6 +45,8 @@ func someThrowingFunction() throws -> Int {// ...}
 }
 ```
 
+---
+
 # Singleton
 
 ## `Singleton`이란?
@@ -131,5 +133,31 @@ class SecondViewController: UIViewController {
         
     }
 ```
+
+## Singleton 내용 보완 ( 2017.06.19 )
+ - `Singleton`은 프로젝트 전체에서 단 하나(유니크)의 이름으로 만들어진 인스턴스 딱 하나이다.
+ - `Singleton`은 **디자인 패턴** 일 뿐이고, iOS에서 `Singleton`을 만들 때, `타입 프로퍼티`를 사용할 뿐이다.
+ - `Static`은 딱 한번 사용할 것인데 램에 상주하게 되기 때문에, 자주 남발되면 매우 곤란하다.
+ - `그.러.나` 꼭 필요한 경우, 만들어야 하고 그게 `Singleton`이 된다.
+ - `Singleton` 인스턴스가 만들어질 때, `init()`을 하게 되고, 인스턴스가 사라질 때, `deinit()`이 불려지고, 이것은 앱이 죽을 때이다.
+
+```swift
+class FriendData {
+	private static let instance:FriendData = FriendData()
+	
+	// 외부에서는 FriendData.standard를 통해 접근한다.
+	class ver standard: FriendData {
+		return instance
+	}
+	
+	func init() {
+		load()
+	}
+	
+	func deinit() {
+		save()
+	}
+}```
+
 ---
 ### 문서 끝 ( by 재성 )
