@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice0619_SwitchSliderIndicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-nC-hei">
+                                <rect key="frame" x="37.5" y="112" width="300" height="443.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuV-83-2Yb">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G2b-e5-Yxt">
+                                        <rect key="frame" x="-2" y="35.5" width="304" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vYH-Qb-eoT"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sliderMain:" destination="BYZ-38-t0r" eventType="valueChanged" id="FfY-5i-I0r"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xc-sQ-m14">
+                                        <rect key="frame" x="0.0" y="100.5" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3F2-Ol-qwC">
+                                        <rect key="frame" x="0.0" y="136" width="300" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="L1C-fc-wAQ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgi-B2-gAe">
+                                        <rect key="frame" x="0.0" y="181" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kti-dt-2u8">
+                                        <rect key="frame" x="125.5" y="216.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchMain:" destination="BYZ-38-t0r" eventType="valueChanged" id="GNR-IP-PoY"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-5v-8oi">
+                                        <rect key="frame" x="0.0" y="262.5" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-nw-wEg">
+                                        <rect key="frame" x="0.0" y="298" width="300" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tk9-Uh-YEu"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Indicator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4K-nZ-vqZ">
+                                        <rect key="frame" x="0.0" y="343" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Nnz-RQ-rVP">
+                                        <rect key="frame" x="140" y="378.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozu-fq-I6d">
+                                        <rect key="frame" x="90.5" y="413.5" width="119" height="30"/>
+                                        <state key="normal" title="Indicator On / Off"/>
+                                        <connections>
+                                            <action selector="buttonIndicatorOnOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQX-Ja-Tz3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MuV-83-2Yb" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="7r4-H1-M8X"/>
+                                    <constraint firstItem="Tje-nw-wEg" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="B2m-NA-cb3"/>
+                                    <constraint firstItem="7Xc-sQ-m14" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="EEZ-nc-6tD"/>
+                                    <constraint firstItem="J4K-nZ-vqZ" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="Isz-bV-t6y"/>
+                                    <constraint firstItem="G2b-e5-Yxt" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="X8f-OX-keX"/>
+                                    <constraint firstItem="3F2-Ol-qwC" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="bsk-ue-GzX"/>
+                                    <constraint firstItem="kgi-B2-gAe" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="gZw-x5-iyg"/>
+                                    <constraint firstItem="gbe-5v-8oi" firstAttribute="width" secondItem="4Lp-nC-hei" secondAttribute="width" id="ghm-sf-U3G"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Lp-nC-hei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ODG-e4-OEt"/>
+                            <constraint firstItem="4Lp-nC-hei" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="4/5" id="V9J-us-7GM"/>
+                            <constraint firstItem="4Lp-nC-hei" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mXF-cG-8sd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorMain" destination="Nnz-RQ-rVP" id="otc-W1-PQv"/>
+                        <outlet property="labelSliderValue" destination="7Xc-sQ-m14" id="LAG-Gc-3fL"/>
+                        <outlet property="labelSwitchValue" destination="gbe-5v-8oi" id="cnf-Fw-9qj"/>
+                        <outlet property="switchMain" destination="kti-dt-2u8" id="hZN-zN-eRy"/>
+                        <outlet property="viewBackgroundTest" destination="3F2-Ol-qwC" id="cfW-E2-UVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

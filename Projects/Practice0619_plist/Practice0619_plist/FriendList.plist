@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>list</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>김애플</string>
+			<key>age</key>
+			<string>20</string>
+			<key>address</key>
+			<string>샌프란시스코</string>
+			<key>phone_number</key>
+			<string>01-1010</string>
+			<key>img_url</key>
+			<string>imageApple</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>김삼성</string>
+			<key>age</key>
+			<string>20</string>
+			<key>address</key>
+			<string>샌프란시스코</string>
+			<key>phone_number</key>
+			<string>01-1010</string>
+			<key>img_url</key>
+			<string>imageApple</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>김삼성</string>
+			<key>age</key>
+			<string>20</string>
+			<key>address</key>
+			<string>샌프란시스코</string>
+			<key>phone_number</key>
+			<string>01-1010</string>
+			<key>img_url</key>
+			<string>imageApple</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>김삼성</string>
+			<key>age</key>
+			<string>20</string>
+			<key>address</key>
+			<string>샌프란시스코</string>
+			<key>phone_number</key>
+			<string>01-1010</string>
+			<key>img_url</key>
+			<string>imageApple</string>
+		</dict>
+	</array>
+	<key>Version</key>
+	<string>1.0</string>
+</dict>
+</plist>
