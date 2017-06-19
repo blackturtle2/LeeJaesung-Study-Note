@@ -46,14 +46,16 @@
 			<key>age</key>
 			<string>20</string>
 			<key>address</key>
-			<string>샌프란시스코</string>
+			<string></string>
 			<key>phone_number</key>
 			<string>01-1010</string>
 			<key>img_url</key>
 			<string>imageApple</string>
 		</dict>
 	</array>
+	<key>testData</key>
+	<string>test_test_test</string>
 	<key>Version</key>
-	<string>1.0</string>
+	<integer>1</integer>
 </dict>
 </plist>

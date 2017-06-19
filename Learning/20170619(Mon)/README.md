@@ -102,13 +102,13 @@ if let filePath = mainBundle.path(forResource: "rName", ofType: "rType"),   let
 	// Document folder에 Plist 파일이 없다면, 여기 라인을 실행.}
 ```
 
-### 3. (만약 없다면) bundle에 있는 파일을 Document에 복사- 만약 `doucument`에 해당 `Plist` 파일이 존재 하지 않을때, `bundle`에 있는 파일을 `document` 폴더로 복사.
+### 3. (만약 없다면) bundle에 있는 파일을 Document에 복사.- 만약 `doucument`에 해당 `Plist` 파일이 존재 하지 않을때, `bundle`에 있는 파일을 `document` 폴더로 복사.
 - **번들 파일은 읽기만 가능하기 때문에 도큐먼트 파일로 복사한다!!!**
 ```swiftif let fileUrl = Bundle.main.path(forResource: "fileName", ofType: "plist") {    do {         try FileManager.default.copyItem(atPath: fileUrl, toPath: basePath)    } catch {         print("fail")	 }
 }
 ```
 
-### 4. Dictionary 인스턴스 불러오기 & 파일 저장 - `document` 폴더에 있는 파일을 `NSDictionary`을 통해서 `Dictionary` 인스턴스로 불러오기.
+### 4. Dictionary 인스턴스 불러오기 & 파일 저장. - `document` 폴더에 있는 파일을 `NSDictionary`을 통해서 `Dictionary` 인스턴스로 불러오기.
  - `write(toFile)` 메소드를 통해 파일 저장. - `dictionary`를 수정. - `NSDictionary`로 변경 후 `write(tofile)` 메소드를 통해 파일에 저장.
 ```swift
 if let dict = NSDictionary(contentsOfFile: basePath) as? [String: Any]{	var loadData = dict	loadData.updateValue("addData", forKey: "key")
