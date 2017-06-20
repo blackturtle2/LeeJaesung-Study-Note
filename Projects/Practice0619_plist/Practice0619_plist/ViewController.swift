@@ -57,13 +57,11 @@ class ViewController: UIViewController {
         
         
         //-- 수정 사항 반영 시작 --//
-        let currentVersion = dicData?["Version"] as! NSNumber
-        currentVersion.intValue
-        
-        print("currentVersion: \(currentVersion)")
-        let updateVersion = currentVersion + 1
-        dicData?.updateValue(updateVersion as AnyObject, forKey: "Version")
-        print("코드명 0505 - dicData: \(dicData!)")
+//        let currentVersion = dicData?["Version"] as! NSNumber
+//        print("currentVersion: \(currentVersion)")
+//        let updateVersion = currentVersion + 1
+//        dicData?.updateValue(updateVersion as AnyObject, forKey: "Version")
+//        print("코드명 0505 - dicData: \(dicData!)")
         //-- 수정 사항 반영 끝 --//
         
         // 4단계: document 폴더의 plist에 드디어 쓰기.
