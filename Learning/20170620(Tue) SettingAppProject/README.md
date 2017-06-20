@@ -246,9 +246,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
  - `Switch`가 있는 `cell`의 형태는 기본적으로 존재하지는 않고, 더군다나 `switch`의 `value changed`를 뷰 컨트롤러 단으로 데려오기 위해서는 `delegate`가 필요하다.
 
 ### protocol `SettingSwitchCellDelegate`
- - `SettingSwitchCell` class를 정의하기 이전에 delegate 연결을 위한 프로토콜을 먼저 선언한다.
- - 이때, delegate 함수에는 cell을 태우고, 이 cell에는 `SettingSwitchCell`라는 class 자기 자신을 태우도록 한다. **이 부분이 키포인트!!!**
- - 추후에 이 방법은 cell 자신이 뷰 컨트롤러에게 자기 자신을 던지는 데에 사용된다. ~뷰 컨트롤러님, 저의 값이 변경되었으니, 이제 컨트롤러님 하고 싶은대로 하시지요..~
+ - `SettingSwitchCell` class를 정의하기 이전에 `delegate` 연결을 위한 프로토콜을 먼저 선언한다.
+ - 이때, `delegate` 함수에는 `cell`을 태우고, 이 `cell`에는 `SettingSwitchCell`라는 `class` 자기 자신을 태우도록 한다. **이 부분이 키포인트!!!**
+ - 추후에 이 방법은 `cell` 자신이 뷰 컨트롤러에게 자기 자신을 던지는 데에 사용된다. ~뷰 컨트롤러님, 저의 값이 변경되었으니, 이제 컨트롤러님 하고 싶은대로 하시지요..~
 
 ```swift
 protocol SettingSwitchCellDelegate {
@@ -257,7 +257,7 @@ protocol SettingSwitchCellDelegate {
 ```
 
 ### class `SettingSwitchCell`
- - `Delegate 변수`의 선언을 **절대** 잊지 말자!!!
+ - `Delegate 변수`의 선언을 **절대 절대 절대** 잊지 말자!!!
 
 ```swift
 class SettingSwitchCell: UITableViewCell {
@@ -269,7 +269,7 @@ class SettingSwitchCell: UITableViewCell {
 ```
 
 ### UISwitch의 `ValueChangeAction`
- - `UISwitch`의 값이 바뀔 때마다 프로토콜에 정의된 `cellValueChanged()`를 호출하고, 매개변수 cell에 자기 자신을 `self`로 태워보낸다. ~( 자기 자신을 태워보내는 것이 핵핵핵포인트이다!!! )~
+ - `UISwitch`의 값이 바뀔 때마다 프로토콜에 정의된 `cellValueChanged()`를 호출하고, 매개변수 `cell`에 자기 자신을 `self`로 태워보낸다. ~( 자기 자신을 태워보내는 것이 핵핵핵포인트이다!!! )~
 
 ```swift
 @IBAction func switcherValueChangeAction(_ sender: UISwitch) {
@@ -279,8 +279,8 @@ class SettingSwitchCell: UITableViewCell {
 
 ### class `SettingViewController`
  - `delegate` 연결을 위해 프로토콜, `SettingSwitchCellDelegate`을 먼저 채택한다.
- - delegate 함수인 cellValueChanged()를 정의한다.
- - 사실은.. 아직 딱히 정의할 액션이 없어서 delegate가 잘 연결되었는지 확인하기 위해 print()만을 해보았다. ~그리고 잘 연결되었다.~
+ - `delegate` 함수인 `cellValueChanged()` 를 정의한다.
+ - 사실은.. 아직 딱히 정의할 액션이 없어서 `delegate`가 잘 연결되었는지 확인하기 위해 `print()` 만을 해보았다. ~그리고 잘 연결되었다.~
 
 ```swift
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingSwitchCellDelegate {
