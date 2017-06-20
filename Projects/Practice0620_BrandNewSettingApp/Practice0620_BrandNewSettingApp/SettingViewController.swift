@@ -51,12 +51,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             myCell.selectionStyle = .none
             
             return myCell
+            
         case .Detail:
             let myCell = tableView.dequeueReusableCell(withIdentifier: SettingCellType.Detail.rawValue)!
             
             myCell.textLabel?.text = SettingCenter.sharedSetting.titleFor(rowAtIndexPath: indexPath)
             
             return myCell
+            
         case .Switch:
             let myCell = tableView.dequeueReusableCell(withIdentifier: SettingCellType.Switch.rawValue) as! SettingSwitchCell
             
@@ -80,7 +82,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: ********** SettingSwitchCellDelegate **********
     func cellValueChanged(_ cell: SettingSwitchCell, isOn: Bool) {
-        print("cellValueChanged")
+        print("cellValueChanged \(isOn)")
     }
     
 }

@@ -28,6 +28,7 @@ class SettingCenter {
         return settingMenuDataList?.count ?? 0
     }
     
+    // section별 Row 갯수 리턴.
     func numberOfRows(in section:Int) -> Int {
         guard let sectionData = settingMenuDataList else {  return 1 }
         
