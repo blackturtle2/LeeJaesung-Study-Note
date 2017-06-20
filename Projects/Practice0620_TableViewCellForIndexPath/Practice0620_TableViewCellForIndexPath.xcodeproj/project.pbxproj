@@ -12,6 +12,8 @@
 		FEA5A9EB1EF933A3005994D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA5A9E91EF933A3005994D2 /* Main.storyboard */; };
 		FEA5A9ED1EF933A3005994D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA5A9EC1EF933A3005994D2 /* Assets.xcassets */; };
 		FEA5A9F01EF933A3005994D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA5A9EE1EF933A3005994D2 /* LaunchScreen.storyboard */; };
+		FEA5A9F81EF95DD1005994D2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5A9F71EF95DD1005994D2 /* DataCenter.swift */; };
+		FEA5A9FA1EF95E66005994D2 /* MyAppleProduct.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEA5A9F91EF95E66005994D2 /* MyAppleProduct.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FEA5A9EC1EF933A3005994D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEA5A9EF1EF933A3005994D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEA5A9F11EF933A3005994D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA5A9F71EF95DD1005994D2 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		FEA5A9F91EF95E66005994D2 /* MyAppleProduct.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyAppleProduct.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 		FEA5A9E41EF933A3005994D2 /* Practice0620_TableViewCellForIndexPath */ = {
 			isa = PBXGroup;
 			children = (
+				FEA5A9E91EF933A3005994D2 /* Main.storyboard */,
 				FEA5A9E51EF933A3005994D2 /* AppDelegate.swift */,
 				FEA5A9E71EF933A3005994D2 /* ViewController.swift */,
-				FEA5A9E91EF933A3005994D2 /* Main.storyboard */,
+				FEA5A9F71EF95DD1005994D2 /* DataCenter.swift */,
+				FEA5A9F91EF95E66005994D2 /* MyAppleProduct.plist */,
 				FEA5A9EC1EF933A3005994D2 /* Assets.xcassets */,
 				FEA5A9EE1EF933A3005994D2 /* LaunchScreen.storyboard */,
 				FEA5A9F11EF933A3005994D2 /* Info.plist */,
@@ -126,6 +132,7 @@
 				FEA5A9F01EF933A3005994D2 /* LaunchScreen.storyboard in Resources */,
 				FEA5A9ED1EF933A3005994D2 /* Assets.xcassets in Resources */,
 				FEA5A9EB1EF933A3005994D2 /* Main.storyboard in Resources */,
+				FEA5A9FA1EF95E66005994D2 /* MyAppleProduct.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA5A9F81EF95DD1005994D2 /* DataCenter.swift in Sources */,
 				FEA5A9E81EF933A3005994D2 /* ViewController.swift in Sources */,
 				FEA5A9E61EF933A3005994D2 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +309,7 @@
 				FEA5A9F61EF933A3005994D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

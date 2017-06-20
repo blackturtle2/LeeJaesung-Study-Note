@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Macbook Pro</key>
+		<dict>
+			<key>Birth</key>
+			<string>Mid 2012</string>
+			<key>CPU</key>
+			<string>2.3GHz Intel Core i7</string>
+			<key>RAM</key>
+			<string>16GB 1600MHz DDR3</string>
+			<key>SSD</key>
+			<string>750GB</string>
+			<key>Display</key>
+			<string>15-inch Retina Display</string>
+		</dict>
+		<key>Macbook Air</key>
+		<dict>
+			<key>Birth</key>
+			<string>late 2013</string>
+			<key>CPU</key>
+			<string>1.7GHz Intel Core i7</string>
+			<key>RAM</key>
+			<string>8GB DDR3</string>
+			<key>SSD</key>
+			<string>512GB</string>
+			<key>Display</key>
+			<string>11-inch Display</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>iPhone7</key>
+		<dict>
+			<key>Color</key>
+			<string>Jet Black</string>
+			<key>SSD</key>
+			<string>128GB</string>
+		</dict>
+		<key>iPhone6</key>
+		<dict>
+			<key>Color</key>
+			<string>Space Gray</string>
+			<key>SSD</key>
+			<string>64GB</string>
+		</dict>
+		<key>iPhone5</key>
+		<dict>
+			<key>Color</key>
+			<string>Gray</string>
+			<key>SSD</key>
+			<string>32GB</string>
+		</dict>
+	</dict>
+</array>
+</plist>
