@@ -52,8 +52,8 @@ for person in data {
  - 데이터 모델링을 위한 `SettingCenter`을 구현한다.
 
 ### `enum`
- - Cell 구분을 위한 타입을 나눈다.
- - enum도 SettingCenter에서 정의한다.
+ - `Cell` 구분을 위한 타입을 나눈다.
+ - `enum`도 `SettingCenter`에서 정의한다.
 
 ```swift
 enum SettingCellType:String {
@@ -71,8 +71,8 @@ enum SettingCellType:String {
 	 - 다른 클래스에서 이 Singleton 사용을 위해서는 `SettingCenter.sharedSetting.~`을 활용한다.
 	 - 예시: `SettingCenter.sharedSetting.titleFor(rowAtIndexPath: indexPath)`
 	 - 싱글턴은 **천상천하 유아독존 나만 존재하겠다** ~혹시 읽으시는 분 죄송합니다.. (_ _)~
- - Plist 설계를 참고하여, 필요하다고 생각되는 것들을 함수로 만들고, 후에 테이블 뷰를 그리면서 필요할 때, 만들어도 된다.
- - plist에서 데이터를 가져오기 위해 `init()`에서 `loadData()`를 호출하고, `loadData()`를 정의한다.
+ - `Plist` 설계를 참고하여, 필요하다고 생각되는 것들을 함수로 만들고, 후에 테이블 뷰를 그리면서 필요할 때, 만들어도 된다.
+ - `Plist` 에서 데이터를 가져오기 위해 `init()`에서 `loadData()`를 호출하고, `loadData()`를 정의한다.
 ```swift
 class SettingCenter {
     
@@ -165,7 +165,8 @@ func loadSettingData() {
  - 앞서 만들어둔 `Singleton`을 잘 활용하여, 테이블 뷰를 구성한다.
  - `Cell`을 그릴 때, `plist`에 저장된 `cell`의 `type`으로 구분하여, `cell`을 그려주고, 특히 `UISwitch`가 있는 `cell`은 커스텀 cell로 잘 구분해 넣도록 한다.
 	 - `UISwitch`를 위한 `delegate`도 `cell`을 그릴 때, 연결하도록 한다.
-	 - ```swift
+
+```swift
 case .Switch:
         let myCell = tableView.dequeueReusableCell(withIdentifier: SettingCellType.Switch.rawValue) as! SettingSwitchCell
         
@@ -206,7 +207,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             let myCell = tableView.dequeueReusableCell(withIdentifier: SettingCellType.Basic.rawValue)!
             
             myCell.textLabel?.text = SettingCenter.sharedSetting.titleFor(rowAtIndexPath: indexPath)
-            myCell.detailTextLabel?.text = "hihihi"
+            myCell.detailTextLabel?.text = "detailTextLabel test"
             myCell.selectionStyle = .none
             
             return myCell
