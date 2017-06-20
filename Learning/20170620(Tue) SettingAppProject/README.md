@@ -32,7 +32,8 @@ for person in data {
 
 ---
 
-# Mini Project - 앱 세팅 화면 만들기
+# [ Mini Project ] 앱 세팅 화면 만들기
+> 전체 소스는 프로젝트 폴더를 참고해주세요. - [프로젝트 폴더 바로가기](https://github.com/blackturtle2/Leejaesung_iOS_School/tree/master/Projects/Practice0620_BrandNewSettingApp/Practice0620_BrandNewSettingApp)
 
 ## 요구사항 - `UITableView`를 이용해 뷰를 구성한다.
  - `Plist`를 이용해 UI 구성을 위한 데이터를 설계하고, 활용한다.
@@ -40,7 +41,7 @@ for person in data {
  - `Singleton` 패턴을 활용해, `Plist`로부터 데이터를 가져와서 테이블 뷰의 UI를 구성한다.## 결과 미리보기
 ![SettingApp.png](SettingApp.png)## UI 그리기
  - UI는 내비게이션 컨트롤러를 임베디드하고, 테이블 뷰를 넣은 뷰컨트롤러를 만든다.
- - 테이블 뷰에 프로토타입 셀을 3가지 넣고, Identifier로 구분한다.
+ - 테이블 뷰에 프로토타입 셀을 3가지 넣고, `Identifier`로 구분한다.
  - ~UI는 늘 하던대로.. 잘.. 열심히..~
 
 ## `Plist`
@@ -70,7 +71,7 @@ enum SettingCellType:String {
 	 - `static let sharedSetting:SettingCenter = SettingCenter()`
 	 - 다른 클래스에서 이 Singleton 사용을 위해서는 `SettingCenter.sharedSetting.~`을 활용한다.
 	 - 예시: `SettingCenter.sharedSetting.titleFor(rowAtIndexPath: indexPath)`
-	 - 싱글턴은 **천상천하 유아독존 나만 존재하겠다** ~혹시 읽으시는 분 죄송합니다.. (_ _)~
+	 - 싱글턴은 **천상천하 유아독존 나만 존재하겠다..!!!** ~( 혹시 읽으시는 분들께 죄송합니다.. (_ _) )~
  - `Plist` 설계를 참고하여, 필요하다고 생각되는 것들을 함수로 만들고, 후에 테이블 뷰를 그리면서 필요할 때, 만들어도 된다.
  - `Plist` 에서 데이터를 가져오기 위해 `init()`에서 `loadData()`를 호출하고, `loadData()`를 정의한다.
 ```swift
@@ -146,7 +147,7 @@ class SettingCenter {
 }
 ```
 #### [ Singleton 특집 ] `loadSettingData()` - 데이터 수정은 하지 않을 계획이기 때문에 `Bundle`에서 데이터를 로드하기만 하자.
- - path 변수에 `Bundle.main.path(forResource: "Settings", ofType: "plist")`을 넣어준다.
+ - `path` 변수에 `Bundle.main.path(forResource: "Settings", ofType: "plist")`을 넣어준다.
  - `NSArray(contentsOfFile: path)`을 이용해 번들에 값이 있다면..
  - `Singleton`에 번들로부터 가져온 값을 넣어준다.
 	 - `Singleton`은 `self.settingMenuDataList`으로 호출한다.```swift
@@ -293,5 +294,7 @@ func cellValueChanged(_ cell: SettingSwitchCell, isOn: Bool) {
 }
 ```
 
-// Json 형태로 음악 앨범의 데이터 구조를 설계해봅니다.---
+---
+
+## Memo// Json 형태로 음악 앨범의 데이터 구조를 설계해봅니다.---
 ### 문서 끝 ( by 재성 )
