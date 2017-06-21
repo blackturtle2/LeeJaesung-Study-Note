@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>SectionTitle</key>
+		<string></string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>셀룰러데이터</string>
+				<key>CellType</key>
+				<string>SwitchCell</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>셀룰러데이터 옵션</string>
+				<key>CellType</key>
+				<string>DetailCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string></string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>개인용 핫스팟</string>
+				<key>CellType</key>
+				<string>DetailCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string>통화 시간</string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>현재 사용량</string>
+				<key>CellType</key>
+				<string>BasicCell</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>누적 사용량</string>
+				<key>CellType</key>
+				<string>BasicCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string>셀룰러 데이터 사용량</string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>현재 사용량</string>
+				<key>CellType</key>
+				<string>BasicCell</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>현재 로밍 사용량</string>
+				<key>CellType</key>
+				<string>BasicCell</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

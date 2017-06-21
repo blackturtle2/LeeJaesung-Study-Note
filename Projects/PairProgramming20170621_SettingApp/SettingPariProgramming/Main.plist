@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>에어플레인 모드</string>
+		<key>CellType</key>
+		<string>SwitchCell</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Wi-Fi</string>
+		<key>CellType</key>
+		<string>DetailCell</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Bluetooth</string>
+		<key>CellType</key>
+		<string>DetailCell</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>셀룰러</string>
+		<key>CellType</key>
+		<string>DetailCell</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>개인용 핫스팟</string>
+		<key>CellType</key>
+		<string>DetailCell</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>네트워크 사업자</string>
+		<key>CellType</key>
+		<string>DetailCell</string>
+	</dict>
+</array>
+</plist>

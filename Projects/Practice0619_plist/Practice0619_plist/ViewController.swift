@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         }
         
         // 3단계: realDocuPath로부터 가져온 NSDictionary를 dic에 넣는다.
-        var dicData = NSDictionary(contentsOfFile: realDocuPath) as? [String : Any]
+        let dicData = NSDictionary(contentsOfFile: realDocuPath) as? [String : Any]
         
         
         //-- 수정 사항 반영 시작 --//

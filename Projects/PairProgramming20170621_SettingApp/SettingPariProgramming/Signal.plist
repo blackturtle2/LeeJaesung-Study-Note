@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>SectionTitle</key>
+		<string></string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Wi-Fi</string>
+				<key>CellType</key>
+				<string>SwitchCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string></string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Bluetooth</string>
+				<key>CellType</key>
+				<string>SwitchCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string></string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>개인용 핫스팟</string>
+				<key>CellType</key>
+				<string>SwitchCell</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Wi-Fi 암호</string>
+				<key>CellType</key>
+				<string>DetailCell</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>SectionTitle</key>
+		<string>네트워크 사업자</string>
+		<key>Data</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>자동</string>
+				<key>CellType</key>
+				<string>SwitchCell</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
