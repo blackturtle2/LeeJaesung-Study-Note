@@ -9,6 +9,13 @@
 import UIKit
 
 class CaculationViewController: UIViewController {
+
+    /*
+     주제: iOS 스쿨 일주일차, 계산기 만들기 프로젝트.
+     숫자를 누르고, 연산 버튼을 누른 후, 다시 숫자를 누르고, = 버튼을 눌러 결과를 확인하는 단순한 계산기 프로젝트.
+     스토리보드를 이용해 UI를 그리고, IBAction, IBOutlet 등으로 소스와 연결하여 function화 시켜 작동을 확인하는 것에 목적이 있습니다.
+     소수점과 퍼센트(%) 등 몇가지 기능을 제외하고는 정상 작동되는 프로젝트입니다.
+     */
     
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var displayOperationLabel: UILabel!

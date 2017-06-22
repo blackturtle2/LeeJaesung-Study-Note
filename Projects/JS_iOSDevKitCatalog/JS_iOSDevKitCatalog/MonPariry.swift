@@ -9,10 +9,13 @@
 import Foundation
 
 class MonPariry:PocketMon {
-    
     init() {
         super.init(name: "파이리" , type: "불")
-        skills = [["name":"불꽃세례","damage":20],["name":"할퀴기","damage":20]]
+        
+        hp = 130
+        skills = [["name":"불꽃세례","damage":20],
+                  ["name":"파이어볼","damage":40],
+                  ["name":"할퀴기","damage":15]]
     }
     
     

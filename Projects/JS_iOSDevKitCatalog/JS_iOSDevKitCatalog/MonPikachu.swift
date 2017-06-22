@@ -9,11 +9,13 @@
 import Foundation
 
 class MonPikachu: PocketMon {
-
     init() {
         super.init(name: "피카츄", type: "전기")
+        
         hp = 110
-        skills = [["name":"전기충격","damage":10],["name":"몸통박치기","damage":20]]
+        skills = [["name":"전기충격","damage":30],
+                  ["name":"몸통박치기","damage":20],
+                  ["name":"할퀴기","damage":15]]
     }
     
     func playCute() {

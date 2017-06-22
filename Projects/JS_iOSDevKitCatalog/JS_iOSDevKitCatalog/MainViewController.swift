@@ -34,6 +34,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             performSegue(withIdentifier: "MoveCaculationViewController", sender: nil)
         case 1:
             performSegue(withIdentifier: "MovePocketmonViewController", sender: nil)
+        case 2:
+            performSegue(withIdentifier: "MoveVendingMachineViewController", sender: nil)
         default: break
             
         }
@@ -50,6 +52,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 1:
             myCell.textLabel?.text = "Pocketmon"
             myCell.detailTextLabel?.text = "Practice0517"
+        case 2:
+            myCell.textLabel?.text = "VendingMachine"
+            myCell.detailTextLabel?.text = "Practice0519"
         default: break
             
         }

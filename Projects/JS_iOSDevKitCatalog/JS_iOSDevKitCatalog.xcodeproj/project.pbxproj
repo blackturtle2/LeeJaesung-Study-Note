@@ -17,9 +17,16 @@
 		FEB73BB11EFBE9640022266F /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAA1EFBE9640022266F /* Trainer.swift */; };
 		FEB73BB21EFBE9640022266F /* AboutMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAB1EFBE9640022266F /* AboutMonster.swift */; };
 		FEB73BB31EFBE9640022266F /* PocketMon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAC1EFBE9640022266F /* PocketMon.swift */; };
-		FEB73BB41EFBE9640022266F /* MonRaichu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAD1EFBE9640022266F /* MonRaichu.swift */; };
+		FEB73BB41EFBE9640022266F /* MonKkobugi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAD1EFBE9640022266F /* MonKkobugi.swift */; };
 		FEB73BB51EFBE9640022266F /* MonPikachu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAE1EFBE9640022266F /* MonPikachu.swift */; };
 		FEB73BB61EFBE9640022266F /* MonPariry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BAF1EFBE9640022266F /* MonPariry.swift */; };
+		FEB73BC11EFC00D50022266F /* VendingMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BBA1EFC00D50022266F /* VendingMachineViewController.swift */; };
+		FEB73BC21EFC00D50022266F /* CarOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BBB1EFC00D50022266F /* CarOption.swift */; };
+		FEB73BC31EFC00D50022266F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73BBC1EFC00D50022266F /* Car.swift */; };
+		FEB73BC41EFC00D50022266F /* x5.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB73BBD1EFC00D50022266F /* x5.png */; };
+		FEB73BC51EFC00D50022266F /* sonata.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB73BBE1EFC00D50022266F /* sonata.png */; };
+		FEB73BC61EFC00D50022266F /* 520d.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB73BBF1EFC00D50022266F /* 520d.png */; };
+		FEB73BC71EFC00D50022266F /* E-Class.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB73BC01EFC00D50022266F /* E-Class.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +42,16 @@
 		FEB73BAA1EFBE9640022266F /* Trainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
 		FEB73BAB1EFBE9640022266F /* AboutMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMonster.swift; sourceTree = "<group>"; };
 		FEB73BAC1EFBE9640022266F /* PocketMon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketMon.swift; sourceTree = "<group>"; };
-		FEB73BAD1EFBE9640022266F /* MonRaichu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonRaichu.swift; sourceTree = "<group>"; };
+		FEB73BAD1EFBE9640022266F /* MonKkobugi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonKkobugi.swift; sourceTree = "<group>"; };
 		FEB73BAE1EFBE9640022266F /* MonPikachu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonPikachu.swift; sourceTree = "<group>"; };
 		FEB73BAF1EFBE9640022266F /* MonPariry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonPariry.swift; sourceTree = "<group>"; };
+		FEB73BBA1EFC00D50022266F /* VendingMachineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachineViewController.swift; sourceTree = "<group>"; };
+		FEB73BBB1EFC00D50022266F /* CarOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarOption.swift; sourceTree = "<group>"; };
+		FEB73BBC1EFC00D50022266F /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		FEB73BBD1EFC00D50022266F /* x5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x5.png; sourceTree = "<group>"; };
+		FEB73BBE1EFC00D50022266F /* sonata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonata.png; sourceTree = "<group>"; };
+		FEB73BBF1EFC00D50022266F /* 520d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 520d.png; sourceTree = "<group>"; };
+		FEB73BC01EFC00D50022266F /* E-Class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "E-Class.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +90,9 @@
 				FEB73B941EFBD8640022266F /* MainViewController.swift */,
 				FEB73B991EFBD8640022266F /* Assets.xcassets */,
 				FEB73B9E1EFBD8640022266F /* Info.plist */,
-				FEB73BA71EFBE9270022266F /* Practice0510_Calculation */,
+				FEB73BB91EFC00B00022266F /* Practice0519_VendingMachine */,
 				FEB73BA81EFBE9510022266F /* Practice0517_ClassPocketmon */,
+				FEB73BA71EFBE9270022266F /* Practice0510_Calculation */,
 			);
 			path = JS_iOSDevKitCatalog;
 			sourceTree = "<group>";
@@ -97,11 +112,25 @@
 				FEB73BAA1EFBE9640022266F /* Trainer.swift */,
 				FEB73BAB1EFBE9640022266F /* AboutMonster.swift */,
 				FEB73BAC1EFBE9640022266F /* PocketMon.swift */,
-				FEB73BAD1EFBE9640022266F /* MonRaichu.swift */,
 				FEB73BAE1EFBE9640022266F /* MonPikachu.swift */,
+				FEB73BAD1EFBE9640022266F /* MonKkobugi.swift */,
 				FEB73BAF1EFBE9640022266F /* MonPariry.swift */,
 			);
 			name = Practice0517_ClassPocketmon;
+			sourceTree = "<group>";
+		};
+		FEB73BB91EFC00B00022266F /* Practice0519_VendingMachine */ = {
+			isa = PBXGroup;
+			children = (
+				FEB73BBA1EFC00D50022266F /* VendingMachineViewController.swift */,
+				FEB73BBB1EFC00D50022266F /* CarOption.swift */,
+				FEB73BBC1EFC00D50022266F /* Car.swift */,
+				FEB73BBD1EFC00D50022266F /* x5.png */,
+				FEB73BBE1EFC00D50022266F /* sonata.png */,
+				FEB73BBF1EFC00D50022266F /* 520d.png */,
+				FEB73BC01EFC00D50022266F /* E-Class.png */,
+			);
+			name = Practice0519_VendingMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +192,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB73BC61EFC00D50022266F /* 520d.png in Resources */,
+				FEB73BC51EFC00D50022266F /* sonata.png in Resources */,
 				FEB73B9D1EFBD8640022266F /* LaunchScreen.storyboard in Resources */,
 				FEB73B9A1EFBD8640022266F /* Assets.xcassets in Resources */,
+				FEB73BC41EFC00D50022266F /* x5.png in Resources */,
 				FEB73B981EFBD8640022266F /* Main.storyboard in Resources */,
+				FEB73BC71EFC00D50022266F /* E-Class.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,14 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB73BB41EFBE9640022266F /* MonRaichu.swift in Sources */,
+				FEB73BB41EFBE9640022266F /* MonKkobugi.swift in Sources */,
 				FEB73BA51EFBE1880022266F /* CaculationViewController.swift in Sources */,
 				FEB73B951EFBD8640022266F /* MainViewController.swift in Sources */,
 				FEB73BB01EFBE9640022266F /* PocketmonViewController.swift in Sources */,
+				FEB73BC31EFC00D50022266F /* Car.swift in Sources */,
+				FEB73BC11EFC00D50022266F /* VendingMachineViewController.swift in Sources */,
 				FEB73BB31EFBE9640022266F /* PocketMon.swift in Sources */,
 				FEB73BB61EFBE9640022266F /* MonPariry.swift in Sources */,
 				FEB73BB51EFBE9640022266F /* MonPikachu.swift in Sources */,
 				FEB73B931EFBD8640022266F /* AppDelegate.swift in Sources */,
+				FEB73BC21EFC00D50022266F /* CarOption.swift in Sources */,
 				FEB73BB21EFBE9640022266F /* AboutMonster.swift in Sources */,
 				FEB73BB11EFBE9640022266F /* Trainer.swift in Sources */,
 			);

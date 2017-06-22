@@ -11,10 +11,8 @@ import Foundation
 class PocketMon {
     let name:String
     let type:String
-    
     var hp:Int = 100
     var skills:[[String:Any]]?
-    
     var myOwner:Trainer?
     
     init(name:String, type:String) {
@@ -24,7 +22,6 @@ class PocketMon {
     
     func attack(toMonster monster:PocketMon, skill skillNum:Int) {
         if let skillList = skills {
-            
             let targetName:String = monster.name
             let skill:[String:Any] = skillList[skillNum]
             let skillName:String = skill["name"] as! String
@@ -47,13 +44,10 @@ class PocketMon {
     }
     
     func returnSkillNameOf(number num:Int) -> String {
-        guard let vSkillList = skills else {
-            print("error-! - vSkillList")
-            return ""
-        }
+        guard let vSkillList = skills else { print("ERROR- vSkillList"); return "" }
         
         if num >= vSkillList.count {
-            return "Index out of range"
+            return "\(num+1)번 공격이 없습니다."
         }else {
             let skillElement:[String:Any] = vSkillList[num]
             
@@ -62,10 +56,7 @@ class PocketMon {
     }
     
     func returnSkillDamageOf(number num:Int) -> Int {
-        guard let vSkillList = skills else {
-            print("error-! - vSkillList")
-            return 0
-        }
+        guard let vSkillList = skills else { print("ERROR- vSkillList"); return 0 }
         
         if num >= vSkillList.count {
             return 0
