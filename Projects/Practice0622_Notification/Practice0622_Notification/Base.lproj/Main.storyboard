@@ -71,16 +71,35 @@
                                 <rect key="frame" x="163" y="318" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="SwitchAction:" destination="HUg-9a-YRp" eventType="valueChanged" id="1Xe-tx-ddn"/>
+                                    <action selector="switchAction:" destination="HUg-9a-YRp" eventType="valueChanged" id="sfk-PD-fNR"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezt-VA-gVf">
+                                <rect key="frame" x="161" y="425" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="plus (+)"/>
+                                <connections>
+                                    <action selector="plusButtonAction:" destination="HUg-9a-YRp" eventType="touchUpInside" id="CFX-M0-YuN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iR2-sT-4NP">
+                                <rect key="frame" x="156" y="488" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="minus (-)"/>
+                                <connections>
+                                    <action selector="minusButtonAction:" destination="HUg-9a-YRp" eventType="touchUpInside" id="tXT-SM-jqa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="switchSpecial" destination="ylr-V9-mAR" id="h4L-63-HfP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ier-L1-vk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="139"/>
+            <point key="canvasLocation" x="1932" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t2a-1P-n2T">

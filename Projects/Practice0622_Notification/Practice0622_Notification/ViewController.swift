@@ -16,23 +16,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.callNoti(_:)), name: Notification.Name("postNoti"), object: nil)
+        UserDefaults.standard.set(true, forKey: "rememberSwitch")
         
     }
     
-    func callNoti(_ sender:Notification) {
-//        labelMain.text = sender.object as? String
-        labelMain.isHidden = sender.object as! Bool
-        switchMain.setOn(sender.object as! Bool, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.callNoti(_:)), name: Notification.Name("postNoti"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.callResponse(_:)), name: NSNotification.Name("testNoti"), object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func callNoti(_ sender:Notification) {
+//        labelMain.text = sender.object as? String
+//        labelMain.isHidden = sender.object as! Bool
+        switchMain.setOn(sender.object as! Bool, animated: true)
+    }
     
-//    reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in return s1 > s2 })
-    
+    func callResponse(_ sender:Notification) {
+        labelMain.text = sender.object as? String
+    }
+
 }
 
