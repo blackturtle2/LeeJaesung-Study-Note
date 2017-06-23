@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fiM-71-sjM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Lotto 645-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Practice0623_LottoApp_Closure" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,6 +46,7 @@
                                                 <state key="normal" title="History"/>
                                                 <connections>
                                                     <action selector="buttonHistoryAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hf0-vS-UQE"/>
+                                                    <segue destination="dmo-PJ-DOs" kind="show" identifier="MoveHistoryView" id="WVL-4b-uZS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edX-a8-JK3">
@@ -70,6 +71,9 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRV-CJ-85C">
                                         <rect key="frame" x="0.0" y="330.5" width="250" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="ZS3-qT-9Qo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -90,12 +94,85 @@
                             <constraint firstItem="tcs-eL-NVj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vf0-zv-0mA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Lotto 645" id="awP-YW-wbU"/>
                     <connections>
                         <outlet property="labelResult" destination="VRV-CJ-85C" id="FRd-iP-Eo2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="542" y="184"/>
+        </scene>
+        <!--Lotto History-->
+        <scene sceneID="Vm2-8y-3hg">
+            <objects>
+                <viewController title="Lotto History" id="dmo-PJ-DOs" customClass="HistoryViewController" customModule="Practice0623_LottoApp_Closure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9j6-el-mJd"/>
+                        <viewControllerLayoutGuide type="bottom" id="iZs-DP-KZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YYg-ag-0gV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xgh-PP-JMZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Cok-y2-Ixw" style="IBUITableViewCellStyleDefault" id="Rzl-RN-IyG">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rzl-RN-IyG" id="7fr-sV-6Ma">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cok-y2-Ixw">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dmo-PJ-DOs" id="gV3-XF-Rgq"/>
+                                    <outlet property="delegate" destination="dmo-PJ-DOs" id="PIt-5p-l6E"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xgh-PP-JMZ" firstAttribute="height" secondItem="YYg-ag-0gV" secondAttribute="height" id="9Ph-8R-NNu"/>
+                            <constraint firstItem="Xgh-PP-JMZ" firstAttribute="width" secondItem="YYg-ag-0gV" secondAttribute="width" id="DDe-Dn-nPM"/>
+                            <constraint firstItem="Xgh-PP-JMZ" firstAttribute="centerY" secondItem="YYg-ag-0gV" secondAttribute="centerY" id="JmR-Nx-IiF"/>
+                            <constraint firstItem="Xgh-PP-JMZ" firstAttribute="centerX" secondItem="YYg-ag-0gV" secondAttribute="centerX" id="zcb-Fe-6PO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaU-cj-Qjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="184"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z7y-lA-kMI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fiM-71-sjM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pqS-Um-vC8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gwe-I9-Oqy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4t-8c-qVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="541.60000000000002" y="-594.15292353823088"/>
         </scene>
     </scenes>
 </document>

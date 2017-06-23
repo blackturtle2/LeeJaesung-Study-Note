@@ -12,6 +12,7 @@
 		FE2021AA1EFCA80600BB10E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2021A81EFCA80600BB10E9 /* Main.storyboard */; };
 		FE2021AC1EFCA80600BB10E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2021AB1EFCA80600BB10E9 /* Assets.xcassets */; };
 		FE2021AF1EFCA80600BB10E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2021AD1EFCA80600BB10E9 /* LaunchScreen.storyboard */; };
+		FE2021B71EFD26F200BB10E9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2021B61EFD26F200BB10E9 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FE2021AB1EFCA80600BB10E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2021AE1EFCA80600BB10E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2021B01EFCA80600BB10E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2021B61EFD26F200BB10E9 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				FE2021A81EFCA80600BB10E9 /* Main.storyboard */,
 				FE2021A41EFCA80600BB10E9 /* AppDelegate.swift */,
 				FE2021A61EFCA80600BB10E9 /* MainViewController.swift */,
+				FE2021B61EFD26F200BB10E9 /* HistoryViewController.swift */,
 				FE2021AB1EFCA80600BB10E9 /* Assets.xcassets */,
 				FE2021B01EFCA80600BB10E9 /* Info.plist */,
 			);
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2021B71EFD26F200BB10E9 /* HistoryViewController.swift in Sources */,
 				FE2021A71EFCA80600BB10E9 /* MainViewController.swift in Sources */,
 				FE2021A51EFCA80600BB10E9 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +305,7 @@
 				FE2021B51EFCA80600BB10E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
