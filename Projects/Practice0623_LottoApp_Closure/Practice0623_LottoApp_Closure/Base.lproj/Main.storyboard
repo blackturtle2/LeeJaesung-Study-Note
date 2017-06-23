@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Practice0623_LottoApp_Closure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="tcs-eL-NVj">
+                                <rect key="frame" x="62.5" y="158" width="250" height="351"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lotto 645" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n4-ud-TBQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbG-fJ-ED4">
+                                        <rect key="frame" x="0.0" y="70.5" width="250" height="30"/>
+                                        <state key="normal" title="S.T.A.R.T"/>
+                                        <connections>
+                                            <action selector="buttonStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdC-z9-6Iv"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-Wc-zoZ">
+                                        <rect key="frame" x="0.0" y="150.5" width="250" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-ZQ-ewd">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                                <state key="normal" title="History"/>
+                                                <connections>
+                                                    <action selector="buttonHistoryAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hf0-vS-UQE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edX-a8-JK3">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="buttonResetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHz-GC-RXL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="edX-a8-JK3" firstAttribute="width" secondItem="9C1-Wc-zoZ" secondAttribute="width" multiplier="1/2" id="IqG-0s-F8R"/>
+                                            <constraint firstItem="WDV-ZQ-ewd" firstAttribute="width" secondItem="9C1-Wc-zoZ" secondAttribute="width" multiplier="1/2" id="igb-uo-WTR"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYn-LL-jGu">
+                                        <rect key="frame" x="0.0" y="230.5" width="240" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="LRb-JK-3v0"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRV-CJ-85C">
+                                        <rect key="frame" x="0.0" y="330.5" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bbG-fJ-ED4" firstAttribute="width" secondItem="tcs-eL-NVj" secondAttribute="width" id="AGe-tn-H2Z"/>
+                                    <constraint firstItem="8n4-ud-TBQ" firstAttribute="width" secondItem="tcs-eL-NVj" secondAttribute="width" id="kpE-8D-bFg"/>
+                                    <constraint firstItem="9C1-Wc-zoZ" firstAttribute="width" secondItem="tcs-eL-NVj" secondAttribute="width" id="pkb-cS-chZ"/>
+                                    <constraint firstItem="VRV-CJ-85C" firstAttribute="width" secondItem="tcs-eL-NVj" secondAttribute="width" id="qQd-J5-K5i"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tcs-eL-NVj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2/3" id="Zqr-p6-dpf"/>
+                            <constraint firstItem="tcs-eL-NVj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vOX-Bn-qqL"/>
+                            <constraint firstItem="tcs-eL-NVj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vf0-zv-0mA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelResult" destination="VRV-CJ-85C" id="FRd-iP-Eo2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
