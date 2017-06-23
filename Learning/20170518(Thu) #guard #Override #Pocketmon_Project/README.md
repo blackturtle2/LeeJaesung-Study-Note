@@ -14,17 +14,14 @@
 ## guard 문
  - 가드문은 if-let으로 처리할 수 있었던 것을 `indent`가 너무 남발한다는 관점으로 탄생(?)하게 되었다.
 
-```
+```swift
 func test(num:Int?) -> Int {
-
 	guard let realNum = num else {
 		//옵셔널일 때, 여기서 끝나고. 아니면, 가드문을 통과하고 지나간다. ( 다음 액션을 실행한다. )
 		return
-	
 	}
 	
 	return realnum * realnum
-
 }
 ```
 
@@ -36,7 +33,7 @@ func test(num:Int?) -> Int {
  - `오버로드`: 같은 함수의 이름을 재정의하는 것.
 	 - 스위프트 고유의 것. Objective-C의 클래스(NSObject 등)을 상속 받으면, 불가능하다.
 
-```
+```swift
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
