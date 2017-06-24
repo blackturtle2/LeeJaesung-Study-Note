@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE303ED21EFE5B9600F24602 /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE303ED11EFE5B9600F24602 /* PlaygroundViewController.swift */; };
 		FEB73B931EFBD8640022266F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73B921EFBD8640022266F /* AppDelegate.swift */; };
 		FEB73B951EFBD8640022266F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73B941EFBD8640022266F /* MainViewController.swift */; };
 		FEB73B981EFBD8640022266F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB73B961EFBD8640022266F /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE303ED11EFE5B9600F24602 /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 		FEB73B8F1EFBD8640022266F /* JS_iOSDevKitCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS_iOSDevKitCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB73B921EFBD8640022266F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEB73B941EFBD8640022266F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				FEB73B9B1EFBD8640022266F /* LaunchScreen.storyboard */,
 				FEB73B961EFBD8640022266F /* Main.storyboard */,
+				FE303ED11EFE5B9600F24602 /* PlaygroundViewController.swift */,
 				FEB73B921EFBD8640022266F /* AppDelegate.swift */,
 				FEB73B941EFBD8640022266F /* MainViewController.swift */,
 				FEB73B991EFBD8640022266F /* Assets.xcassets */,
@@ -212,6 +215,7 @@
 				FEB73BB41EFBE9640022266F /* MonKkobugi.swift in Sources */,
 				FEB73BA51EFBE1880022266F /* CaculationViewController.swift in Sources */,
 				FEB73B951EFBD8640022266F /* MainViewController.swift in Sources */,
+				FE303ED21EFE5B9600F24602 /* PlaygroundViewController.swift in Sources */,
 				FEB73BB01EFBE9640022266F /* PocketmonViewController.swift in Sources */,
 				FEB73BC31EFC00D50022266F /* Car.swift in Sources */,
 				FEB73BC11EFC00D50022266F /* VendingMachineViewController.swift in Sources */,
@@ -385,6 +389,7 @@
 				FEB73BA31EFBD8640022266F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
