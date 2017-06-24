@@ -62,10 +62,10 @@
 				FEA5A9E51EF933A3005994D2 /* AppDelegate.swift */,
 				FEA5A9E71EF933A3005994D2 /* ViewController.swift */,
 				FEA5A9F71EF95DD1005994D2 /* DataCenter.swift */,
-				FEA5A9F91EF95E66005994D2 /* MyAppleProduct.plist */,
 				FEA5A9EC1EF933A3005994D2 /* Assets.xcassets */,
 				FEA5A9EE1EF933A3005994D2 /* LaunchScreen.storyboard */,
 				FEA5A9F11EF933A3005994D2 /* Info.plist */,
+				FEA5A9F91EF95E66005994D2 /* MyAppleProduct.plist */,
 			);
 			path = Practice0620_TableViewCellForIndexPath;
 			sourceTree = "<group>";
