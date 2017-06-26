@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--JS Timer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="JS Timer" id="BYZ-38-t0r" customClass="ViewController" customModule="Practice0626_TimerClosure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-Jv-exg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="520099200.80990398">
+                                    <!--2017-06-25 16:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="myDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="6eZ-yz-0Go"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njU-K5-UEe">
+                                <rect key="frame" x="-0.5" y="320" width="375" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTW-Vn-Lvw">
+                                <rect key="frame" x="157" y="380" width="61" height="30"/>
+                                <state key="normal" title="S.T.A.R.T"/>
+                                <connections>
+                                    <action selector="buttonStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EeF-s5-Qci"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dud-Jv-exg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFb-5I-9UN"/>
+                            <constraint firstItem="njU-K5-UEe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oxk-Nf-Ewx"/>
+                            <constraint firstItem="pTW-Vn-Lvw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPY-8A-ppL"/>
+                            <constraint firstItem="njU-K5-UEe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kdV-NJ-XvA"/>
+                            <constraint firstItem="pTW-Vn-Lvw" firstAttribute="top" secondItem="njU-K5-UEe" secondAttribute="bottom" constant="32.5" id="rVP-rO-3kQ"/>
+                            <constraint firstItem="Dud-Jv-exg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="sRY-3R-mV3"/>
+                            <constraint firstItem="Dud-Jv-exg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t5W-HU-Xgx"/>
+                            <constraint firstItem="njU-K5-UEe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zSe-i4-E37"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelMain" destination="njU-K5-UEe" id="bjb-dF-uBm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
