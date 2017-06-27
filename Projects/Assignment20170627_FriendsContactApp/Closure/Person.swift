@@ -3,7 +3,6 @@
 //  Closure
 //
 //  Created by youngmin joo on 2017. 6. 26..
-//  Copyright © 2017년 WingsCompany. All rights reserved.
 //
 
 import Foundation
@@ -12,6 +11,7 @@ enum Gender
 {
     case Man
     case Woman
+    case Unknown
 }
 
 struct Person {
@@ -19,3 +19,4 @@ struct Person {
     var gender:Gender
     var age:Int
 }
+

@@ -71,10 +71,13 @@
                                 <segment title="Man"/>
                                 <segment title="Woman"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlGenderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7ut-4T-LMN"/>
+                            </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="qDs-rd-V64">
                             <connections>
-                                <segue destination="pji-bu-c0S" kind="show" id="qsp-3y-yxJ"/>
+                                <segue destination="pji-bu-c0S" kind="show" identifier="moveDetailViewController" id="qsp-3y-yxJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -99,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OQn-f3-pvR">
-                                <rect key="frame" x="32" y="80" width="311" height="122"/>
+                                <rect key="frame" x="32" y="80" width="311" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mn-qf-h82">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="30"/>
@@ -131,25 +134,30 @@
                                                 <rect key="frame" x="43" y="0.0" width="268" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAu-Ch-oMC">
-                                        <rect key="frame" x="0.0" y="92" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="92" width="311" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxM-i5-aZr">
-                                                <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-Lc-z81">
-                                                <rect key="frame" x="43" y="0.0" width="268" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Hb-Xj-E4p">
+                                                <rect key="frame" x="43" y="0.0" width="268" height="29"/>
+                                                <segments>
+                                                    <segment title="Man"/>
+                                                    <segment title="Woman"/>
+                                                    <segment title="Unknown"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentedControlGenderValueChanged:" destination="pji-bu-c0S" eventType="valueChanged" id="a23-1E-d2x"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -160,7 +168,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Ow7-sX-gco"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="삭제">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -189,8 +197,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="navigationItemTitle" destination="GHR-Z7-Cef" id="6g4-es-aoN"/>
+                        <outlet property="segmentedControlGender" destination="9Hb-Xj-E4p" id="HiR-M0-kHB"/>
                         <outlet property="textFieldAge" destination="d0V-4f-0Fd" id="h4v-Rn-adU"/>
-                        <outlet property="textFieldGender" destination="tSP-Lc-z81" id="413-fy-vNI"/>
                         <outlet property="textFieldName" destination="rKn-Ty-Lt2" id="ZSp-2N-oxk"/>
                     </connections>
                 </viewController>

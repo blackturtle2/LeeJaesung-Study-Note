@@ -1,8 +1,9 @@
 //
 //  AppDelegate.swift
-//  Closure
+//  Practice0627_StudyDataModeling
 //
-//  Created by youngmin joo on 2017. 6. 21..
+//  Created by leejaesung on 2017. 6. 27..
+//  Copyright © 2017년 leejaesung. All rights reserved.
 //
 
 import UIKit
