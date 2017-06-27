@@ -34,6 +34,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     // MARK: 회원가입 버튼 액션 정의
     @IBAction func buttonRegister(_ sender: UIButton) {
         
+        
         // -- 예외처리 시작 -- //
         if (textFieldID.text?.isEmpty)! || (textFieldPassword.text?.isEmpty)! || (textFieldName.text?.isEmpty)! {
             showDialog(title: "알림", message: "회원가입 정보가 충분하지 않습니다.\r다시 확인해주세요.")
