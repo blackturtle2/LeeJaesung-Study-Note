@@ -14,13 +14,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var segmentedControlGender: UISegmentedControl!
     @IBOutlet weak var navigationItemTitle: UINavigationItem!
     
-    var vPerson:Person?
+    var vPerson = Person(pName: "", pGender: Gender.Man)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        vPerson?.gender = .Man
 
     }
 
@@ -37,18 +35,19 @@ class DetailViewController: UIViewController {
             return
         }
         
-        vPerson?.name = textFieldName.text!
-        vPerson?.age = Int(textFieldAge.text!)!
+        vPerson.name = textFieldName.text!
+//        vPerson.age = textFieldAge.text!
+        vPerson.gender = Gender(rawValue: segmentedControlGender.selectedSegmentIndex)!
         
         // UserDefaults 데이터 - nil 여부 체크.
         guard let vArrayTotalFriends = UserDefaults.standard.array(forKey: "friends") else {
-            UserDefaults.standard.set([["Name": textFieldName.text!, "Age": textFieldAge.text!, "Gender": Gender.Man]], forKey: "friends")
+            UserDefaults.standard.set([["Name": vPerson.name, "Age": vPerson.age!, "Gender": vPerson.gender]], forKey: "friends")
             return
         }
         // ***** 예외 처리 끝***** //
         
         var arrayTotalFriends = vArrayTotalFriends
-        let dicNewFriend:[String:Any] = ["Name": textFieldName.text!, "Age": textFieldAge.text!, "Gender": Gender.Man]
+        let dicNewFriend:[String:Any] = ["Name": vPerson.name, "Age": vPerson.age!, "Gender": vPerson.gender]
         
         arrayTotalFriends.append(dicNewFriend)
         
@@ -57,20 +56,6 @@ class DetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
         
     }
-    
-    @IBAction func segmentedControlGenderValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            vPerson?.gender = .Man
-        case 1:
-            vPerson?.gender = .Woman
-        case 2:
-            vPerson?.gender = .Unknown
-        default :
-            return
-        }
-    }
-
     
     @IBAction func buttonDeleteAction(_ sender: UIButton) {
         

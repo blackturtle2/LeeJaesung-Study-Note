@@ -23,7 +23,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         // ***** 예외 처리 시작 ***** //
         guard let vArrayTotalFriends = UserDefaults.standard.array(forKey: "friends") else {
@@ -58,8 +57,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let dicFriend = vArrayFriends[indexPath.row] 
         
-        myCell.textLabel?.text = dicFriend["Name"]
-        myCell.detailTextLabel?.text = dicFriend["Age"]
+        myCell.textLabel?.text = "\(dicFriend["Name"]!)"
+        myCell.detailTextLabel?.text = "\(dicFriend["Age"]!)"
         
         return myCell
     }

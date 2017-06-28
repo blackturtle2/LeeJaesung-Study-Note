@@ -15,17 +15,17 @@ class DataCenter {
     var friendList:[Person]?
     
     init() {
-        loadDataCenter()
+//        loadDataCenter()
     }
     
-    func loadDataCenter() {
-        friendList = UserDefaults.standard.array(forKey: "friends") as! [Person]
-    }
-    
-    func saveData(_ name:String) {
-        let vPerson:Person
-        
-        
-    }
+//    func loadDataCenter() {
+//        friendList = UserDefaults.standard.array(forKey: "friends") as! [Person]
+//    }
+//    
+//    func saveData(_ name:String) {
+//        let vPerson:Person
+//        
+//        
+//    }
     
 }
