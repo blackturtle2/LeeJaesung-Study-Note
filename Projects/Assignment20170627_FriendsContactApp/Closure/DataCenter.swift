@@ -8,55 +8,74 @@
 import Foundation
 
 
-class FriendList {
-    var arrayFriendList:[Friend] = []
+struct FriendList {
+    var arrFriendList:[Friend] = []
     
-    init(pData:[[String:Any]]) {
-        for i:[String:Any] in pData {
-            arrayFriendList.append(Friend(data: i))
+    init(Data:[[String:Any]]) {
+        for item:[String:Any] in Data {
+            arrFriendList.append(Friend(data: item))
         }
     }
-    
 }
 
-class Friend {
+struct Friend {
+    var pk:Int
     var name:String
     var gender:String
-    var age:String?
+    var age:Int?
     
     init(data:[String:Any]) {
-        name = data["name"] as? String ?? "(이름 없음)"
-        gender = data["gender"] as? String ?? "(성별 없음)"
+        pk = data["friend_pk"] as! Int
+        name = data["friend_name"] as? String ?? "(이름 없음)"
+        gender = data["friend_gender"] as? String ?? "(성별 없음)"
     }
     
+    init(primaryKey pk:Int, name aName:String, gender aGender:String) {
+        self.pk = pk
+        self.name = aName
+        self.gender = aGender
+    }
+    
+    var dic:[String:Any] {
+        var dicResult:[String:Any] = [:]
+        dicResult.updateValue(pk, forKey: "friend_pk")
+        dicResult.updateValue(name, forKey: "friend_name")
+        dicResult.updateValue(gender, forKey: "friend_gender")
+        dicResult.updateValue(age ?? 0, forKey: "friend_age")
+        
+        return dicResult
+    }
 }
 
 class DataCenter {
     
     static let sharedInstance:DataCenter = DataCenter()
-    var arrayFriendList:FriendList?
+    
+    var arrFriendListData:FriendList?
     
     init() {
         loadData()
     }
     
     func loadData() {
-        if let vArrayData = UserDefaults.standard.array(forKey: "friends") {
-            arrayFriendList = FriendList(pData: vArrayData as! [[String : Any]])
-        }else {
-            print("ERROR- ")
+        guard let arrData = UserDefaults.standard.array(forKey: "friends") else {
+            print("ERROR- loadData_guard_let")
+            return
         }
+        
+        self.arrFriendListData = FriendList(Data: arrData as! [[String : Any]])
     }
     
-}
-
-func saveFriendOf(person pData:Friend) {
-    guard var vArrayTotalFriendList = UserDefaults.standard.array(forKey: "friends") else {
-        UserDefaults.standard.set([["Name": pData.name, "Age": pData.age, "Gender": pData.gender]], forKey: "friends")
-        return
+    func saveDataOf(friend aFriend:Friend) {
+        guard var arrData = UserDefaults.standard.array(forKey: "friends") else {
+            UserDefaults.standard.set([aFriend.dic], forKey: "friends")
+            print("ERROR- saveDataOf_guard_let")
+            return
+        }
+        
+        arrData.append(aFriend.dic)
+        
+        UserDefaults.standard.set(arrData, forKey: "friends")
+        print("Success- UserDefaults_set")
     }
-    
-    vArrayTotalFriendList.append(["Name": pData.name, "Age": pData.age, "Gender": pData.gender])
-    
-    UserDefaults.standard.set(vArrayTotalFriendList, forKey: "friends")
 }

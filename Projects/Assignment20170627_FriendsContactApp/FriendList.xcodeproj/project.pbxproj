@@ -66,10 +66,10 @@
 			children = (
 				50EEB5831EFA068400BA7236 /* Main.storyboard */,
 				50EEB5881EFA068400BA7236 /* LaunchScreen.storyboard */,
+				FE2022121F026C8F00BB10E9 /* JS_ToolBox.swift */,
 				FEED7E401F03EDD1006CD172 /* TestViewController.swift */,
 				506A55F81F01012D000CA062 /* DataCenter.swift */,
 				506A55F41F00FE34000CA062 /* Person.swift */,
-				FE2022121F026C8F00BB10E9 /* JS_ToolBox.swift */,
 				50EEB57F1EFA068400BA7236 /* AppDelegate.swift */,
 				50EEB5811EFA068400BA7236 /* MainViewController.swift */,
 				506A55F61F00FF87000CA062 /* DetailViewController.swift */,

@@ -232,17 +232,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiA-oJ-Nv8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiA-oJ-Nv8">
                                 <rect key="frame" x="164" y="132" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonTest:" destination="PdE-ox-TrX" eventType="touchUpInside" id="fGU-eI-uKQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-Hu-zTd">
+                                <rect key="frame" x="-0.5" y="72" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nPc-Hu-zTd" firstAttribute="centerX" secondItem="wxf-6x-vSd" secondAttribute="centerX" id="ITw-K0-X7u"/>
+                            <constraint firstItem="nPc-Hu-zTd" firstAttribute="top" secondItem="Ugi-5o-bK9" secondAttribute="bottom" constant="52" id="QHW-Is-NNe"/>
+                            <constraint firstItem="kiA-oJ-Nv8" firstAttribute="top" secondItem="nPc-Hu-zTd" secondAttribute="bottom" constant="39" id="aN8-1J-xkX"/>
+                            <constraint firstItem="nPc-Hu-zTd" firstAttribute="width" secondItem="wxf-6x-vSd" secondAttribute="width" id="iNF-Oe-jCP"/>
+                            <constraint firstItem="kiA-oJ-Nv8" firstAttribute="centerX" secondItem="wxf-6x-vSd" secondAttribute="centerX" id="umZ-wK-Bft"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelName" destination="nPc-Hu-zTd" id="JdJ-lK-xab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOC-xD-EKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

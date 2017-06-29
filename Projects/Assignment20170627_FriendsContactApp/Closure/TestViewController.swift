@@ -13,15 +13,15 @@ class TestViewController: UIViewController {
     var myPerson:Friend?
     var myFriendList:FriendList?
     
+    @IBOutlet weak var labelName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myFriendList = DataCenter.sharedInstance.arrayFriendList
+        myFriendList = DataCenter.sharedInstance.arrFriendListData
         
-        myPerson = Friend(data: ["name":"leejaesung", "gender":"man"])
-        myPerson?.age = "30"
-        
+        print(myFriendList?.arrFriendList[0].name ?? "ERROR- no data")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,13 +30,9 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func buttonTest(_ sender:UIButton) {
+        let testData:Friend = Friend(primaryKey: 1, name: "leejaesung", gender: "Man")
         
-        saveFriendOf(person: myPerson!)
-        
-        let data = UserDefaults.standard.array(forKey: "friends")
-        print(data)
-        
-        
+        DataCenter.sharedInstance.saveDataOf(friend: testData)
     }
 
 }
