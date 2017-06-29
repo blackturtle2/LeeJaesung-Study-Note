@@ -10,16 +10,17 @@ import UIKit
 
 class TestViewController: UIViewController {
     
-    var myPerson:Person?
-    var myFriendList:FriendsList?
+    var myPerson:Friend?
+    var myFriendList:FriendList?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        myPerson = Person(pName: "Kimsehwa", pGender: .Woman)
-        myPerson?.age = 31
         
+        myFriendList = DataCenter.sharedInstance.arrayFriendList
+        
+        myPerson = Friend(data: ["name":"leejaesung", "gender":"man"])
+        myPerson?.age = "30"
         
     }
 
@@ -29,11 +30,11 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func buttonTest(_ sender:UIButton) {
-        myFriendList?.saveFriend(person: myPerson!)
         
-        print(UserDefaults.standard.array(forKey: "friends"))
+        saveFriendOf(person: myPerson!)
         
-        print(myFriendList?.getFriendNameOf(index: 0))
+        let data = UserDefaults.standard.array(forKey: "friends")
+        print(data)
         
         
     }
