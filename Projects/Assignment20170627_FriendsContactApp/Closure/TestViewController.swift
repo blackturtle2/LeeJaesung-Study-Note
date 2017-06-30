@@ -18,10 +18,11 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myFriendList = DataCenter.sharedInstance.arrFriendListData
+        myFriendList = DataCenter.sharedInstance.dicFriendListData
         
-        print(myFriendList?.arrFriendList[0].name ?? "ERROR- no data")
-
+        print(myFriendList?.dicFriendList ?? "ERROR- no data")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +31,7 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func buttonTest(_ sender:UIButton) {
-        let testData:Friend = Friend(primaryKey: 1, name: "leejaesung", gender: "Man")
+        let testData:Friend = Friend(name: "leejaesung", gender: "Man")
         
         DataCenter.sharedInstance.saveDataOf(friend: testData)
     }

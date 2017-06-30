@@ -9,14 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    // 데이터 모델링 통해서 구조화해야 함.
+    var myFriendList:FriendList?
     
     @IBOutlet weak var tableViewMain: UITableView!
-    var vArrayFriends:[[String:String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myFriendList = DataCenter.sharedInstance.dicFriendListData
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
         
@@ -24,8 +24,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print(myFriendList?.dicFriendList ?? "ERROR- no data")
+        
         // ***** 예외 처리 시작 ***** //
-        guard let vArrayTotalFriends = UserDefaults.standard.array(forKey: "friends") else {
+        if myFriendList == nil {
             JS_ToolBox.showOkAlert(sender: self, title: "알림", massage: "친구가 1도 없네요. :P\r새 친구를 등록해주세요.", handler: { (action) in
                 self.performSegue(withIdentifier: "moveDetailViewController", sender: nil)
             })
@@ -33,7 +35,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         // ***** 예외 처리 끝 ***** //
         
-        vArrayFriends = vArrayTotalFriends as! [[String:String]]
+        DataCenter.sharedInstance.loadData()
+        
         tableViewMain.reloadData()
     }
 
@@ -49,17 +52,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Row의 수는 Array 카운트.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vArrayFriends.count
+        return (myFriendList?.dicFriendList.count)!
     }
     
     // MARK: 테이블 뷰 Cell 그리기.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let dicFriend = vArrayFriends[indexPath.row] 
+        let dicFriend = myFriendList?.dicFriendList
         
-        myCell.textLabel?.text = "\(dicFriend["Name"]!)"
-        myCell.detailTextLabel?.text = "\(dicFriend["Age"]!)"
-        
+//        myCell.textLabel?.text = "\(dicFriend?["Name"]!)"
+//        myCell.detailTextLabel?.text = "\(dicFriend?["Age"]!)"
+
         return myCell
     }
     
