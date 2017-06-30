@@ -112,7 +112,7 @@ class DataCenter {
         print("Success- UserDefaults_set")
     }
     
-    func loadOrderOfArr() -> [Friend] {
-        dicFriendListData
-    }
+//    func loadOrderOfArr() -> [Friend] {
+//        
+//    }
 }
