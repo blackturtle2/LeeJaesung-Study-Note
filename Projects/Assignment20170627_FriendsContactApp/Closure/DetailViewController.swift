@@ -27,9 +27,10 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: 완료 버튼 액션 정의.
     @IBAction func buttonItemComplete(_ sender: UIBarButtonItem) {
         // ***** 예외 처리 시작 ***** //
-        // Textfield - 비어있는지 체크.
+        // Textfield, 비어있는지 체크.
         if (textFieldName.text?.isEmpty)! || (textFieldAge.text?.isEmpty)! {
             JS_ToolBox.showOkAlert(sender: self, title: "알림", massage: "정보가 부족합니다.", handler: nil)
             return
@@ -59,6 +60,7 @@ class DetailViewController: UIViewController {
         
     }
     
+    // MARK: 삭제 버튼 액션 정의.
     @IBAction func buttonDeleteAction(_ sender: UIButton) {
         
     }

@@ -7,27 +7,27 @@
 
 import UIKit
 
+let cellIdentifier:String = "myCell"
+
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var myFriendList:FriendList?
     
     @IBOutlet weak var tableViewMain: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myFriendList = DataCenter.sharedInstance.dicFriendListData
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
-        print(myFriendList?.dicFriendList ?? "ERROR- no data")
+        print("\r[ ===== 데이터 점검 ===== ]")
+        print(DataCenter.sharedInstance.dicFriendListData ?? "ERROR- no data")
         
         // ***** 예외 처리 시작 ***** //
-        if myFriendList == nil {
+        if DataCenter.sharedInstance.dicFriendListData == nil {
             JS_ToolBox.showOkAlert(sender: self, title: "알림", massage: "친구가 1도 없네요. :P\r새 친구를 등록해주세요.", handler: { (action) in
                 self.performSegue(withIdentifier: "moveDetailViewController", sender: nil)
             })
@@ -36,8 +36,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // ***** 예외 처리 끝 ***** //
         
         DataCenter.sharedInstance.loadData()
-        
         tableViewMain.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,14 +52,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Row의 수는 Array 카운트.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (myFriendList?.dicFriendList.count)!
+        return DataCenter.sharedInstance.dicFriendListData?.dicFriendList.count ?? 0
     }
     
     // MARK: 테이블 뷰 Cell 그리기.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let dicFriend = myFriendList?.dicFriendList
+        let myCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
+        
+//        let dicFriend = DataCenter.sharedInstance.dicFriendListData?.dicFriendList
 //        myCell.textLabel?.text = "\(dicFriend?["Name"]!)"
 //        myCell.detailTextLabel?.text = "\(dicFriend?["Age"]!)"
 

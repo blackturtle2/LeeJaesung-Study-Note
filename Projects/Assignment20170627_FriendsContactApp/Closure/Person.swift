@@ -4,7 +4,17 @@
 ////
 ////  Created by youngmin joo on 2017. 6. 26..
 ////
-//
+
+
+
+
+
+// MARK: ***** ***** [ CAUTION ] I Don't use this Class-! ***** ***** *****
+
+
+
+
+
 //import Foundation
 //
 //enum Gender:Int {
@@ -70,14 +80,6 @@
 //        
 //        return vArrayTotalFriends[i]["Name"]!
 //    }
-////
-////    func getFriendAge(<#parameters#>) -> <#return type#> {
-////        <#function body#>
-////    }
-////    
-////    func getFriendGender(<#parameters#>) -> <#return type#> {
-////        <#function body#>
-////    }
 //    
 //    
 //}

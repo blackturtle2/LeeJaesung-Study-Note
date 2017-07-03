@@ -7,7 +7,10 @@
 
 import Foundation
 
+let userDefaultsForKey:String = "dicFriends"
 
+
+// MARK: *** FriendList를 단순 Array로 만들었을 때의 Struct ***
 //struct FriendList {
 //    var arrFriendList:[Friend] = []
 //    
@@ -18,6 +21,7 @@ import Foundation
 //    }
 //}
 
+// MARK: *** struct FriendList ***
 struct FriendList {
     var dicFriendList:[String:Friend] = [:] // [pk:Friend]; pk는 Date()로 저장.
     
@@ -28,6 +32,7 @@ struct FriendList {
     }
 }
 
+// MARK: *** struct Friend ***
 struct Friend {
     var name:String
     var gender:String
@@ -53,6 +58,7 @@ struct Friend {
     }
 }
 
+
 class DataCenter {
     
     static let sharedInstance:DataCenter = DataCenter()
@@ -64,7 +70,7 @@ class DataCenter {
         loadData()
     }
     
-//     Singleton에 UserDefaults로부터 Array를 통째로 받아서 넣는 function
+// MARK: *** loadData(): Singleton에 UserDefaults로부터 Array를 통째로 받아서 넣는 function ***
 //    func loadData() {
 //        guard let arrData = UserDefaults.standard.array(forKey: "friends") else {
 //            print("ERROR- loadData_guard_let")
@@ -73,10 +79,11 @@ class DataCenter {
 //        
 //        self.arrFriendListData = FriendList(Data: arrData as! [[String : Any]])
 //    }
-    
+
+    // MARK: *** loadData() ***
     // Array에서 PK가 있는 Dictionary로 전환하면서 function 재설계.
     func loadData() {
-        guard let dicData = UserDefaults.standard.dictionary(forKey: "dicFriends") else {
+        guard let dicData = UserDefaults.standard.dictionary(forKey: userDefaultsForKey) else {
             print("ERROR- loadData_guard_let")
             return
         }
@@ -84,7 +91,7 @@ class DataCenter {
         self.dicFriendListData = FriendList(Data: dicData as! [String : [String : Any]])
     }
     
-//    Friend 객체를 받아서 UserDefaults에 저장하는 function
+// MARK: *** saveDataOf(): Friend 객체를 받아서 UserDefaults에 저장하는 function ***
 //    func saveDataOf(friend aFriend:Friend) {
 //        guard var arrData = UserDefaults.standard.array(forKey: "friends") else {
 //            UserDefaults.standard.set([aFriend.dic], forKey: "friends")
@@ -98,21 +105,29 @@ class DataCenter {
 //        print("Success- UserDefaults_set")
 //    }
     
+    // MARK: *** saveDataOf() ***
     // Array에서 PK가 있는 Dictionary로 전환하면서 function 재설계.
     func saveDataOf(friend aFriend:Friend) {
-        guard var dicData = UserDefaults.standard.dictionary(forKey: "dicFriends") else {
-            UserDefaults.standard.set(["\(Date())":aFriend.dic], forKey: "dicFriends")
+        guard var dicData = UserDefaults.standard.dictionary(forKey: userDefaultsForKey) else {
+            UserDefaults.standard.set(["\(Date())":aFriend.dic], forKey: userDefaultsForKey)
+            loadData() // Singleton 인스턴스에도 값이 저장되도록 한다.
             print("ERROR- saveDataOf_guard_let")
             return
         }
         
         dicData["\(Date())"] = aFriend.dic
         
-        UserDefaults.standard.set(dicData, forKey: "dicFriends")
+        UserDefaults.standard.set(dicData, forKey: userDefaultsForKey)
+        loadData() // Singleton 인스턴스에도 값이 저장되도록 한다.
+        
         print("Success- UserDefaults_set")
     }
     
-//    func loadOrderOfArr() -> [Friend] {
-//        
-//    }
+    // MARK: lineUpDicDataOfFriend(): Key값에 따라서 FriendList Dictionary를 정렬합니다.
+    func loadLineUpDicFriendList() -> [String:Friend] {
+        let sortedData = dicFriendListData?.dicFriendList.sorted(by: { $0.0 < $1.0 })
+        
+        return sortedData
+    }
+    
 }
