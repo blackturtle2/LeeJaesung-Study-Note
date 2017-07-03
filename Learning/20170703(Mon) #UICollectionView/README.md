@@ -70,19 +70,106 @@ override func collectionView(_ collectionView: UICollectionView, cellForItemAt i
 
 ## `UICollectionViewDelegate`
 
-```
-// Methods for notification of selection/deselection and highlight/unhighlight events.
-// The sequence of calls leading to selection from a user touch is:
-//
+ - Apple의 레퍼런스에 의하면, 아래의 순서로 Delegate 메소드가 호출된다.
+ - `should`(가능 여부)를 먼저 체크하고, `did`를 실행한다.
+ - `Highlight`는 touch를 시작했을 때, 호출된다.
+ - `Select`는 touch를 떼었을 때, 호출된다.
+
+> // (when the touch begins)
+> 
+> // 1. -collectionView:shouldHighlightItemAtIndexPath:
+> 
+> // 2. -collectionView:didHighlightItemAtIndexPath:
+> 
+> // (when the touch lifts)
+> 
+> // 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
+> 
+> // 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
+> 
+> // 5. -collectionView:didUnhighlightItemAtIndexPath:
+
+### `[ Sample ] UICollectionViewDelegate` 실험
+
+ - 각 Delegate 함수를 모두 호출하고, Print를 찍어 확인한다.
+ - UI 상의 확인을 위해 몇개의 UI적 요소를 추가한다.
+	 - `collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.black`
+
+```swift
+// MARK: ***** UICollectionViewDelegate *****
+    
 // (when the touch begins)
 // 1. -collectionView:shouldHighlightItemAtIndexPath:
-// 2. -collectionView:didHighlightItemAtIndexPath:
-//
+func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    print("shouldHighlightItemAt \(indexPath)")
+    
+    return true
+}
+    
+// 2. -collectionView:didHighlightItemAtIndexPath: item에 touch를 시작했을 때, Highlight가 됩니다.
+func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    print("didHighlightItemAt \(indexPath)")
+    
+    collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.orange
+}
+    
+    
 // (when the touch lifts)
-// 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
-// 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
+// 3-a. -collectionView:shouldSelectItemAtIndexPath:
+func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    print("shouldSelectItemAt \(indexPath)")
+    return true
+}
+    
+// 3-b. -collectionView:shouldDeselectItemAtIndexPath:
+func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+    print("shouldDeselectItemAt \(indexPath)")
+    return true
+}
+    
+// 4-a. -collectionView:didSelectItemAtIndexPath: item에 touch를 끝낼 때, 실행됩니다.
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("didSelectItemAt \(indexPath)")
+    
+    if collectionView.cellForItem(at: indexPath)?.backgroundColor == UIColor.black {
+        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.clear
+    }else {
+        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.black
+    }
+}
+    
+// 4-b. -collectionView:didDeselectItemAtIndexPath: 다른 item을 Select하면서 원래 선택된 item이 Deselect 됩니다.
+func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    print("didDeselectItemAt \(indexPath)")
+    
+    collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.gray
+}
+    
 // 5. -collectionView:didUnhighlightItemAtIndexPath:
+func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    print("didUnhighlightItemAt \(indexPath)")
+}
 ```
+
+### `결과`
+ - [0, 0]의 item을 터치하고, [0, 1]의 item을 터치한 결과.
+ - `Apple`의 가이드와는 다르게 `shuouldSelectItemAt`보다 `didUnhighlightItemAt`이 먼저 불린다.
+ - **한줄요약** : `Hightlight`를 체크하고, `Select`를 진행한다.
+
+```
+shouldHighlightItemAt [0, 0]
+didHighlightItemAt [0, 0]
+didUnhighlightItemAt [0, 0]
+shouldSelectItemAt [0, 0]
+didSelectItemAt [0, 0]
+shouldHighlightItemAt [0, 1]
+didHighlightItemAt [0, 1]
+didUnhighlightItemAt [0, 1]
+shouldSelectItemAt [0, 1]
+didDeselectItemAt [0, 0]
+didSelectItemAt [0, 1]
+```
+
 
 # [ Sample ] Multiple-Selection
 
