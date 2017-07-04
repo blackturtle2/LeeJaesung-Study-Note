@@ -127,6 +127,10 @@ class DataCenter {
     func loadLineUpDicFriendList() -> [String:Friend] {
         let sortedData = dicFriendListData?.dicFriendList.sorted(by: { $0.0 < $1.0 })
         
+        let sortData = dicFriendListData?.dicFriendList.sorted(by: { (item1:(key: String, value: Friend), item2:(key: String, value: Friend)) -> Bool in
+            
+        })
+        
         return sortedData
     }
     
