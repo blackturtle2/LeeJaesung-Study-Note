@@ -117,6 +117,7 @@ class DataCenter {
         
         dicData["\(Date())"] = aFriend.dic
         
+        
         UserDefaults.standard.set(dicData, forKey: userDefaultsForKey)
         loadData() // Singleton 인스턴스에도 값이 저장되도록 한다.
         
@@ -124,14 +125,14 @@ class DataCenter {
     }
     
     // MARK: lineUpDicDataOfFriend(): Key값에 따라서 FriendList Dictionary를 정렬합니다.
-    func loadLineUpDicFriendList() -> [String:Friend] {
-        let sortedData = dicFriendListData?.dicFriendList.sorted(by: { $0.0 < $1.0 })
-        
-        let sortData = dicFriendListData?.dicFriendList.sorted(by: { (item1:(key: String, value: Friend), item2:(key: String, value: Friend)) -> Bool in
-            
-        })
-        
-        return sortedData
-    }
+//    func loadLineUpDicFriendList() -> [String:Friend] {
+//        let sortedData = dicFriendListData?.dicFriendList.sorted(by: { $0.0 < $1.0 })
+//        
+//        let sortData = dicFriendListData?.dicFriendList.sorted(by: { (item1:(key: String, value: Friend), item2:(key: String, value: Friend)) -> Bool in
+//            
+//        })
+//        
+//        return sortedData
+//    }
     
 }
