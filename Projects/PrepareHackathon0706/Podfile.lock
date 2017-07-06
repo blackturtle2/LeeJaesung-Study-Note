@@ -1,0 +1,24 @@
+PODS:
+  - MarqueeLabel/Swift (3.1.0)
+  - NotificationBannerSwift (1.4.0):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 3.2)
+  - SnapKit (3.2.0)
+  - Toaster (2.0.4)
+  - YNDropDownMenu (2.3.2)
+
+DEPENDENCIES:
+  - NotificationBannerSwift
+  - Toaster
+  - YNDropDownMenu
+
+SPEC CHECKSUMS:
+  MarqueeLabel: 061d04687ee5485ac035b45c8e292274a87afe01
+  NotificationBannerSwift: b2a81c9f0f816851686ca2e802058afd65676adc
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
+  YNDropDownMenu: 9d9f1ae71a408d0e7c66a55da2a52232545fca5a
+
+PODFILE CHECKSUM: 68e59a445f4305625a7b2649245da3dfc9970253
+
+COCOAPODS: 1.2.1
