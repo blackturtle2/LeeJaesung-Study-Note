@@ -50,9 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nContent = UNMutableNotificationContent()
         
         nContent.badge = 1
-        nContent.body = "어서어서 들어오세요?"
-        nContent.title = "로컬 알림메세지"
-        nContent.subtitle = "서브타이틀"
+        nContent.title = "읽어봐(Var)"
+        nContent.body = "한줄 코드라도 서로 거들면 낫다."
+        nContent.subtitle = "오늘의 명언"
         nContent.sound = UNNotificationSound.default()
         
         

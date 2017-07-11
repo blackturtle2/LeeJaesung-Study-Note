@@ -62,6 +62,7 @@ class MainViewController: UIViewController {
         labelCommentName2?.text = tempCommentData.getDicOf(index: 1).nickName
         labelCommentContent2?.text = tempCommentData.getDicOf(index: 1).comment
         buttonCommentNum?.setTitle(String(tempCommentData._arrComment.count), for: .normal)
+        
     }
     
     @IBAction func buttonReloadAction(_ sender:UIButton) {

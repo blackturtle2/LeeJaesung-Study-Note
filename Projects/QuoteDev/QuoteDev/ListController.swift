@@ -23,7 +23,7 @@ class ListController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var currentIndex:Int = 0
     var newArrData:arrComment?
     
-
+	
     
     
     //확인 버튼 누를때 [배열[딕셔너리]] 에 데이터 저장

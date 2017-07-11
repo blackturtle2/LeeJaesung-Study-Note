@@ -65,6 +65,7 @@
                                         <state key="normal" image="ic_chat_bubble_outline"/>
                                         <connections>
                                             <action selector="buttonCommentAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cl4-PZ-Hkm"/>
+                                            <segue destination="Oqi-L1-SeL" kind="show" id="k80-Mc-5NS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMB-ez-rjt">
@@ -72,6 +73,9 @@
                                         <state key="normal" title="00">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Oqi-L1-SeL" kind="show" id="kfp-rD-ND5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPK-ge-VSl">
                                         <rect key="frame" x="335" y="10.5" width="24" height="24"/>
@@ -237,7 +241,7 @@
                 <viewControllerPlaceholder storyboardName="Comment" id="Oqi-L1-SeL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opu-U4-CtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="813"/>
+            <point key="canvasLocation" x="1710" y="793"/>
         </scene>
         <!--Setting-->
         <scene sceneID="NFd-3i-0mt">
@@ -245,7 +249,7 @@
                 <viewControllerPlaceholder storyboardName="Setting" id="oD7-iJ-4fS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb9-bc-3gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="534"/>
+            <point key="canvasLocation" x="1709" y="486"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FSq-5u-d0g">
@@ -273,5 +277,8 @@
         <image name="ic_favorite_border" width="24" height="24"/>
         <image name="ic_settings" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ewd-mE-dOz"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
