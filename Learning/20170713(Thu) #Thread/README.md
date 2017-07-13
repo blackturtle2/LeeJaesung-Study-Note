@@ -1,179 +1,46 @@
-# 패스트캠퍼스 강의 노트 40th ( 20170711 )
+# 패스트캠퍼스 강의 노트 41th ( 20170713 )
 
-# SubScript
+# Thread
 
- - `Subscript`는 별도의 `setter/getter`없이 `index`를 통해서 데이터를 설정하거나 값을 가져오는 기능을 할 수 있다.
- - `Array[index] / Dictionary[“Key”]` 등의 표현이 `Subscript`이다.
+> 스레드(thread)는 어떠한 프로그램 내에서, 특히 프로세스 내에 서 실행되는 흐름의 단위를 말한다. 일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 둘 이상의 스레드를 동시에 실행할 수 있다. 이러한 실행 방식을 `멀티 스레드 (multi thread)`라고 한다.
 
-## [ Sample ] `index를 통한 접근`
+## iOS Thread
+ - 모든 app은 기본적으로 `main thread`를 가지고 있다.
+ - use UIKit classes only from your app’s main thread.
+ - 기본적인 UI 및 모든 행동은 `main thread`에서 실행된다.
 
-```swift
-class Friends {
-    private var friendNames:[String] = []
-    subscript(index:Int) -> String
-    {
-        get {
-            return friendNames[index]
-        }
-        set {
-            friendNames[index] = newValue
-        }
-    }
-}
-let fList = Friends()fList[0] = "joo"
-```
-
-## [ Sample ] `Struct`
-
-```swift
-struct TimesTable {      let multiplier: Int      subscript(index: Int) -> Int {          return multiplier * index      }}
-let threeTimesTable = TimesTable(multiplier: 3)print("six times three is \(threeTimesTable[6])")
-```
-
-## [ Sample ] `Multi Parameter`
-
-```swift
-struct CustomMatrix {
-    let rows: Int
-    let columns: Int
-    var grid: [Double]
-    
-    init(aRows: Int, aColumns: Int) {
-        self.rows = aRows
-        self.columns = aColumns
-        grid = Array(repeating: 0.0, count: rows * columns)
-    }
-    
-    subscript(aRow:Int, aColumn:Int) -> Double {
-        get {
-            return grid[(aRow * aColumn) + aColumn]
-        }
-        set {
-            grid[(aRow * aColumn) + aColumn] = newValue
-        }
-    }
-    
-}
-    var myMatrix = CustomMatrix(aRows: 2, aColumns: 2)
-    
-    super.viewDidLoad()
-        
-    myMatrix[0,0] = 1
-    myMatrix[0,1] = 2
-        
-    print(myMatrix[0,0])
-```
-
-# Extensions
-
- - Extensions 기능은 기존 클래스, 구조, 열거 형 또는 프로토콜 유형에 새로운 기능을 추가한다.
- - 확장의 개념.
- - 클래스를 나눈 것은 아니기 때문에, 각 프로퍼티나 메소드는 접근제한자의 영향을 받을 뿐, Extensions의 영향을 받지는 않는다.
- - Extensions은 프로토콜을 채택할 수도 있기 때문에, UITableViewDelegate 같은 것들은 UIViewController에서 따로 빼내서 정리한다면, 소스가 한결 심플해보일 수 있다.
-
-```swift
-extension Double {
-    var km: Double { return self * 1_000.0 }
-    var m: Double { return self }
-    var cm: Double { return self / 100.0 }
-    var mm: Double { return self / 1_000.0 }
-    var ft: Double { return self / 3.28084 }
-}
-
-let oneInch = 25.4.mm
-print("One inch is \(oneInch) meters")
-// Prints "One inch is 0.0254 meters"
-
-let threeFeet = 3.ft
-print("Three feet is \(threeFeet) meters")
-// Prints "Three feet is 0.914399970739201 meters"
-```
-
-```swift
-extension Int {
-    func repetitions(task: () -> Void) {
-        for _ in 0..<self {
-            task() }
-    } }
-3.repetitions {
-    print("Hello!")
-}
-// Hello!
-// Hello!
-// Hello!
-```
+## When we use
+ - Network request/response
+ - time control
+ - image download/upload
+ - long time actions
 
 
-# Generic
+## 동기와 비동기
+ - 비동기 (Asynchronous: 동시에 일어나지 않는, 非同期: 같은 시기가 아닌)
+ - 동기 (synchronous: 동시에 일어나는, 同期: 같은 시기)### 디자인 패턴에 의한 비동기처리
+- 델리게이트(delegate), 셀렉터(@selector), 블록(a.k.a 클로저, block), 노티피케이션(Notification)### 큐를 이용한 비동기처리 방법
+ - GCD로 가능.
+ - dispatch_sync(...), dispatch_async(...)
 
- - Array는 Generic이기 때문에 타입을 지정해주지 않으면 만들 수 없다.
- - 꺽쇠 `< >` 부분이 들어가면, 제네릭이라고 부른다.
+### 교착 상태
+ - 교착 상태(膠着狀態, 영어: deadlock)란 두 개 이상의 작업이 서로 상대방의 작업이 끝나기만을 기다리고 있기 때문에 결과 적으로 아무것도 완료되지 못하는 상태를 가리킨다
 
-## [ Sample ] T를 활용한 예제
 
-```swift
-func swapTwoValues<T>(_ a: inout T, _ b: inout T) { let temporaryA = a
-    a=b
-    b = temporaryA
-}
+# Multithread
 
-var someInt = 3
-var anotherInt = 107
+ - `Thread` : 직접 thread를 만들어서 제어 하는 방식.
+ - `GCD` : Closure 기반의 기법으로 코드 가독성이 좋고 간편하다. // GCD : Grand Central Dispatch.
+ - `Operation` : GCD기반의 rapper Class. 간단하게 사용가능하고 고수준의 API를 제공한다. 성능이 느린 편.
+	 - GCD는 C언어 기반의 문법으로 구성되어 있었다. ( Obj-C 시절에.. )
+	 - GCD와 Operation 모두, Swift 시대를 맞이하여, 새롭게 탈바꿈하였기 때문에 둘 모두 사용하기 편리해졌다. 입맛에 맡게 골라서 사용할 것.
+ - `performSelector`: Selector를 이용한 방식, ARC이전에 주로 사용한 방식이였으나 GCD 이후엔 많이 사용되진 않는다.
+	 - Selector를 사용하기 때문에 권장하지 않는다.
+ - `Timer` : 간단한 interval Notification를 제공해 주는 Class. 특이하게도 **Timer는 mainLoop에서 실행** 된다.
 
-swapTwoValues(&someInt, &anotherInt)
-// someInt is now 107, and anotherInt is now 3
+ - UI는 Main Thread에서만 작동된다.
+ - 따라서 최종적으로 수업 때는 `GCD`만 진행한다.
 
-var someString = "hello"
-var anotherString = "world"
-swapTwoValues(&someString, &anotherString)
-// someString is now "world", and anotherString is now "hello"
-
-```
-
-## [ Sample ] 타입을 가리지 않는 Stack 만들기
- - 같은 함수인데, input 타입을 가리지 않고, 받아서 처리한다.
- - 같은 액션을 하는 함수하면, 제네릭으로 만들어서 효율적으로 관리할 수 있다.
-
-```swift
-struct IntStack {
-    var items = [Int]()
-    
-    mutating func push(_ item:Int) {
-        items.append(item)
-    }
-    
-    mutating func pop() -> Int {
-        return items.removeLast()
-    }
-}
-
-struct GenericStack<T> {
-    var items = [T]()
-    
-    mutating func push(_ item:T) {
-        items.append(item)
-    }
-    
-    mutating func pop() -> T {
-        return items.removeLast()
-    }
-}
-
-// ViewDidLoad
-var stringTest = GenericStack(items: ["kimsehwa"])
-var intTest = GenericStack(items: [12])
-
-class ViewController: UIViewController {
-stringTest.push("ImFineThankyou")
-intTest.push(13)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-		print(stringTest) //GenericStack<String>(items: ["kimsehwa", "ImFineThankyou"])
-		print(intTest) //GenericStack<Int>(items: [12, 13])
-	}
-```
 
 ---
 ### 문서 끝 ( by 재성 )
