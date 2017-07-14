@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var labelMain:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,22 @@ class ViewController: UIViewController {
             for n in 300..<400 {
                 print(n)
             }
+            
+            DispatchQueue.main.async {
+                self.labelMain.text = "END Thread-!"
+            }
         }
+        
+        let globalQueue = DispatchQueue.global()
+        
+        globalQueue.async {
+            for n in 1...9999999 {
+                print(n)
+            }
+        }
+        
+        
+        
         
         
     }
