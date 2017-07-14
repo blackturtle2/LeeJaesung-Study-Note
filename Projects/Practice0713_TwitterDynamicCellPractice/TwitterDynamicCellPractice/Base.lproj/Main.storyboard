@@ -54,16 +54,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bodyText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-6O-f1c">
-                                                    <rect key="frame" x="99" y="34" width="260" height="131.5"/>
+                                                    <rect key="frame" x="99" y="34" width="205" height="162.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-ak-fJo">
-                                                    <rect key="frame" x="99" y="173.5" width="260" height="146"/>
+                                                    <rect key="frame" x="99" y="204.5" width="205" height="115"/>
                                                     <subviews>
                                                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-Jd-1ij">
-                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="146"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="205" height="115"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="UPC-Jd-1ij" secondAttribute="height" multiplier="16:9" id="wSU-TF-ihe"/>
                                                             </constraints>
@@ -111,7 +111,13 @@
                             <constraint firstItem="bOq-mS-KQ3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="rlh-jg-Pcu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Twitter" id="wLO-tL-fBU"/>
+                    <navigationItem key="navigationItem" title="My Twitter" id="wLO-tL-fBU">
+                        <barButtonItem key="rightBarButtonItem" title="ADD" id="e2Y-kn-Ouv">
+                            <connections>
+                                <action selector="addButtonAction:" destination="BYZ-38-t0r" id="xi2-3g-0eN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="bOq-mS-KQ3" id="Z1C-bc-Tp3"/>
                     </connections>

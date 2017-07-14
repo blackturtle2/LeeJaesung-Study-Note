@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var mainTableView:UITableView!
+    var mainBoxView:UIView!
+    var textFieldTweet:UITextField!
     
     // MARK: View Cycle
     
@@ -22,13 +24,65 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
         
-//        self.mainTableView.rowHeight = UITableViewAutomaticDimension
-//        self.mainTableView.estimatedRowHeight = 44
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    
+    
+    // MARK: Add button Action
+    @IBAction func addButtonAction(_ sender:UIButton) {
+        let mainBoxWidth:CGFloat = 300
+        let mainBoxHeight:CGFloat = 180
+        
+        mainBoxView = UIView(frame: CGRect(x: (self.view.bounds.width-300)/2, y: (self.view.bounds.height-100)/3, width: mainBoxWidth, height: mainBoxHeight))
+        
+        let tempText:UILabel = UILabel(frame: CGRect(x: 8, y:8, width: 100, height: 15))
+        textFieldTweet = UITextField(frame: CGRect(x: 8, y: tempText.bounds.height+16, width: mainBoxWidth-16, height: 100))
+        
+        let cancelButton:UIButton = UIButton(frame: CGRect(x: 0, y: mainBoxView.bounds.height-50, width: mainBoxWidth/2, height: 48))
+        let saveButton:UIButton = UIButton(frame: CGRect(x: mainBoxWidth/2, y: mainBoxView.bounds.height-50, width: mainBoxWidth/2, height: 48))
+        
+        
+        mainBoxView.backgroundColor = UIColor.black
+        
+        tempText.text = "Enjoy Tweet-!"
+        tempText.textColor = UIColor.white
+        
+        textFieldTweet.backgroundColor = UIColor.white
+        
+        cancelButton.setTitle("CANCEL", for: .normal)
+        cancelButton.setTitleColor(UIColor.red, for: .normal)
+        cancelButton.addTarget(self, action: #selector(tweetViewCancelButtonAction), for: .touchUpInside)
+
+        saveButton.setTitle("SAVE", for: .normal)
+        saveButton.setTitleColor(UIColor.blue, for: .normal)
+        saveButton.addTarget(self, action: #selector(tweetViewSaveButtonAction), for: .touchUpInside)
+        
+        self.view.addSubview(mainBoxView)
+        mainBoxView.addSubview(tempText)
+        mainBoxView.addSubview(cancelButton)
+        mainBoxView.addSubview(saveButton)
+        mainBoxView.addSubview(textFieldTweet)
+        
+    }
+    
+    func tweetViewCancelButtonAction(sender: UIButton!) {
+        print("Cancel Button tapped")
+        
+        self.mainBoxView.removeFromSuperview()
+    }
+    
+    func tweetViewSaveButtonAction(sender: UIButton!) {
+        print("Save Button tapped")
+        
+        
+        
+        self.mainBoxView.removeFromSuperview()
+        self.mainTableView.reloadData()
     }
     
     

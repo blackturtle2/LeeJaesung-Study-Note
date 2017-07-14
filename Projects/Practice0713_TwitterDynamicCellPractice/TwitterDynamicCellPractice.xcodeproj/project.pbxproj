@@ -87,6 +87,7 @@
 		B9899CE61F16FBC300B005CF /* TwitterDynamicCellPractice */ = {
 			isa = PBXGroup;
 			children = (
+				B9899CF01F16FBC300B005CF /* LaunchScreen.storyboard */,
 				B9899CEB1F16FBC300B005CF /* Main.storyboard */,
 				B9899CE71F16FBC300B005CF /* AppDelegate.swift */,
 				B9899CFB1F16FC2B00B005CF /* DataCenter.swift */,
@@ -95,7 +96,6 @@
 				B9899CEE1F16FBC300B005CF /* Assets.xcassets */,
 				B92583FF1F1702D1007AA58D /* profiles */,
 				B92584001F1703F4007AA58D /* sundae.jpg */,
-				B9899CF01F16FBC300B005CF /* LaunchScreen.storyboard */,
 				B9899CF31F16FBC300B005CF /* Info.plist */,
 				B9899CF91F16FBFC00B005CF /* DataFromServer.plist */,
 			);

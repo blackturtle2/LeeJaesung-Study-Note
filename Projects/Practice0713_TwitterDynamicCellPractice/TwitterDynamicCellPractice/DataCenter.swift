@@ -29,7 +29,7 @@ class DataCenter {
         let bundlePath: String = Bundle.main.path(forResource: "DataFromServer", ofType: "plist")!
         if let loadedArray = NSArray.init(contentsOfFile: bundlePath) as? [[String:String]] {
 //            print(loadedArray)
-            //불러온 어레이를 Twit으로 만들어서 rawArray에 넣으세용
+//            불러온 어레이를 Twit으로 만들어서 rawArray에 넣으세용
             
 //            for item in loadedArray {
 //                self.rawArray.append(Twit(with: item))
@@ -40,7 +40,10 @@ class DataCenter {
             })
 
         }
-        
+    }
+    
+    func saveTweetOf(twitData aData:Twit) {
+        self.rawArray.append(aData)
     }
     
 }
@@ -66,5 +69,13 @@ class Twit {
         self.userPhotoUrl = dictionary["user_profile_img_url"]!
         self.bodyText = dictionary["body_text"]!
         self.imageUrl = dictionary["img_url"]
+    }
+    
+    init(with aName:String, anUserID:String, anUserPhotoUrl:String, aBodyText:String, anImageUrl:String?) {
+        self.userName = aName
+        self.userId = anUserID
+        self.userPhotoUrl = anUserPhotoUrl
+        self.bodyText = aBodyText
+        self.imageUrl = anImageUrl
     }
 }
