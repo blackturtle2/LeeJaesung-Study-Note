@@ -12,6 +12,8 @@ import Firebase
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableViewMain:UITableView!
+    
+    var rawData:[String:[String:String]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let rawMemoData = Database.database().reference().child("memoDataOf\(UserDefaults.standard.string(forKey: userKey)!)")
         rawMemoData.observeSingleEvent(of: .value, with: { (snapshot) in
             let data = snapshot.value as? NSDictionary
-            let memoData = data?["person1"] as? String ?? "(no data)"
+//            let memoData = data?["person1"] as? String ?? "(no data)"
+            self.rawData = data as! [String : [String : String]]
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+        print(self.rawData)
     }
 
     override func didReceiveMemoryWarning() {

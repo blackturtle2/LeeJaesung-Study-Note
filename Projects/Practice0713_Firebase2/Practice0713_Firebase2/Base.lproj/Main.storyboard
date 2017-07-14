@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,14 +75,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyB-vL-dYx">
+                                <rect key="frame" x="8" y="457" width="359" height="202"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jyB-vL-dYx" secondAttribute="height" multiplier="16:9" id="4Od-Qo-Aqo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jyB-vL-dYx" secondAttribute="trailing" constant="8" id="0F4-sW-9bf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0W-Dx-W3w" secondAttribute="trailing" id="1pP-cE-y3Y"/>
                             <constraint firstItem="QSN-ex-n4y" firstAttribute="trailing" secondItem="J6w-KN-bG9" secondAttribute="trailing" id="3SK-qN-IHO"/>
+                            <constraint firstItem="jyB-vL-dYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5kH-ZD-GTQ"/>
                             <constraint firstItem="L0L-36-kYJ" firstAttribute="leading" secondItem="g0W-Dx-W3w" secondAttribute="leading" id="9LM-yg-vKd"/>
                             <constraint firstItem="L0L-36-kYJ" firstAttribute="trailing" secondItem="g0W-Dx-W3w" secondAttribute="trailing" id="AdO-zJ-qwB"/>
                             <constraint firstItem="J6w-KN-bG9" firstAttribute="trailing" secondItem="jx7-Fy-XFn" secondAttribute="trailing" id="Biu-8j-Hmo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jyB-vL-dYx" secondAttribute="bottom" constant="8" id="ESM-Oy-ANJ"/>
                             <constraint firstItem="SVb-6g-kX0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J6Q-aF-TLA"/>
                             <constraint firstItem="L0L-36-kYJ" firstAttribute="top" secondItem="g0W-Dx-W3w" secondAttribute="bottom" constant="16" id="Kzl-8I-xzS"/>
                             <constraint firstItem="g0W-Dx-W3w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="Mas-Dd-zWj"/>
@@ -89,6 +100,7 @@
                             <constraint firstItem="JAG-t3-GFM" firstAttribute="leading" secondItem="L0L-36-kYJ" secondAttribute="leading" id="TGK-hy-bJp"/>
                             <constraint firstItem="g0W-Dx-W3w" firstAttribute="leading" secondItem="jx7-Fy-XFn" secondAttribute="trailing" constant="8" id="VwD-54-66P"/>
                             <constraint firstItem="iTY-mD-wrx" firstAttribute="top" secondItem="JAG-t3-GFM" secondAttribute="bottom" constant="16" id="WpP-ut-ZAb"/>
+                            <constraint firstItem="jyB-vL-dYx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="X9i-bX-PMz"/>
                             <constraint firstItem="J6w-KN-bG9" firstAttribute="centerY" secondItem="L0L-36-kYJ" secondAttribute="centerY" id="c2h-r7-n1A"/>
                             <constraint firstItem="jx7-Fy-XFn" firstAttribute="centerY" secondItem="g0W-Dx-W3w" secondAttribute="centerY" id="cKd-5c-v47"/>
                             <constraint firstItem="QSN-ex-n4y" firstAttribute="centerY" secondItem="JAG-t3-GFM" secondAttribute="centerY" id="hTt-5k-Nmk"/>

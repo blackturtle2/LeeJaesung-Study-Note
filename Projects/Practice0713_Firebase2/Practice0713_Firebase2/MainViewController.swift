@@ -56,8 +56,8 @@ class MainViewController: UIViewController {
         UserDefaults.standard.set(textFieldName.text, forKey: userKey)
         
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
-        rawMemoData.setValue(["\(Date())":["title":textFieldTitle.text, "memo":textFieldMemo.text]])
-        
+//        rawMemoData.setValue(["\(Date())":["title":textFieldTitle.text, "memo":textFieldMemo.text]])
+        rawMemoData.setValue(["title":textFieldTitle.text, "memo":textFieldMemo.text], forKeyPath: "12345")
         
         // Firebase Test
         let rawData = Database.database().reference().child("friend")
