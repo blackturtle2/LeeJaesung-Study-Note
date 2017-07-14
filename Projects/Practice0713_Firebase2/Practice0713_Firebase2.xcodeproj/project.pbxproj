@@ -14,7 +14,6 @@
 		FEE8F5EF1F17A89D00F39DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE8F5EE1F17A89D00F39DA1 /* Assets.xcassets */; };
 		FEE8F5F21F17A89D00F39DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE8F5F01F17A89D00F39DA1 /* LaunchScreen.storyboard */; };
 		FEE8F5FA1F17A91700F39DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEE8F5F91F17A91700F39DA1 /* GoogleService-Info.plist */; };
-		FEE8F5FC1F17B80200F39DA1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE8F5FB1F17B80200F39DA1 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		FEE8F5F11F17A89D00F39DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE8F5F31F17A89D00F39DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE8F5F91F17A91700F39DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FEE8F5FB1F17B80200F39DA1 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 				FEE8F5EB1F17A89D00F39DA1 /* Main.storyboard */,
 				FEE8F5E71F17A89D00F39DA1 /* AppDelegate.swift */,
 				FEE8F5E91F17A89D00F39DA1 /* MainViewController.swift */,
-				FEE8F5FB1F17B80200F39DA1 /* ListViewController.swift */,
 				FEE8F5F31F17A89D00F39DA1 /* Info.plist */,
 				FEE8F5F91F17A91700F39DA1 /* GoogleService-Info.plist */,
 			);
@@ -220,7 +217,6 @@
 			files = (
 				FEE8F5EA1F17A89D00F39DA1 /* MainViewController.swift in Sources */,
 				FEE8F5E81F17A89D00F39DA1 /* AppDelegate.swift in Sources */,
-				FEE8F5FC1F17B80200F39DA1 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,13 +12,16 @@ import Toaster
 
 let userKey:String = "savedUserName"
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var textFieldName:UITextField!
     @IBOutlet var textFieldTitle:UITextField!
     @IBOutlet var textFieldMemo:UITextField!
     
+    @IBOutlet var labelName:UILabel!
+    @IBOutlet var labelTitle:UILabel!
     @IBOutlet var labelMemo:UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +30,32 @@ class MainViewController: UIViewController {
             textFieldName.text = data
         }
         
-        // Firebase Test
-        let ref = Database.database().reference()
-        let itemsRef = ref.child("friend")
+        loadDataFireBase()
         
-        itemsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        // Firebase Test
+//        let ref = Database.database().reference()
+//        let itemsRef = ref.child("friend")
+//        
+//        itemsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            let data = snapshot.value as? NSDictionary
+//            let memoData = data?["person1"] as? String ?? "(no data)"
+//            self.labelMemo.text = memoData
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
+        
+    }
+    
+    func loadDataFireBase() {
+        let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
+        rawMemoData.observeSingleEvent(of: .value, with: { (snapshot) in
             let data = snapshot.value as? NSDictionary
-            let memoData = data?["person1"] as? String ?? "(no data)"
-            self.labelMemo.text = memoData
+            self.labelName.text = data?["name"] as? String ?? "(no data)"
+            self.labelTitle.text = data?["title"] as? String ?? "(no data)"
+            self.labelMemo.text = data?["memo"] as? String ?? "(no data)"
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,13 +73,25 @@ class MainViewController: UIViewController {
         UserDefaults.standard.set(textFieldName.text, forKey: userKey)
         
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
-//        rawMemoData.setValue(["\(Date())":["title":textFieldTitle.text, "memo":textFieldMemo.text]])
-        rawMemoData.setValue(["title":textFieldTitle.text, "memo":textFieldMemo.text], forKeyPath: "12345")
+        rawMemoData.setValue(["name":textFieldName.text, "title":textFieldTitle.text, "memo":textFieldMemo.text])
+        
+        textFieldName.resignFirstResponder()
+        textFieldTitle.resignFirstResponder()
+        textFieldMemo.resignFirstResponder()
         
         // Firebase Test
-        let rawData = Database.database().reference().child("friend")
-        rawData.setValue(["person1":"\(textFieldName.text ?? "(no data)")"])
+//        let rawData = Database.database().reference().child("friend")
+//        rawData.setValue(["person1":"\(textFieldName.text ?? "(no data)")"])
         
+    }
+    
+    @IBAction func reloadButtonAction(_ sender:UIButton) {
+        
+        textFieldName.resignFirstResponder()
+        textFieldTitle.resignFirstResponder()
+        textFieldMemo.resignFirstResponder()
+        
+        loadDataFireBase()
     }
 
 
