@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import Toaster
+
+let userKey:String = "savedUserName"
 
 class MainViewController: UIViewController {
     
@@ -20,6 +23,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let data = UserDefaults.standard.string(forKey: userKey) {
+            textFieldName.text = data
+        }
+        
+        // Firebase Test
         let ref = Database.database().reference()
         let itemsRef = ref.child("friend")
         
@@ -39,6 +47,19 @@ class MainViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender:UIButton) {
         
+        if textFieldName.text == "" {
+            let toast = Toast(text: "Insert Name Please -")
+            toast.show()
+            return
+        }
+        
+        UserDefaults.standard.set(textFieldName.text, forKey: userKey)
+        
+        let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
+        rawMemoData.setValue(["\(Date())":["title":textFieldTitle.text, "memo":textFieldMemo.text]])
+        
+        
+        // Firebase Test
         let rawData = Database.database().reference().child("friend")
         rawData.setValue(["person1":"\(textFieldName.text ?? "(no data)")"])
         

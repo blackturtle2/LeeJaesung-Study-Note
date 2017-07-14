@@ -8,5 +8,6 @@ target 'Practice0713_Firebase2' do
   # Pods for Practice0713_Firebase2
 
 pod 'Firebase/Database'
+pod 'Toaster'
 
 end

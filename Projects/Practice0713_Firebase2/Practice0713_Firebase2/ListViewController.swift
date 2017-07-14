@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,6 +18,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //rawMemoData.setValue(["\(Date())":["title":textFieldTitle.text, "memo":textFieldMemo.text]])
+        
+        let rawMemoData = Database.database().reference().child("memoDataOf\(UserDefaults.standard.string(forKey: userKey)!)")
+        rawMemoData.observeSingleEvent(of: .value, with: { (snapshot) in
+            let data = snapshot.value as? NSDictionary
+            let memoData = data?["person1"] as? String ?? "(no data)"
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
