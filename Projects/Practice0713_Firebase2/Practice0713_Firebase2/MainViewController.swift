@@ -45,6 +45,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 //        }
         
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     func loadDataFireBase() {
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
@@ -56,10 +61,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     @IBAction func saveButtonAction(_ sender:UIButton) {
@@ -75,9 +76,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
         rawMemoData.setValue(["name":textFieldName.text, "title":textFieldTitle.text, "memo":textFieldMemo.text])
         
-        textFieldName.resignFirstResponder()
-        textFieldTitle.resignFirstResponder()
-        textFieldMemo.resignFirstResponder()
+        keyboardResponder()
         
         // Firebase Test
 //        let rawData = Database.database().reference().child("friend")
@@ -86,12 +85,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func reloadButtonAction(_ sender:UIButton) {
-        
+        keyboardResponder()
+        loadDataFireBase()
+    }
+    
+    func keyboardResponder() {
         textFieldName.resignFirstResponder()
         textFieldTitle.resignFirstResponder()
         textFieldMemo.resignFirstResponder()
-        
-        loadDataFireBase()
     }
 
 
