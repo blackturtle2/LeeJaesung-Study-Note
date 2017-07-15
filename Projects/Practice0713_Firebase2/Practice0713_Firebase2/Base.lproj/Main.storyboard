@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YeO-lY-fnf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YeO-lY-fnf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -132,6 +132,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Practice Firebase MemoApp" id="2g7-dv-IpL">
+                        <barButtonItem key="leftBarButtonItem" title="Move" id="8cW-la-yH8">
+                            <connections>
+                                <segue destination="dNj-Dx-Z1H" kind="show" id="is4-e7-7qp"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Reload" id="WGG-02-kZM">
                             <connections>
                                 <action selector="reloadButtonAction:" destination="BYZ-38-t0r" id="tnY-Vk-07Z"/>
@@ -150,6 +155,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="876" y="-622.03898050974522"/>
+        </scene>
+        <!--Lecture View Controller-->
+        <scene sceneID="3Ah-J1-7eR">
+            <objects>
+                <viewController id="dNj-Dx-Z1H" customClass="LectureViewController" customModule="Practice0713_Firebase2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OeR-1h-dcx"/>
+                        <viewControllerLayoutGuide type="bottom" id="WbP-0b-mMe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mdJ-xZ-N5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-OR-Xbd">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0x-t0-8fM">
+                                <rect key="frame" x="16" y="160" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81l-me-cGF">
+                                <rect key="frame" x="313" y="223" width="46" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="buttonSave:" destination="dNj-Dx-Z1H" eventType="touchUpInside" id="eMo-rw-PDG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ego-O8-xrf">
+                                <rect key="frame" x="16" y="287" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlK-dW-Jrw">
+                                <rect key="frame" x="313" y="350" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="buttonDelete:" destination="dNj-Dx-Z1H" eventType="touchUpInside" id="pbl-J3-FoF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y0x-t0-8fM" firstAttribute="top" secondItem="Ybs-OR-Xbd" secondAttribute="bottom" constant="33" id="6v0-kf-jB8"/>
+                            <constraint firstItem="Ybs-OR-Xbd" firstAttribute="top" secondItem="OeR-1h-dcx" secondAttribute="bottom" constant="33" id="GJN-A4-XgR"/>
+                            <constraint firstItem="81l-me-cGF" firstAttribute="top" secondItem="Y0x-t0-8fM" secondAttribute="bottom" constant="33" id="Lk9-jX-Qha"/>
+                            <constraint firstItem="Y0x-t0-8fM" firstAttribute="trailing" secondItem="mdJ-xZ-N5R" secondAttribute="trailingMargin" id="NYd-i3-kr1"/>
+                            <constraint firstItem="81l-me-cGF" firstAttribute="trailing" secondItem="mdJ-xZ-N5R" secondAttribute="trailingMargin" id="SaD-O0-Nf6"/>
+                            <constraint firstItem="Y0x-t0-8fM" firstAttribute="leading" secondItem="mdJ-xZ-N5R" secondAttribute="leadingMargin" id="URJ-xp-kTL"/>
+                            <constraint firstItem="Ybs-OR-Xbd" firstAttribute="trailing" secondItem="mdJ-xZ-N5R" secondAttribute="trailingMargin" id="Um8-EO-lsK"/>
+                            <constraint firstItem="81l-me-cGF" firstAttribute="leading" secondItem="mdJ-xZ-N5R" secondAttribute="leadingMargin" constant="297" id="fHS-fA-eHn"/>
+                            <constraint firstItem="Ybs-OR-Xbd" firstAttribute="leading" secondItem="mdJ-xZ-N5R" secondAttribute="leadingMargin" id="gkJ-fM-5PG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textFieldDeleteKey" destination="ego-O8-xrf" id="DUx-IE-hZX"/>
+                        <outlet property="textFieldKey" destination="Ybs-OR-Xbd" id="SoQ-zm-r0u"/>
+                        <outlet property="textFieldValue" destination="Y0x-t0-8fM" id="YiK-Ia-lSY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4I8-J6-szj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677.5999999999999" y="-622.03898050974522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e7P-7e-BXc">

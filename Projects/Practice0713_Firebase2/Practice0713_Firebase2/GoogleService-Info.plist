@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>103938682054-4gphikc83berk550rv073dfk5us65a8n.apps.googleusercontent.com</string>
+	<string>744892849634-el83kbi9e9f68k54nb2qm2vkh3bv4qq3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.103938682054-4gphikc83berk550rv073dfk5us65a8n</string>
+	<string>com.googleusercontent.apps.744892849634-el83kbi9e9f68k54nb2qm2vkh3bv4qq3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCoHNUhttmzFZzSgxfJZnxKE29wZjS6BQg</string>
+	<string>AIzaSyAP-xmSoiQayD7yB9W7Y6E0rCm3AQdlKc8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>103938682054</string>
+	<string>744892849634</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>net.blackturtle2.Practice0713-FirebaseiOS</string>
+	<string>kr.co.fastcampus.ios</string>
 	<key>PROJECT_ID</key>
-	<string>fir-ios-62fef</string>
+	<string>fastcampus-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-ios-62fef.appspot.com</string>
+	<string>fastcampus-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:103938682054:ios:d12ffeac10b63251</string>
+	<string>1:744892849634:ios:5cc6a2629a824fcc</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-ios-62fef.firebaseio.com</string>
+	<string>https://fastcampus-ios.firebaseio.com</string>
 </dict>
 </plist>

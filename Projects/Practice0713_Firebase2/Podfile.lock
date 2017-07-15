@@ -21,6 +21,7 @@ PODS:
   - Toaster (2.0.4)
 
 DEPENDENCIES:
+  - Firebase/Core
   - Firebase/Database
   - Toaster
 
@@ -33,6 +34,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Toaster: f13031c636ef065281bc11857be9a16c7659e04f
 
-PODFILE CHECKSUM: d24882afba029c51c102e58e16526670f30ee87b
+PODFILE CHECKSUM: 64a67c52f7097da6c57cdaa1f409d82381b198d3
 
 COCOAPODS: 1.2.0

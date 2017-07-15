@@ -14,6 +14,8 @@ let userKey:String = "savedUserName"
 
 class MainViewController: UIViewController, UITextFieldDelegate {
     
+    // 혼자 놀면서 만든 뷰
+    
     @IBOutlet var textFieldName:UITextField!
     @IBOutlet var textFieldTitle:UITextField!
     @IBOutlet var textFieldMemo:UITextField!
@@ -53,6 +55,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     func loadDataFireBase() {
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
+        
         rawMemoData.observeSingleEvent(of: .value, with: { (snapshot) in
             let data = snapshot.value as? NSDictionary
             self.labelName.text = data?["name"] as? String ?? "(no data)"
@@ -61,6 +64,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }) { (error) in
             print(error.localizedDescription)
         }
+        
     }
     
     @IBAction func saveButtonAction(_ sender:UIButton) {
@@ -75,6 +79,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         let rawMemoData = Database.database().reference().child("memoDataOf\(textFieldName.text!)")
         rawMemoData.setValue(["name":textFieldName.text, "title":textFieldTitle.text, "memo":textFieldMemo.text])
+        
         
         keyboardResponder()
         
