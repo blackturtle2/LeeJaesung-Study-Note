@@ -131,7 +131,7 @@
  - 프로토콜: `#Ethernet.RS-232C`, `#전선`, `#전파`, `#광섬유`, `#동축케이블`, `#도파관`, `#PSTN`, `#Repeater`, `#DSU`, `#CSU`, `#Modem`
  - 설명: 물리적 매체를 통해 비트(Bit)의 흐름을 전송하기 위하여 요구되는 기능들을 조정하는 단계를 말합니다. 케이블이나 연결 장치 등과 같은 기본적인 물리적 연결기의 전기적 명세를 정하고 네트워크의 두 노드를 물리적으로 연결시켜 주는 신호방식을 다룹니다.
 
-![What is OSI Model](What is OSI Model.png)
+![What_is_OSI_Model](What_is_OSI_Model.png)
 
 ( ↑ 이미지 출처: [http://technet2u.com/what-is-osi-model/](http://technet2u.com/what-is-osi-model/) )
 
@@ -141,7 +141,7 @@
  - **OSI 7 Layer** 를 `이론상 표준`이라고 한다면, **TCP/IP 4 layer** 는 `사실상 표준`이라고 할 수 있다.
  - 5, 6, 7 계층을 묶어서 `Application` 계층으로 부르고, 4계층 `Transport`는 그대로 `Transport`, 3계층 `Network`는 `Internet`으로, 1, 2계층을 묶어서 `Network Access` 계층으로 부른다.
 
-![OSI 7 vs TCP IP](OSI 7 vs TCP IP.png)
+![OSI_7_vs_TCP_IP](OSI_7_vs_TCP_IP.png)
 
 ( ↑ 이미지 출처: [http://saysecurity.tistory.com/14](http://saysecurity.tistory.com/14) )
 
