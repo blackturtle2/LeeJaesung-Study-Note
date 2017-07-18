@@ -13,6 +13,10 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet var imageViewMain:UIImageView!
     @IBOutlet var labelName:UILabel!
     @IBOutlet var labelShortDescription:UILabel!
+    @IBOutlet var buttonMoveDetail:UIButton!
+    
+    var cellIndexPathRow:Int!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +27,10 @@ class RecipeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func buttonMoveDetailAction(_ Sender:UIButton) {
+        print(buttonMoveDetail.tag)
     }
 
 }

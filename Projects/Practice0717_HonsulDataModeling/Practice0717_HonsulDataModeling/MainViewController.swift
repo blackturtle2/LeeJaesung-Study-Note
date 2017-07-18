@@ -42,8 +42,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         myCell.labelName.text = DataCenter.sharedInstance.getRecipeNameOf(id: indexPath.row)
         myCell.labelShortDescription.text = DataCenter.sharedInstance.getRecipeShortDescriptionOf(id: indexPath.row)
         
+        myCell.cellIndexPathRow = indexPath.row
+        myCell.buttonMoveDetail.tag = indexPath.row
+        
         return myCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath) as! RecipeTableViewCell
+        let cellNum = selectedCell.cellIndexPathRow
+        
+        print(cellNum ?? "(ERROR- no data)")
+        
+    }
+    
+    
 
 
 }
