@@ -2,7 +2,7 @@
 
 # `#Network`
 
-# ORM : Object Relation Mapping
+# ORM : `Object Relation Mapping`
  
 ## SQL
  - `Database`는 보통 SQL이라는 언어를 사용하고, ORM이 없었던 시절에 백엔드 개발자는 SQL을 이용해서 데이터베이스 테이블을 구성해야 했습니다.
@@ -35,7 +35,7 @@ Person p = repository.GetPerson(10);String name = p.getFirstName();
  - 도커 핵심 명령어 정리 : [https://gist.github.com/nacyot/8366310](https://gist.github.com/nacyot/8366310)
 
 
-# DBMS : Database Management System
+# DBMS : `Database Management System`
 
 ## DBMS 체험하기
  - 도커에 `MariaDB`를 설치해서 세팅해둔 `Sails.js`에서 이 DB에 접근해서 데이터를 저장하도록 합니다.
@@ -244,7 +244,7 @@ func uploadAlamofire(pickedImage : UIImage) {
 - req.params : request의 URL 파라메터
 - (라우팅 설정에서 /user/:name 을 설정 한 경우 req.params.name 으로 :name을 접근 할 수 있음)
 
-# RDBMS : Relational Database Management System
+# RDBMS : `Relational Database Management System`
  - 관계형 모델(Relational Model)
  - 구조체(테이블 스키마 지칭)와 1차 술어논리로 구성된 언어(DB에서는 SQL을 지칭)를 사용하여 데이터를 다루는 접근법.
  - 관계 종류: 1. `일대일`, 2. `일대다 / 다대일`, 3. `다대다`
@@ -252,7 +252,7 @@ func uploadAlamofire(pickedImage : UIImage) {
 
 ## `DBMS` 기본 용어 - 스키마(schema), 테이블(table), 쿼리(query), 뷰(view), 행(row), 열(column), 기본키(primary key), 외래키(foreign key), 데이터형(data type)
 
-# SQL (Structered Query Language)- SQL구문은 몇 가지 주요 키워드로 구성돼 있어 쉽게 배울 수 있음- 특정 RDBMS에서만 쓸수 있는 SQL 구문도 존재 하지만 대부분은 공통적으로 쓸 수 있음 - 대소문자 구분 안함
+# SQL : `Structered Query Language`- SQL구문은 몇 가지 주요 키워드로 구성돼 있어 쉽게 배울 수 있음- 특정 RDBMS에서만 쓸수 있는 SQL 구문도 존재 하지만 대부분은 공통적으로 쓸 수 있음 - 대소문자 구분 안함
 
 ## 주요 SQL Query문
 ```# 테이블 생성 - CREATE TABLE [테이블 이름] ([컬럼 이름] [자료형], ...);# 테이블 삭제 - DROP TABLE [테이블 이름]# 입력 - INSERT INTO [테이블 이름]([컬럼 이름], ...) VALUES([입력값], ...);# 조회 - SELECT [컬럼이름], ... FROM [테이블 이름] WHERE [조건식]# 수정 - UPDATE [테이블 이름] SET [컬럼 이름] = [수정할 값] WHERE [조건식]# 삭제 - DELETE [테이블 이름] WHERE [조건]
@@ -266,7 +266,7 @@ func uploadAlamofire(pickedImage : UIImage) {
 
 # NoSQL - RDBMS와 다르게 최초 생성시 데이터간 관계를 정의하지 않 음 (설계시 유연) - 명시적인 스키마가 존재하지 않음 - 대표적인 NoSQL: MongoDB, Redis, HBase 등
 
-# redis - 레디스. - [https://redis.io/](https://redis.io/) - 더 빠른 결과를 제공하기 위해 데이터를 메모리에 저장함. (메인 메모리의 처리 속도는 HDD의 800배, SSD의 40배 정도 빠름) - 인메모리 데이터 저장소 : redis vs memcached
+# Redis - 레디스. - [https://redis.io/](https://redis.io/) - 더 빠른 결과를 제공하기 위해 데이터를 메모리에 저장함. (메인 메모리의 처리 속도는 HDD의 800배, SSD의 40배 정도 빠름) - 인메모리 데이터 저장소 : redis vs memcached
  - K-V 방식의 access
 
 # View & EJS
@@ -275,7 +275,7 @@ func uploadAlamofire(pickedImage : UIImage) {
  - 마지막으로 `response` 패킷에 넣을 `HTML` 데이터를 조립.
  - `sails.js`는 `ejs`를 기본 `view engine`으로 채용.
 
-## 서버사이드 렌더링
+## Serverside Rendering
 
 ### `GRUNT` - 자바스크립트의 테스크 러너
  - 자동화(Automation): 반복적인 일을 줄여주는데 사용
