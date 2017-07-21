@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Foundation
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -109,7 +110,5 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
-
-
+    
 }
-

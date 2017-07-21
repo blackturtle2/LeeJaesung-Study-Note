@@ -5,13 +5,14 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "sails": "^1.0.0-36",
+    "async": "2.0.1",
     "grunt": "1.0.1",
+    "lodash": "3.10.1",
+    "sails": "^1.0.0-36",
+    "sails-hook-grunt": "^2.0.0",
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.0",
-    "sails-hook-grunt": "^2.0.0",
-    "lodash": "3.10.1",
-    "async": "2.0.1"
+    "sails-mysql": "^1.0.0-14"
   },
   "devDependencies": {
     "eslint": "3.5.0"

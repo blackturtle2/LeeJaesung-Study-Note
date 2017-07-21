@@ -13,6 +13,7 @@
 		FE1F18231F205506005F01C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1F18211F205506005F01C6 /* Main.storyboard */; };
 		FE1F18251F205506005F01C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1F18241F205506005F01C6 /* Assets.xcassets */; };
 		FE1F18281F205506005F01C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1F18261F205506005F01C6 /* LaunchScreen.storyboard */; };
+		FE7341791F21CD0A00ECF138 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7341781F21CD0A00ECF138 /* UploadViewController.swift */; };
 		FED774441F207D0A00783F99 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED774431F207D0A00783F99 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		FE1F18241F205506005F01C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE1F18271F205506005F01C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE1F18291F205506005F01C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7341781F21CD0A00ECF138 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		FED774431F207D0A00783F99 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				FE1F181D1F205506005F01C6 /* AppDelegate.swift */,
 				FE1F181F1F205506005F01C6 /* MainViewController.swift */,
 				FED774431F207D0A00783F99 /* AddViewController.swift */,
+				FE7341781F21CD0A00ECF138 /* UploadViewController.swift */,
 				FE1F18291F205506005F01C6 /* Info.plist */,
 			);
 			path = Practice0720_NetworkFirst;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1F18201F205506005F01C6 /* MainViewController.swift in Sources */,
+				FE7341791F21CD0A00ECF138 /* UploadViewController.swift in Sources */,
 				FE1F181E1F205506005F01C6 /* AppDelegate.swift in Sources */,
 				FED774441F207D0A00783F99 /* AddViewController.swift in Sources */,
 			);
