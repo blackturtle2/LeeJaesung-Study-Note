@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
 //        let rootVC = UIViewController()
 //        rootVC.view.backgroundColor = .blue
         
-        let rootVC = SignupViewController()
-        let rootNavi = UINavigationController(rootViewController: rootVC)
+        let rootNavi = UINavigationController(rootViewController: LoginViewController())
 
-        window?.rootViewController = rootNavi
+//        window?.rootViewController = rootNavi
+        window?.rootViewController = MainTabbarViewController()
         window?.makeKeyAndVisible()
         
         return true
