@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class ProfileHeaderViewCell: UICollectionViewCell {
     
@@ -20,22 +22,25 @@ class ProfileHeaderViewCell: UICollectionViewCell {
                 print("///// urlStr: ", urlStr)
                 print("///// url: ", url)
                 
-                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                    print("///// data: ", data ?? "")
-                    print("///// response: ", response ?? "")
-                    print("///// error: ", error ?? "")
-                    
-//                    guard let error = error else { return }
-                    guard let realData = data else { return }
-                    
-                    print("///// realData: ",realData)
-                    
-                    DispatchQueue.main.async {
-                        self.photoBtn.setBackgroundImage(UIImage(data: realData), for: .normal)
-                        
-                    }
-                    
-                }).resume()
+                self.photoBtn.sd_setBackgroundImage(with: url, for: .normal)
+                
+//                SDWebImage 오픈소스 사용하게 되면서 아래 소스는 주석 처리. ( 로직은 동일 )
+//                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+//                    print("///// data: ", data ?? "")
+//                    print("///// response: ", response ?? "")
+//                    print("///// error: ", error ?? "")
+//                    
+////                    guard let error = error else { return } //에러가 nil인데도 return 먹음.
+//                    guard let realData = data else { return }
+//                    
+//                    print("///// realData: ",realData)
+//                    
+//                    DispatchQueue.main.async {
+//                        self.photoBtn.setBackgroundImage(UIImage(data: realData), for: .normal)
+//                        
+//                    }
+//                    
+//                }).resume()
             }
             
             

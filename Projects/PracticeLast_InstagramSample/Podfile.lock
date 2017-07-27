@@ -40,6 +40,9 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - Toaster (2.0.4)
 
 DEPENDENCIES:
@@ -47,6 +50,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - SDWebImage (~> 4.0)
   - Toaster
 
 SPEC CHECKSUMS:
@@ -59,8 +63,9 @@ SPEC CHECKSUMS:
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Toaster: f13031c636ef065281bc11857be9a16c7659e04f
 
-PODFILE CHECKSUM: 7afb73d3d087c6a120509fa5df3552241d30e352
+PODFILE CHECKSUM: 52e2a8f517593d7bcc64c25bbc9067461d2e5633
 
 COCOAPODS: 1.2.1

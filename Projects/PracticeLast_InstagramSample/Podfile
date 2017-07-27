@@ -13,4 +13,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'Toaster'
 
+pod 'SDWebImage', '~> 4.0'
+
+
 end
