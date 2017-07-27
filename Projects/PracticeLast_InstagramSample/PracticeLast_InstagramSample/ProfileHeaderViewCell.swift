@@ -10,6 +10,39 @@ import UIKit
 
 class ProfileHeaderViewCell: UICollectionViewCell {
     
+    var userData:User?{
+        didSet{
+            // MARK: Show userName
+            userNameLabel.text = userData?.userName
+            
+            // MARK: Show user profile image
+            if let urlStr = userData?.userProfileImgUrl, let url = URL(string: urlStr) {
+                print("///// urlStr: ", urlStr)
+                print("///// url: ", url)
+                
+                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                    print("///// data: ", data ?? "")
+                    print("///// response: ", response ?? "")
+                    print("///// error: ", error ?? "")
+                    
+//                    guard let error = error else { return }
+                    guard let realData = data else { return }
+                    
+                    print("///// realData: ",realData)
+                    
+                    DispatchQueue.main.async {
+                        self.photoBtn.setBackgroundImage(UIImage(data: realData), for: .normal)
+                        
+                    }
+                    
+                }).resume()
+            }
+            
+            
+        }
+    }
+    
+    
     let photoBtn:UIButton = {
         let btn = UIButton()
         btn.setTitleColor(.blue, for: .normal) // Extension을 만들어서 이렇게 해결할 수 있었다.
@@ -56,7 +89,7 @@ class ProfileHeaderViewCell: UICollectionViewCell {
         return label
     }()
     
-    let horizontalStackView:UIStackView = {
+    let postFollowerFollowingStackView:UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -67,24 +100,82 @@ class ProfileHeaderViewCell: UICollectionViewCell {
     }()
     
     let editProfileBtn:UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Edit Profile", for: .normal) //Title의 Default 컬러는 흰색이다.
-        btn.setTitleColor(.blue, for: .normal) // Extension을 만들어서 이렇게 해결할 수 있었다.
+        let btn = UIButton(type: UIButtonType.system)
+        btn.setTitle("Edit Profile", for: .normal)
+        btn.setTitleColor(.blue, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.layer.borderWidth = 1
+        btn.addTarget(self, action:#selector(testFunction) , for: .touchUpInside)
+        
+        return btn
+    }()
+    
+    let userNameLabel:UILabel = {
+        let label = UILabel()
+        label.text = "testest"
+//        let labelStr = NSMutableAttributedString(string: "userName", attributes: [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)])
+//        
+//        
+//        label.attributedText = labelStr
+        
+        return label
+    }()
+    
+    let moveViewActionStackView:UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 8
+        
+        return stackView
+    }()
+    
+    let gridBtn:UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setBackgroundImage(#imageLiteral(resourceName: "grid"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action:#selector(testFunction) , for: .touchUpInside)
+        
+        return btn
+    }()
+    
+    
+    func testFunction() {
+        print("testestest")
+    }
+    
+    let listBtn:UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setBackgroundImage(#imageLiteral(resourceName: "list"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         
         return btn
     }()
     
+    let bookmarkBtn:UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setBackgroundImage(#imageLiteral(resourceName: "ribbon"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        
+        return btn
+    }()
+    
+    
+    // MARK: ***** init() *****
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.addSubview(photoBtn)
-        self.addSubview(horizontalStackView)
+        self.addSubview(postFollowerFollowingStackView)
         self.addSubview(postLabel)
         self.addSubview(followersLabel)
         self.addSubview(followingLabel)
+        postFollowerFollowingStackView.addArrangedSubviews([postLabel, followersLabel, followingLabel])
         self.addSubview(editProfileBtn)
-        horizontalStackView.addArrangedSubviews([postLabel, followersLabel, followingLabel])
+        self.addSubview(userNameLabel)
+        self.addSubview(moveViewActionStackView)
+        moveViewActionStackView.addArrangedSubviews([gridBtn, listBtn, bookmarkBtn])
         
         setSubView()
 
@@ -94,6 +185,8 @@ class ProfileHeaderViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: ***** setSubView() *****
     func setSubView() {
         photoBtn.anchor(top: self.topAnchor,
                         left: self.leftAnchor,
@@ -108,7 +201,7 @@ class ProfileHeaderViewCell: UICollectionViewCell {
                         centerX: nil,
                         centerY: nil)
         
-        horizontalStackView.anchor(top: photoBtn.topAnchor,
+        postFollowerFollowingStackView.anchor(top: photoBtn.topAnchor,
                                    left: photoBtn.rightAnchor,
                                    right: self.rightAnchor,
                                    bottom: nil, 
@@ -122,7 +215,7 @@ class ProfileHeaderViewCell: UICollectionViewCell {
                                    centerY: nil)
         
         editProfileBtn.anchor(top: nil,
-                              left: horizontalStackView.leftAnchor,
+                              left: postFollowerFollowingStackView.leftAnchor,
                               right: self.rightAnchor,
                               bottom: photoBtn.bottomAnchor,
                               topConstant: 0,
@@ -133,6 +226,28 @@ class ProfileHeaderViewCell: UICollectionViewCell {
                               height: 0,
                               centerX: nil,
                               centerY: nil)
+        
+        userNameLabel.anchor(top: editProfileBtn.bottomAnchor,
+                             left: self.leftAnchor,
+                             right: self.rightAnchor,
+                             bottom: nil,
+                             topConstant: 16, leftConstant: 16, rightConstant: 16, bottomConstant: 0,
+                             width: 0, height: 25,
+                             centerX: nil, centerY: nil)
+        
+        moveViewActionStackView.anchor(top: photoBtn.bottomAnchor,
+                                       left: self.leftAnchor,
+                                       right: self.rightAnchor,
+                                       bottom: nil,
+                                       topConstant: 75,
+                                       leftConstant: 8,
+                                       rightConstant: 8,
+                                       bottomConstant: 0,
+                                       width: 0,
+                                       height: 0,
+                                       centerX: nil,
+                                       centerY: nil)
+        
     }
     
     

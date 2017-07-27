@@ -15,6 +15,7 @@
 		FEB7B2751F271B2400C50ED4 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7B2741F271B2400C50ED4 /* MainTabbarViewController.swift */; };
 		FEB7B2771F271E9900C50ED4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7B2761F271E9900C50ED4 /* ProfileViewController.swift */; };
 		FEB7B2791F2726C700C50ED4 /* ProfileHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7B2781F2726C700C50ED4 /* ProfileHeaderViewCell.swift */; };
+		FEB7B27B1F287A1000C50ED4 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7B27A1F287A1000C50ED4 /* DataCenter.swift */; };
 		FEBB35661F25BD0300AF7194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB35651F25BD0300AF7194 /* AppDelegate.swift */; };
 		FEBB356D1F25BD0300AF7194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBB356C1F25BD0300AF7194 /* Assets.xcassets */; };
 		FEBB35701F25BD0300AF7194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBB356E1F25BD0300AF7194 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 		FEB7B2741F271B2400C50ED4 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		FEB7B2761F271E9900C50ED4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FEB7B2781F2726C700C50ED4 /* ProfileHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewCell.swift; sourceTree = "<group>"; };
+		FEB7B27A1F287A1000C50ED4 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		FEBB35621F25BD0300AF7194 /* PracticeLast_InstagramSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeLast_InstagramSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBB35651F25BD0300AF7194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEBB356C1F25BD0300AF7194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				FEB7B2781F2726C700C50ED4 /* ProfileHeaderViewCell.swift */,
 				FE58979C1F25BE8900B9A9F6 /* SignupViewController.swift */,
 				FE5897A01F25DA4100B9A9F6 /* LoginViewController.swift */,
+				FEB7B27A1F287A1000C50ED4 /* DataCenter.swift */,
 				FE58979E1F25D19700B9A9F6 /* Extension.swift */,
 				FEBB35711F25BD0300AF7194 /* Info.plist */,
 				FEB7B2721F26E7AA00C50ED4 /* GoogleService-Info.plist */,
@@ -232,6 +235,7 @@
 				FE58979D1F25BE8900B9A9F6 /* SignupViewController.swift in Sources */,
 				FEB7B2791F2726C700C50ED4 /* ProfileHeaderViewCell.swift in Sources */,
 				FEBB35661F25BD0300AF7194 /* AppDelegate.swift in Sources */,
+				FEB7B27B1F287A1000C50ED4 /* DataCenter.swift in Sources */,
 				FEB7B2751F271B2400C50ED4 /* MainTabbarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

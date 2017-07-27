@@ -102,6 +102,9 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
     func signUpActionHandle() {
         print("signUpActionHandle")
         
+        let loadingToast = Toast.init(text: "회원가입 중입니다.", delay: 0, duration: .infinity)
+        loadingToast.show()
+        
         guard let email = emailTextField.text else { return }
         
         Auth.auth().createUser(withEmail: email, password: passwordTextField.text!) { (user, error) in
@@ -136,6 +139,10 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
                 Database.database().reference().child(uid).updateChildValues(["UserName" : self.userNameTextField.text!, "ProfilePhotoUrl" : photoUrlStr], withCompletionBlock: { (error, ref) in
                     print("database() error: ", error ?? "(no error)")
                     print("database() ref: ", ref)
+                    
+                    loadingToast.cancel()
+                    
+                    self.navigationController?.popViewController(animated: true)
                 })
                 
             })

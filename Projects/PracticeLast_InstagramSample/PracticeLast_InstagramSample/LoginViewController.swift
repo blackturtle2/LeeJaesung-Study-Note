@@ -61,13 +61,33 @@ class LoginViewController: UIViewController {
     }()
     
     func loginBtnAction() {
+        
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                let myToast = Toast.init(text: "로그인 실패입니다.")
+                myToast.show()
+                
+                return
+            }
+            
             print("user: ", user ?? "(no data)")
             print("user.uid: ", user?.uid ?? "(no data)")
             print("error: ", error ?? "(no data)")
             
+            Toast.init(text: "로그인 성공입니다.").show()
             
-            Toast.init(text: "반갑습니다.").show()
+            DispatchQueue.main.async {
+//                self.present(MainTabbarViewController(), animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            Database.database().reference().child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                print("///// snapshot.value: ", snapshot.value ?? "")
+            }, withCancel: { (error) in
+                print("///// error: ", error)
+            })
+            
         }
     }
     

@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "Cell"
 private let headerReuseIdentifier = "Cell"
 
 class ProfileViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var userData:User?{
+        didSet{
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if DataCenter.sharedData.isLogin && userData == nil {
+            DataCenter.sharedData.requestUserData(completion: { (user) in
+                self.userData = user
+            })
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settingBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "gear"), style: .plain, target: self, action: #selector(settingBtnAction))
+        self.navigationItem.rightBarButtonItem = settingBtn
         
         collectionView?.backgroundColor = .white
 
@@ -34,6 +55,21 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
         super.didReceiveMemoryWarning()
         
     }
+    
+    func settingBtnAction() {
+        print("logout-")
+        
+        do {
+            try Auth.auth().signOut()
+            
+            // 탭바에게 요청..
+            let tabbar:MainTabbarViewController = self.tabBarController as! MainTabbarViewController
+            tabbar.showLoginVC()
+            
+        } catch {
+            
+        }
+    }
 
     
     
@@ -52,7 +88,9 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
+        let cell:ProfileHeaderViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! ProfileHeaderViewCell
+        
+        cell.userData = self.userData
         
 //        cell.backgroundColor = .yellow
         

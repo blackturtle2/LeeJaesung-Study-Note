@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import Firebase
+import Toaster
 
 class MainTabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
         
-        setSubviews()
+//        do {
+//            try Auth.auth().signOut()
+//        } catch  {
+//            
+//        }
+//        
+        print("//////Auth: ", Auth.auth().currentUser ?? "nil")
         
+        if !DataCenter.sharedData.requestLogin() {
+            DispatchQueue.main.async {
+                self.showLoginVC()
+            }
+        }
+        
+        setSubviews()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,11 +59,21 @@ class MainTabbarViewController: UITabBarController {
         
         
         let vc5 = ProfileViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        vc5.view.backgroundColor = .blue
-        vc5.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
-        vc5.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_unselected")
+        let vc5Navi = UINavigationController(rootViewController: vc5)
         
-        viewControllers = [ vc1, vc2, vc3, vc4, vc5 ]
+        vc5Navi.view.backgroundColor = .blue
+        vc5Navi.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
+        vc5Navi.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_unselected")
+        // 탭바 버튼은 탭바 컨트롤러의 자식 뷰인 내비게이션 컨트롤러가 지정하고, 내비게이션 바는 내비게이션 컨트롤러의 자식인 뷰 컨트롤러가 지정한다.
+        
+        viewControllers = [ vc1, vc2, vc3, vc4, vc5Navi ]
+    }
+    
+    func showLoginVC() {
+        let loginVC = LoginViewController()
+        let navi = UINavigationController(rootViewController: loginVC)
+        self.present(navi, animated: true, completion: nil)
+        Toast.init(text: "로그아웃 되었습니다.").show()
     }
     
     

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let rootVC = UIViewController()
 //        rootVC.view.backgroundColor = .blue
         
-        let rootNavi = UINavigationController(rootViewController: LoginViewController())
+//        let rootNavi = UINavigationController(rootViewController: LoginViewController())
 
 //        window?.rootViewController = rootNavi
         window?.rootViewController = MainTabbarViewController()
